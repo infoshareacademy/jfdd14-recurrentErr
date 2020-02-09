@@ -1,7 +1,45 @@
 .premier-section {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-flow: column;
     height: 100vh;
+    text-align: center;
+}
+
+.premier-section_form {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+    justify-content: center;    
+}
+
+.container {
+    text-align: center;
+    max-width: 90%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="button"]{
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .premier-section_form {
+        flex-flow: row;
+    }
+
+    .container {
+        order: -1;
+        text-align: right;
+    }
+
+    form, .container {
+        width: 40%;
+    }
 }
