@@ -1,0 +1,10 @@
+i{       
+    color: #757575;
+}
+
+#functionalities{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+
+}
