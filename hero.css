@@ -17,6 +17,16 @@ body {
     color: #FFFFFF;
     
 }
+
+.features p{
+    border-bottom: 1px solid black;
+}
+
+#hero img{
+    width: 90%;
+    height: 400px;
+}
+
 .heroimage{
 display: block;
 max-width: 90%;
