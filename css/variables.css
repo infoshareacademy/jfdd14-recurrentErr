@@ -13,17 +13,26 @@ i{
     color: #757575;
 }
 
+div{
+    padding: 1rem;
+}
+
 .section__functionalities{
     display: flex;
     list-style-type: none;
     justify-content: space-around; 
     text-align: center;  
-    padding: 1rem;
+    padding: 2rem;   
+    align-items: center; 
 }
 
-li.ul__functionalities{
+.ul__functionalities{
     flex: 1 1 25%;
-    margin: 0;  
+    margin: 0;
+    color: #212121;  
+    font-size: 2rem;
+    text-align: center;
+    align-items: center;
 }
 
 @media only screen and (max-width: 599px) {
