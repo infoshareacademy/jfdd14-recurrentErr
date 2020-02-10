@@ -1,14 +1,43 @@
-.heroimage{
-   position: relative;
-   text-align: center; 
-   
+* {
+    box-sizing: border-box;  
 }
 
-.img__text{
-    position: absolute;
-    top: 30%;
-    left: 40%;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #FFEB3B;
+}
+
+
+#hero {
+    display: flex;
+    min-height: 270px;
+    justify-content: center;
+    color: #FFFFFF;
     
-    font-size: 2em;
+}
+.heroimage{
+display: block;
+max-width: 90%;
+margin: 0 auto
+}
+
+.img__text {
+    position: absolute;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 200%;
+}
+
+.features{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #212121;
 }
 
