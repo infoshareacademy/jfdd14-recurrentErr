@@ -1,1 +1,38 @@
-/* RE - Identyfikacja wizualna produktu */
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+}
+
+#functionalities{
+    background: #CFD8DC;
+}
+
+i{       
+    color: #757575;
+}
+
+.section__functionalities{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around; 
+    text-align: center;  
+    padding: 1rem;
+}
+
+li.ul__functionalities{
+    flex: 1 1 25%;
+    margin: 0;  
+}
+
+@media only screen and (max-width: 599px) {
+    .section__functionalities{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    li.ul__functionalities{
+    flex: 1 1 25%;
+    padding: 1rem;  
+}
