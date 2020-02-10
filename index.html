@@ -1,38 +1,48 @@
-<!-- RE - identyfikacja wizualna produktu w pliku css/variables -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>crossRoads</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header>
-        <!-- RE - Nawigacja w obrębie sstrony -->
-    </header>
-
-    <section>
-        <!-- RE - Sekcja Hero -->
-    </section>
-
-    <section>
-        <!-- RE - Spis planowanych funkcji produktu -->
-    </section>
-
-    <section>
-        <!-- RE - Dodatkowe informacje o produkcie  -->
-    </section>
-
-    <form action="" method="get">
-        <!-- RE - Zapis na premierę -->
-    </form>
-
-    <section>
-        <!-- RE - informacje o zespole -->
-    </section>
-
-
+    <main class="main-container">
+        <header>
+            <!-- RE - Nawigacja w obrębie sstrony -->
+        </header>
+    
+        <section>
+            <!-- RE - Sekcja Hero -->
+        </section>
+    
+        <section>
+            <!-- RE - Spis planowanych funkcji produktu -->
+        </section>
+    
+        <section>
+            <!-- RE - Dodatkowe informacje o produkcie  -->
+        </section>
+    
+        <section class="premier-section">
+            <!-- RE - Zapis na premierę -->
+            <h3>Chcesz zostać powiadomiony gdy aplikacja już wyjdzie?</h3>
+            <div class="premier-section_form">
+                <form action="" method="get"> 
+                    <input type="email" name="email" placeholder="twoj@email.com" required>
+                    <input class="premier-section_button" type="button" value="Wyślij">
+                </form>
+                <div class="premier-section_text">
+                    <p>Nienawidzimy spamu i wyślemy ci tylko maila z powiadomieniem, że aplikacja jest dostępna.</p>
+                    <p>Gwarantujemy bezpieczeństwo danych.</p>
+                </div>
+            </div>
+        </section>
+    
+        <section>
+            <!-- RE - informacje o zespole -->
+        </section>
+    </main>
 </body>
 </html>

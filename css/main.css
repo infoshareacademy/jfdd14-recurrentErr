@@ -1,10 +1,17 @@
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .premier-section {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: column;
-    height: 100vh;
     text-align: center;
+    background: #607D8B;
+    color: #FFFFFF;
+    padding: 8rem 0;
 }
 
 .premier-section_form {
@@ -15,9 +22,16 @@
     justify-content: center;    
 }
 
-.container {
+.premier-section_text {
     text-align: center;
     max-width: 90%;
+}
+
+.premier-section_button {
+    background: #455A64;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.5rem 0; 
 }
 
 form {
@@ -34,12 +48,12 @@ input[type="button"]{
         flex-flow: row;
     }
 
-    .container {
+    .premier-section_text {
         order: -1;
         text-align: right;
     }
 
-    form, .container {
+    form, .premier-section_text {
         width: 40%;
     }
 }
