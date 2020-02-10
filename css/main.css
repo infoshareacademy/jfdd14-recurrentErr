@@ -22,16 +22,21 @@
     justify-content: center;    
 }
 
-.premier-section_text {
-    text-align: center;
-    max-width: 90%;
+.premier-section_email, .premier-section_button {
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 1rem;
+}
+
+.premier-section_email {
+    background: #CFD8DC;
+    color: #212121; 
 }
 
 .premier-section_button {
     background: #455A64;
     color: #FFFFFF;
-    border: none;
-    padding: 0.5rem 0; 
+    width: 100%;
 }
 
 form {
@@ -39,11 +44,7 @@ form {
     flex-direction: column;
 }
 
-input[type="button"]{
-    width: 100%;
-}
-
-@media (min-width: 600px) {
+/*@media (min-width: 600px) {
     .premier-section_form {
         flex-flow: row;
     }
@@ -56,4 +57,4 @@ input[type="button"]{
     form, .premier-section_text {
         width: 40%;
     }
-}
+}*/
