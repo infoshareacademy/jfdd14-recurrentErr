@@ -23,25 +23,33 @@
 }
 
 .premier-section_email, .premier-section_button {
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
     border: none;
-    padding: 0.5rem 0;
-    border-radius: 1rem;
+
 }
 
 .premier-section_email {
     background: #CFD8DC;
-    color: #212121; 
+    color: #212121;
+    margin-bottom: 1em; 
 }
 
 .premier-section_button {
-    background: #455A64;
-    color: #FFFFFF;
+    background: #FFEB3B; 
+    color: #212121;  
     width: 100%;
+}
+
+.premier-section_button:hover {
+    background: #455A64;
+    color: #FFFFFF; 
 }
 
 form {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 /*@media (min-width: 600px) {
