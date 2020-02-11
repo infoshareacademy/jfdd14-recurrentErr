@@ -58,6 +58,7 @@ a.nav{
     font-weight: bold;
 
 }
+
 @media screen and (min-width: 800px){
 
     .navigation {
@@ -70,9 +71,8 @@ a.nav{
        padding-right: 10px;
 }
    .nav{
-       border: 2px solid #455A64;
        background: black;
-       border-radius: 50px;
+       border-radius: 10px;
        margin-right: 5px;
    }
    .logo{
