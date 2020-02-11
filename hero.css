@@ -22,6 +22,15 @@ body {
     border-bottom: 1px solid black;
 }
 
+.features a {
+    text-decoration: none;
+    color: #212121;
+}
+
+.features a:hover{
+    background-color: #757575;
+}
+
 #hero img{
     width: 90%;
     height: 400px;
