@@ -2,13 +2,13 @@
 body{
     background: #BDBDBD;
     font-family: sans-serif;
-    width: 1200px;
-    margin: 0px;
-    padding: 0px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
 }
 .navigation{
     
-    margin: 0; 
+    margin: 0 auto; 
     margin-top: 0;   
     height: auto;
     width: 100vw;
@@ -39,53 +39,49 @@ body{
     border: 3px black solid;
 }
 
-ul {
+.position {
     margin-block-start: 0em;
     margin-block-end: 0em;
     padding-inline-start: 0px;
+    margin-left: 0;
+    margin-right: 0;
 }   
 a.nav{
     text-decoration: none;
     color: #FFEB3B;
     text-transform: uppercase;
     padding: 6px;
-    
 }
 
-a.nav:hover{
-    font-weight: bolder;
-}
 .menu:hover{
     background: black;
-    padding: 1em;
+    font-weight: bold;
+
 }
 @media screen and (min-width: 800px){
 
     .navigation {
         flex-direction: row;
-        justify-content: space-between;
-      
-        
-    }
+        justify-content: space-between;  
+}
    ul{
        display: flex;
        align-items: center;
        padding-right: 10px;
-   }
+}
    .nav{
        border: 2px solid #455A64;
        background: black;
        border-radius: 50px;
        margin-right: 5px;
    }
-
    .logo{
        display: block;
        align-self: center;
        justify-self: flex-start;
+       margin: 0;
    }
-   .menu:hover{  
-    padding: 1.3em;
+   .menu:hover{   
     background: none;
 }
 }
