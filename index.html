@@ -4,45 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>crossRoads</title>
+    <title>crossRoads</title> 
+    <script src="https://kit.fontawesome.com/cd3df7232a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main class="main-container">
-        <header>
-            <!-- RE - Nawigacja w obrębie sstrony -->
-        </header>
-    
-        <section>
-            <!-- RE - Sekcja Hero -->
-        </section>
-    
-        <section>
-            <!-- RE - Spis planowanych funkcji produktu -->
-        </section>
-    
-        <section>
-            <!-- RE - Dodatkowe informacje o produkcie  -->
-        </section>
-    
-        <section id="contact-section">
-            <!-- RE - Zapis na premierę -->
-            <h2>Chcesz zostać powiadomiony, gdy aplikacja już wyjdzie?</h2>
-            <div class="contact-section_container">
-                <form action="" method="get"> 
-                    <input class="contact-section_email" type="email" name="email" placeholder="twoj@email.com" required>
-                    <input class="contact-section_button" type="button" value="Wyślij">
-                </form>
-                <div class="contact-section_text">
-                    <p>Nienawidzimy spamu i wyślemy ci tylko maila z powiadomieniem, że aplikacja jest dostępna.</p>
-                    <p>Zapewniamy bezpieczeństwo danych.</p>
-                </div>
+    <nav class="navigation">
+        <img src="Pak State.png" class="logo" alt="logo" width="40px">
+        <ul>
+            <li class="menu"><a  href="#" class="nav">Home</a></li>
+            <li class="menu"><a href="#" class="nav">Mój Profil</a></li>
+            <li class="menu"><a href="#" class="nav">Zaplanuj Przechadzkę</a></li>
+            <li class="menu"><a href="#contact-section" class="nav">Skontaktuj Się Z Nami</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <!-- RE - Sekcja Hero -->
+    </section>
+    <!-- RE - Spis planowanych funkcji produktu -->
+    <section id="functionalities">
+
+        <ul class="section__functionalities">
+            <li class="ul__functionalities"><i class="fas fa-map-signs fa-border fa-2x"></i><div>Planuj</div></li>
+            <li class="ul__functionalities"><i class="fas fa-walking fa-border fa-2x"></i><div>Spaceruj</div></li>
+            <li class="ul__functionalities"><i class="fas fa-tablet-alt fa-border fa-2x"></i><div>Obserwuj</div></li>
+            <li class="ul__functionalities"><i class="fas fa-keyboard fa-border fa-2x"></i><div>Komentuj</div></li>
+        </ul>
+
+    </section>
+
+    <section>
+        <!-- RE - Dodatkowe informacje o produkcie  -->
+    </section>
+
+    <section id="contact-section">
+        <!-- RE - Zapis na premierę -->
+        <h2>Chcesz zostać powiadomiony, gdy aplikacja już wyjdzie?</h2>
+        <div class="contact-section_container">
+            <form action="" method="get"> 
+                <input class="contact-section_email" type="email" name="email" placeholder="twoj@email.com" required>
+                <input class="contact-section_button" type="button" value="Wyślij">
+            </form>
+            <div class="contact-section_text">
+                <p>Nienawidzimy spamu i wyślemy ci tylko maila z powiadomieniem, że aplikacja jest dostępna.</p>
+                <p>Zapewniamy bezpieczeństwo danych.</p>
             </div>
-        </section>
-    
-        <section>
-            <!-- RE - informacje o zespole -->
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section>
+        <!-- RE - informacje o zespole -->
+    </section>
+
+
 </body>
+
 </html>
