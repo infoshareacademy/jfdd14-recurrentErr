@@ -32,12 +32,12 @@
 form {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .contact-section_email, .contact-section_button {
     padding: 0.5rem 0.5rem;
     border-radius: 0.5rem;
+    width: 100%;
     border: none;
 }
 
