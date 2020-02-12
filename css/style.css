@@ -18,12 +18,12 @@ body{
     height: auto;
     width: 100vw;
     padding: 0px;
-    background:#757575;
+    background:#607D8B;
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
     text-align: center;
-    align-content: center;
+    align-content: space-around;
     color: #FFEB3B;
     position: fixed;
     top: 0;
@@ -31,10 +31,11 @@ body{
     right: 0;
     
 }
+
 .navigation ul li{
     margin: 0.7em 0px;
     list-style: none;
-}
+  }
 .navigation > .logo{
     align-self: center;
     width: 6em;
@@ -56,19 +57,25 @@ a.nav{
     color: #FFEB3B;
     text-transform: uppercase;
     padding: 6px;
+   
+}
+a.nav:hover {
+    font-weight: bold;
 }
 
 .menu:hover{
     background: black;
-    font-weight: bold;
-
-}
+    }
 
 @media screen and (min-width: 800px){
 
     .navigation {
         flex-direction: row;
-        justify-content: space-between;  
+        justify-content: space-between; 
+}
+    a.nav {
+    color: black;
+    padding: 15px;
 }
    ul{
        display: flex;
@@ -79,7 +86,7 @@ a.nav{
        border-radius: 10px;
        margin-right: 5px;
        padding: 10px;
-       background: black;
+       background: rgb(247, 230, 80);
    }
    .logo{
        display: block;
@@ -87,7 +94,11 @@ a.nav{
        justify-self: flex-start;
        margin: 0;
    }
-   .menu:hover{   
+   a.nav:hover {
+    font-weight: lighter;
+    background: #CFD8DC;
+}
+.menu:hover {
     background: none;
 }
 }
