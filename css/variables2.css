@@ -6,6 +6,8 @@
 }
 
 #functionalities{
+   
+    margin-top: 96px;
     background: #CFD8DC;
 }
 
@@ -39,9 +41,17 @@ div{
         flex-direction: column;
         text-align: center;
     }
-
+}#functionalities{
+   
+    margin-top: 80px;
+    background: #CFD8DC;
+}
     li.ul__functionalities{
     flex: 1 1 25%;
     padding: 1rem;  
+    }
+@media screen and (min-width: 800px){
+    #functionalities{   
+        margin-top: 75px;
 }
 }
