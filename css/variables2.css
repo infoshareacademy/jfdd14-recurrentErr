@@ -43,7 +43,7 @@ div{
     }
 }#functionalities{
    
-    margin-top: 230px;
+    margin-top: 80px;
     background: #CFD8DC;
 }
     li.ul__functionalities{
@@ -52,6 +52,6 @@ div{
     }
 @media screen and (min-width: 800px){
     #functionalities{   
-        margin-top: 96px;
+        margin-top: 75px;
 }
 }

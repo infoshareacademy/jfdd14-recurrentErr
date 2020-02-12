@@ -20,10 +20,10 @@ body{
     padding: 0px;
     background:#607D8B;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-transform: uppercase;
     text-align: center;
-    align-content: space-around;
+    justify-content: space-evenly;
     color: #FFEB3B;
     position: fixed;
     top: 0;
@@ -33,16 +33,18 @@ body{
 }
 
 .navigation ul li{
-    margin: 0.7em 0px;
+    margin: 0.2em 0px;
     list-style: none;
   }
 .navigation > .logo{
-    align-self: center;
-    width: 6em;
+    align-self: flex-start;
+    width: 5em;
 
 }
 .logo{
     border: 3px black solid;
+    margin: auto 0;
+
 }
 
 .position {
@@ -54,7 +56,7 @@ body{
 }   
 a.nav{
     text-decoration: none;
-    color: #FFEB3B;
+    color:rgb(252, 243, 164);
     text-transform: uppercase;
     padding: 6px;
    
@@ -75,7 +77,8 @@ a.nav:hover {
 }
     a.nav {
     color: black;
-    padding: 15px;
+    padding: 7px 10 px 6px;
+    margin: 7px;
 }
    ul{
        display: flex;
@@ -86,7 +89,8 @@ a.nav:hover {
        border-radius: 10px;
        margin-right: 5px;
        padding: 10px;
-       background: rgb(247, 230, 80);
+      
+       background: #CFD8DC;
    }
    .logo{
        display: block;
@@ -96,7 +100,7 @@ a.nav:hover {
    }
    a.nav:hover {
     font-weight: lighter;
-    background: #CFD8DC;
+    background: rgb(252, 243, 164);
 }
 .menu:hover {
     background: none;
