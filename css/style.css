@@ -7,13 +7,9 @@
 body{
     background: #BDBDBD;
     font-family: sans-serif;
-<<<<<<< HEAD:css/style.css
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
-=======
-
->>>>>>> develop:css/style.css
 }
 .navigation{
     
@@ -80,9 +76,10 @@ a.nav{
        padding-right: 10px;
 }
    .nav{
-       background: black;
        border-radius: 10px;
        margin-right: 5px;
+       padding: 10px;
+       background: black;
    }
    .logo{
        display: block;
