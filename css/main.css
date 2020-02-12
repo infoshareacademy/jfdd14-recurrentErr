@@ -6,6 +6,39 @@
     font-family: Arial, Helvetica, sans-serif;  
 }
 
+.section-extra_column1 {
+    grid-area: column1;
+    padding: 0;
+}
+
+.section-extra_column2 {
+    grid-area: column2;
+    padding: 0;
+}
+
+.section-extra {
+    background: #455A64;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 1.5rem 1fr 1.5rem;
+    grid-template-rows: 1.5rem 1fr 1fr 1.5rem;
+    grid-template-areas: 
+        ".    .    ."
+        ". column1 ."
+        ". column2 ."
+        ".    .    .";
+}
+
+.section-extra_funcionality {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.section-extra_funcionality p {
+    margin-top: 1rem;
+}
+
 #contact-section {
     display: flex;
     flex-flow: column;
@@ -56,4 +89,21 @@ form {
 .contact-section_button:hover {
     background: #455A64;
     color: #FFFFFF; 
+}
+
+@media screen and (min-width: 599px){
+    .section-extra {
+        grid-template-columns: 1.5rem 1fr 1.5rem 1fr 1.5rem;
+        grid-template-rows: 1.5rem 1fr 1.5rem;
+        grid-template-areas: 
+            ".    .    .    .    ."
+            ". column1 . column2 ."
+            ".    .    .    .    .";
+    }
+}
+
+@media screen and (min-width: 999px){
+    .section-extra {
+        grid-template-columns: 6rem 1fr 2rem 1fr 6rem;
+    }
 }
