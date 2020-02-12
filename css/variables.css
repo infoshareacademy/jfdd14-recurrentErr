@@ -67,6 +67,10 @@ div{
     text-align: center;
 }
 
+.p1_paragraph, .p2_paragraph, .p3_paragraph, .p1_paragraph{
+    font-size: 20px;
+}
+
 @media only screen and (max-width: 599px) {
     .section__functionalities{
         flex-direction: column;
