@@ -18,7 +18,7 @@ i{
 }
 
 div.p1, div.p2, div.p3, div.p4{
-    padding: 0;
+    padding: 1rem 0;
 }
 
 .section__functionalities{
@@ -32,8 +32,7 @@ div.p1, div.p2, div.p3, div.p4{
 .ul__functionalities{
     flex: 1 1 25%;
     margin: 0;
-    color: #212121;  
-    
+    color: #212121;      
     text-align: center;
     align-items: center;
 }
@@ -69,10 +68,12 @@ div.p1, div.p2, div.p3, div.p4{
 
 .p1,.p2,.p3,.p4{
     text-align: center;
+    
 }
 
-.p1_paragraph, .p2_paragraph, .p3_paragraph, .p1_paragraph{
-    font-size: 17px;
+.p1_paragraph, .p2_paragraph, .p3_paragraph, .p4_paragraph{
+    font-size: 1rem;
+    padding: 1rem 0;
 }
 
 @media only screen and (max-width: 599px) {
