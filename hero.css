@@ -49,15 +49,15 @@ body {
  
 .top__header1{
     display: flex;
-    align-self: center;
+    align-self: flex-start;
     font-size: 100%;
     height: 20%;
-    width: 40%;
+    width: 50%;
     margin-top: 10%;
     background-color: rgba(146, 99, 13, 0.568);
    border-radius: 10%;
     text-align: center;
-    display: inline-block;
+    
 }
 
 
@@ -105,6 +105,7 @@ body {
         width: 40%;
         background-color: rgba(146, 99, 13, 0.568);
         border-radius: 10%;
+        text-align: center;
         align-items: center;
         margin-top: 15%;
         font-size: 70%;
@@ -155,10 +156,9 @@ body {
         display: flex;
         font-size: 0,5em;
         height: 20%;
-        width: 37%;
+        /* width: 37%; */
         background-color: rgba(146, 99, 13, 0.568);
        border-radius: 10%;
-       display: inline-block;
         text-align: center;
         
     }
@@ -191,7 +191,7 @@ body {
             width: 40%;
             font-size: 1rem;
             text-align: center;
-            display: inline-block;
+           
             }
     
     
@@ -240,7 +240,7 @@ body {
             .hero__header{
                 background-color: rgba(146, 99, 13, 0.568);
                border-radius: 10%;
-               width: 70%;
+               /* width: 80%; */
                flex-wrap: wrap;
                margin-top: 30px;
                margin-bottom: 30px;
@@ -266,7 +266,7 @@ body {
                 display: flex;
                 font-size: 2em;
                 height: 20%;
-                width: 80%;
+                width: 100%;
                 margin-top: 5%;
                  text-align: center;
                  display: inline-block;
@@ -282,9 +282,8 @@ body {
                 flex-direction: column;
                 align-self: center;
                 margin-top: 5%;
-                width: 80%;
+                width: 90%;
                 font-size: 1.5em;
-                display: inline-block;
                 text-align: center;
                 background-color: rgba(128, 255, 0, 0);
                 }
@@ -305,7 +304,7 @@ body {
                     align-self: center;
                     margin-top: 5%;
                     height: 20%;
-                    width: 80%;
+                    width: 90%;
                     font-size: 1.5em;
                     background-color: rgba(128, 255, 0, 0);
                     }
@@ -314,7 +313,7 @@ body {
                 .bottom__header2{
                     display: flex;
                     flex-direction: column;
-                    width: 80%;
+                    width: 100%;
                     margin-top: 0%;
                     align-items: center;
                     align-self: center;
