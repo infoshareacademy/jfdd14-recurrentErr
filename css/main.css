@@ -8,27 +8,63 @@
 
 /* section-extra styling */
 
-.section-extra_column1 {
-    grid-area: column1;
+.section-extra_funcionality-1 {
+    grid-area: func1;
     padding: 0;
 }
 
-.section-extra_column2 {
-    grid-area: column2;
+.section-extra_funcionality-2 {
+    grid-area: func2;
+    padding: 0;
+}
+
+.section-extra_funcionality-3 {
+    grid-area: func3;
+    padding: 0;
+}
+
+.section-extra_funcionality-4 {
+    grid-area: func4;
+    padding: 0;
+}
+
+.section-extra_funcionality-5 {
+    grid-area: func5;
+    padding: 0;
+}
+
+.section-extra_funcionality-6 {
+    grid-area: func6;
+    padding: 0;
+}
+
+.section-extra_funcionality-7 {
+    grid-area: func7;
+    padding: 0;
+}
+
+.section-extra_funcionality-8 {
+    grid-area: func8;
     padding: 0;
 }
 
 .section-extra {
     background: #455A64;
     color: #FFFFFF;
-    display: grid;
-    grid-template-columns: 1.5rem 1fr 1.5rem;
-    grid-template-rows: 1.5rem 1fr 1fr 1.5rem;
+    display: grid;		
+    grid-template-columns: 4rem 1fr 4rem;
+    grid-template-rows: 1.5rem repeat(8, 1fr) 1.5rem;
     grid-template-areas: 
         ".    .    ."
-        ". column1 ."
-        ". column2 ."
-        ".    .    .";
+        ". func1 ."
+        ". func2 ."
+        ". func3 ."
+        ". func4 ."
+        ". func5 ."
+        ". func6 ."
+        ". func7 ."
+        ". func8 ."
+        ".    .  .";
 }
 
 .section-extra_funcionality {
@@ -102,11 +138,14 @@ form {
 @media screen and (min-width: 599px){
     .section-extra {
         grid-template-columns: 1.5rem 1fr 1.5rem 1fr 1.5rem;
-        grid-template-rows: 1.5rem 1fr 1.5rem;
+        grid-template-rows: 1.5rem repeat(4,1fr) 1.5rem;
         grid-template-areas: 
-            ".    .    .    .    ."
-            ". column1 . column2 ."
-            ".    .    .    .    .";
+            ".   .   .   .   ."
+            ". func1 . func2 ."
+            ". func3 . func4 ."
+            ". func5 . func6 ."
+            ". func7 . func8 ."
+            ".   .   .   .   .";
     }
 }
 
