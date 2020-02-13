@@ -6,6 +6,8 @@
     font-family: Arial, Helvetica, sans-serif;  
 }
 
+/* section-extra styling */
+
 .section-extra_column1 {
     grid-area: column1;
     padding: 0;
@@ -38,6 +40,12 @@
 .section-extra_funcionality p {
     margin-top: 1rem;
 }
+
+i.fa-5x {
+    color: #FFFFFF;
+}
+
+/* end section-extra styling */
 
 #contact-section {
     display: flex;
@@ -102,8 +110,18 @@ form {
     }
 }
 
-@media screen and (min-width: 999px){
+/* section-extra styling */
+
+@media screen and (min-width: 799px){
     .section-extra {
-        grid-template-columns: 6rem 1fr 2rem 1fr 6rem;
+        grid-template-columns: 4rem 1fr 2rem 1fr 4rem;
     }
 }
+
+@media screen and (min-width: 999px){
+    .section-extra {
+        grid-template-columns: 8rem 1fr 4rem 1fr 8rem;
+    }
+}
+
+/*end of section-extra styling */
