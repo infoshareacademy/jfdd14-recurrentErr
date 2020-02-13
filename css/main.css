@@ -10,42 +10,34 @@
 
 .section-extra_funcionality-1 {
     grid-area: func1;
-    padding: 0;
 }
 
 .section-extra_funcionality-2 {
     grid-area: func2;
-    padding: 0;
 }
 
 .section-extra_funcionality-3 {
     grid-area: func3;
-    padding: 0;
 }
 
 .section-extra_funcionality-4 {
     grid-area: func4;
-    padding: 0;
 }
 
 .section-extra_funcionality-5 {
     grid-area: func5;
-    padding: 0;
 }
 
 .section-extra_funcionality-6 {
     grid-area: func6;
-    padding: 0;
 }
 
 .section-extra_funcionality-7 {
     grid-area: func7;
-    padding: 0;
 }
 
 .section-extra_funcionality-8 {
     grid-area: func8;
-    padding: 0;
 }
 
 .section-extra {
@@ -53,7 +45,7 @@
     color: #FFFFFF;
     display: grid;		
     grid-template-columns: 4rem 1fr 4rem;
-    grid-template-rows: 1.5rem repeat(8, 1fr) 1.5rem;
+    grid-template-rows: 3rem repeat(8, 1fr) 1rem;
     grid-template-areas: 
         ".    .    ."
         ". func1 ."
@@ -75,13 +67,18 @@
 
 .section-extra_funcionality p {
     margin-top: 1rem;
+    margin-bottom: 2rem;
 }
+
+/* Only in my section icons have class fa-5x */
 
 i.fa-5x {
     color: #FFFFFF;
 }
 
 /* end section-extra styling */
+
+/* contact-section styling */
 
 #contact-section {
     display: flex;
@@ -135,6 +132,10 @@ form {
     color: #FFFFFF; 
 }
 
+/* end of contact-section styling */
+
+/* section-extra styling */
+
 @media screen and (min-width: 599px){
     .section-extra {
         grid-template-columns: 1.5rem 1fr 1.5rem 1fr 1.5rem;
@@ -149,8 +150,6 @@ form {
     }
 }
 
-/* section-extra styling */
-
 @media screen and (min-width: 799px){
     .section-extra {
         grid-template-columns: 4rem 1fr 2rem 1fr 4rem;
@@ -159,7 +158,7 @@ form {
 
 @media screen and (min-width: 999px){
     .section-extra {
-        grid-template-columns: 8rem 1fr 4rem 1fr 8rem;
+        grid-template-columns: 9rem 1fr 5rem 1fr 9rem;
     }
 }
 
