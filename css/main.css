@@ -6,6 +6,78 @@
     font-family: Arial, Helvetica, sans-serif;  
 }
 
+/* section-extra styling */
+
+.section-extra_funcionality-1 {
+    grid-area: func1;
+}
+
+.section-extra_funcionality-2 {
+    grid-area: func2;
+}
+
+.section-extra_funcionality-3 {
+    grid-area: func3;
+}
+
+.section-extra_funcionality-4 {
+    grid-area: func4;
+}
+
+.section-extra_funcionality-5 {
+    grid-area: func5;
+}
+
+.section-extra_funcionality-6 {
+    grid-area: func6;
+}
+
+.section-extra_funcionality-7 {
+    grid-area: func7;
+}
+
+.section-extra_funcionality-8 {
+    grid-area: func8;
+}
+
+.section-extra {
+    background: #455A64;
+    color: #FFFFFF;
+    display: grid;		
+    grid-template-columns: 4rem 1fr 4rem;
+    grid-template-rows: 3rem repeat(7, 1fr) 1rem;
+    grid-template-areas: 
+        ".    .    ."
+        ". func1 ."
+        ". func2 ."
+        ". func3 ."
+        ". func4 ."
+        ". func5 ."
+        ". func6 ."
+        ". func7 ."
+        ".   .   .";
+}
+
+.section-extra_funcionality {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.section-extra_funcionality p {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Only in my section icons have class fa-5x */
+
+i.fa-5x {
+    color: #FFFFFF;
+}
+
+/* end section-extra styling */
+
+/* contact-section styling */
 
 #contact-section {
     display: flex;
@@ -58,6 +130,8 @@ form {
     background: #455A64;
     color: #FFFFFF; 
 }
+
+/* end of contact-section styling */
 
 .navigation{
     
@@ -113,6 +187,21 @@ a.nav:hover {
 .menu:hover{
     background: black;
     }
+
+@media screen and (min-width: 600px){
+    .section-extra {
+        grid-template-columns: 1.5rem 1fr 1.5rem 1fr 1.5rem;
+        grid-template-rows: 1.5rem repeat(4,1fr) 1.5rem;
+        grid-template-areas: 
+            ".   .   .   .   ."
+            ". func1 . func2 ."
+            ". func3 . func4 ."
+            ". func5 . func6 ."
+            ". func7 func7 func7 ."
+            ".   .   .   .   .";
+    }
+}
+
 @media screen and (min-width: 800px){
     .navigation {
         flex-direction: row;
@@ -152,6 +241,10 @@ a.nav:hover {
     .menu:hover {
         background: none;
 }
+    .section-extra {
+        grid-template-columns: 4rem 1fr 2rem 1fr 4rem;
+    }
+
 }
 
 #functionalities{
@@ -260,4 +353,10 @@ div.p1, div.p2, div.p3, div.p4{
         grid-area: p4;
     }
 
+}
+
+@media screen and (min-width: 999px){
+    .section-extra {
+        grid-template-columns: 9rem 1fr 5rem 1fr 9rem;
+    }
 }
