@@ -45,7 +45,7 @@
     color: #FFFFFF;
     display: grid;		
     grid-template-columns: 4rem 1fr 4rem;
-    grid-template-rows: 3rem repeat(8, 1fr) 1rem;
+    grid-template-rows: 3rem repeat(7, 1fr) 1rem;
     grid-template-areas: 
         ".    .    ."
         ". func1 ."
@@ -55,8 +55,7 @@
         ". func5 ."
         ". func6 ."
         ". func7 ."
-        ". func8 ."
-        ".    .  .";
+        ".   .   .";
 }
 
 .section-extra_funcionality {
@@ -198,7 +197,7 @@ a.nav:hover {
             ". func1 . func2 ."
             ". func3 . func4 ."
             ". func5 . func6 ."
-            ". func7 . func8 ."
+            ". func7 func7 func7 ."
             ".   .   .   .   .";
     }
 }
