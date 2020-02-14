@@ -5,15 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>crossRoads</title> 
+    <title>crossRoads</title>
     <script src="https://kit.fontawesome.com/cd3df7232a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/normalize.css">
-
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/variables2.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="hero.css">
     
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="hero.css">
    
 </head>
 
@@ -23,6 +19,7 @@
         <ul class="position">
             <li class="menu"><a  href="#" class="nav">Home</a></li>
             <li class="menu"><a href="#" class="nav">Mój Profil</a></li>
+            <li class="menu"><a href="#about__us" class="nav">O Nas</a></li>
             <li class="menu"><a href="#" class="nav">Zaplanuj Przechadzkę</a></li>
             <li class="menu"><a href="#contact-section" class="nav">Skontaktuj Się Z Nami</a></li>
         </ul>
@@ -74,12 +71,23 @@
     </section>
     <!-- RE - Spis planowanych funkcji produktu -->
     <section id="functionalities">
-
         <ul class="section__functionalities">
-            <li class="ul__functionalities"><i class="fas fa-map-signs fa-border fa-2x"></i><div>Planuj</div></li>
-            <li class="ul__functionalities"><i class="fas fa-walking fa-border fa-2x"></i><div>Spaceruj</div></li>
-            <li class="ul__functionalities"><i class="fas fa-tablet-alt fa-border fa-2x"></i><div>Obserwuj</div></li>
-            <li class="ul__functionalities"><i class="fas fa-keyboard fa-border fa-2x"></i><div>Komentuj</div></li>
+            <li class="ul__functionalities">
+                <i class="fas fa-map-signs fa-border fa-2x"></i>
+                <div class="description">Planuj</div>
+            </li>
+            <li class="ul__functionalities">
+                <i class="fas fa-walking fa-border fa-2x"></i>
+                <div class="description">Spaceruj</div>
+            </li>
+            <li class="ul__functionalities">
+                <i class="fas fa-tablet-alt fa-border fa-2x"></i>
+                <div class="description">Obserwuj</div>
+            </li>
+            <li class="ul__functionalities">
+                <i class="fas fa-keyboard fa-border fa-2x"></i>
+                <div class="description">Komentuj</div>
+            </li>
         </ul>
 
     </section>
@@ -92,7 +100,7 @@
         <!-- RE - Zapis na premierę -->
         <h2>Chcesz zostać powiadomiony, gdy aplikacja już wyjdzie?</h2>
         <div class="contact-section_container">
-            <form action="" method="get"> 
+            <form action="" method="get">
                 <input class="contact-section_email" type="email" name="email" placeholder="twoj@email.com" required>
                 <input class="contact-section_button" type="button" value="Wyślij">
             </form>
@@ -101,10 +109,48 @@
                 <p>Zapewniamy bezpieczeństwo danych.</p>
             </div>
         </div>
-    </section>
+    </section >
+    <section id="about__us">
+    <div class="about__us--heading">
+        <h1>NASZ ZESPÓŁ:</h1>
+    </div>
+    <div class="photos">
+        <div class="p1">
+            <img src="/photo/PZ.jpg" alt="photo Paulina">
+            <p class="p1_paragraph">Paulina Ziomkowska</p>
+            <a href="#"><i class="fab fa-facebook-square fa-2x" style="color:#3b5998" target="_blank"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x" style="color: #0E76A8" target="_blank"></i></a>
+            <a href="#"><i class="fas fa-envelope fa-2x" style="color: #607D8B" target="_blank"></i></a>
+            <a href="#"><i class="fas fa-address-card fa-2x" style="color: #607D8B" target="_blank"></i></a>
+        </div>
+        <div class="p2">
+            <img src="/photo/PK.jpeg" alt="photo Piotr">
+            <p class="p2_paragraph">Piotr Kielak</p>
+            <a href="#"><i class="fab fa-facebook-square fa-2x" style="color:#3b5998" target="_blank"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x" style="color: #0E76A8" target="_blank"></i></a>
+            <a href="#"><i class="fas fa-envelope fa-2x" style="color: #607D8B" target="_blank"></i></a>
+            <a href="#"><i class="fas fa-address-card fa-2x" style="color: #607D8B" target="_blank"></i></a>
+        </div>
+        <div class="p3">
+            <img src="/photo/RR.jpeg" alt="photo Robert">
+            <p class="p3_paragraph">Robert Rosa</p>
+            <a href="#"><i class="fab fa-facebook-square fa-2x" style="color:#3b5998" target="_blank"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x" style="color: #0E76A8" target="_blank"></i></a>
+            <a href="#"><i class="fas fa-envelope fa-2x" style="color: #607D8B" target="_blank"></i></a>
+            <a href="#"><i class="fas fa-address-card fa-2x" style="color: #607D8B" target="_blank"></i></a>
+        </div>
+        <div class="p4">
+            <img src="/photo/PP.jpg" alt="photo Paweł">
+            <p class="p4_paragraph">Paweł Politowski</p>
+            <a href="#"><i class="fab fa-facebook-square fa-2x" style="color:#3b5998" target="_blank"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x" style="color: #0E76A8" target="_blank"></i></a>
+            <a href="#"><i class="fas fa-envelope fa-2x" style="color: #607D8B" target="_blank"></i></a>
+            <a href="#"><i class="fas fa-address-card fa-2x" style="color: #607D8B" target="_blank"></i></a>
+        </div>
+    </div>
 
-    <section>
-        <!-- RE - informacje o zespole -->
+ 
+
     </section>
 
 
