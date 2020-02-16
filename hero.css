@@ -1,188 +1,42 @@
-@media all and (min-width: 0px) and (max-width: 600px){
+
     * {
         box-sizing: border-box;  
     }
 
     #hero{
-    padding: 5%;
-    margin-top: 10em;
     display: flex;
-    background-color:#607D8B ;
-    border-radius: 10%;
-    width: 80% 
-}
-
-    .hero__top{
-        
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 5em;
-    }
-
-    .top__header1{
-        margin-bottom: 1em;
-    }
-
-    .hero__bottom{
-        
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .bottom__header1{
-        margin-bottom: 1em;
-    }
-
-    .bottom__header2 h1 a{
-        text-decoration: none;
-        color: #212121;
-    }
-
-    .bottom__header2 h1 a:hover{
-        color: #030303b2;
-        background: rgb(252, 243, 164); 
-    }
-
-
-}
-
-@media all and (min-width: 601px) and (max-width: 900px){
-    * {
-        box-sizing: border-box;  
-    }
-
-    #hero{
-    padding: 5%;
-    margin-top: 10em;
-    display: flex;
-    width: 80% 
-}
-
-    .hero__top{
-        
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 5em;
-    }
-
-    .top__header1{
-        padding: 5%;
-        width: 15rem;
-        border-radius: 10%;
-        margin-bottom: 1em;
-        background-color:#607D8B ;
-    }
-
-    .top__header2{
-        padding: 5%;
-        width: 20rem;
-        border-radius: 10%;
-        margin-bottom: 1em;
-        background-color:#607D8B ;
-    }
-
-    .hero__bottom{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .bottom__header1{
-        padding: 5%;
-        border-radius: 10%;
-        margin-bottom: 1em;
-        background-color:#607D8B ;
-    }
-
-    .bottom__header2{
-        padding: 5%;
-        border-radius: 10%;
-        background-color:#607D8B ;
-        
-    }
-
-    .bottom__header2 h1 a{
-        text-decoration: none;
-        color: #212121;
-    }
-
-    .bottom__header2 h1 a:hover{
-        color: #030303b2;
-        background: rgb(252, 243, 164); 
-    }
-
-
-}
-
-@media all and (min-width: 900px){
-    * {
-        box-sizing: border-box;  
-    }
-
-     #hero{
-    padding: 5%;
-    margin-top: 5em;
+    min-height: 540px;
     background-image: url('las.jpg');
+    margin: 0;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFF;
+    align-items: center;
+    margin-top: 80px;
+}
+
+    .hero__top{
+        text-align: center;
+        margin-bottom: 1rem;
     }
-
-    
-
 
     .hero__header{
-        background-color: rgba(207, 216, 220, 0.856);
-        border-radius: 20%;
-        width: 60%;
-        
+        background-color: rgba(69, 90, 100, 0.8);
+        width: 1000%;
+        padding: 2rem;
     }
-
-    .hero__top{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 2em;   
-
-    }
-
-    
 
     .top__header1{
-        padding: 5%;
-        font-size: 1em;
-        width: 20em;
-        border-radius: 10%;
-        margin-bottom: 1em;
-        text-align: center;
-    }
-
-    .top__header2{
-        
-        
-        padding: 5%;
-        width: 20em;
-        border-radius: 10%;
-        margin-bottom: 1em;
-        
+        margin-bottom: 1rem;
     }
 
     .hero__bottom{
-        display: flex;
-        flex-direction: column;
         text-align: center;
     }
 
     .bottom__header1{
-        padding: 5%;
-        width: 30em;
-        border-radius: 10%;
-        margin-bottom: 1em;
-    }
-
-    .bottom__header2{
-        
-        padding: 5%;
-        width: 20em;
-        border-radius: 10%;
+        margin-bottom: 1rem;
     }
 
     .bottom__header2 h1 a{
@@ -192,8 +46,20 @@
 
     .bottom__header2 h1 a:hover{
         color: #030303b2;
-        background: rgb(252, 243, 164); 
-        border-radius: 20%;
     }
 
+@media screen and (min-width: 600px){
+    
+    .hero__header{
+        border-radius: 2rem;
+        width: 80%;
+    }
 }
+
+@media screen and (min-width: 800px){
+    
+    .hero__header{
+        width: 50%;
+    }
+}  
+
