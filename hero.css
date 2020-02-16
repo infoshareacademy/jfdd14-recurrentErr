@@ -14,7 +14,8 @@
     color: #FFF;
     align-items: center;
     margin-top: 80px;
-}
+    border-top: 2px solid #FFEB3B;    
+    }
 
     .hero__top{
         text-align: center;
