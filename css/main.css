@@ -71,7 +71,7 @@ a.nav:hover {
 #hero{
     display: flex;
     min-height: 540px;
-    background-image: url('/las.jpg');
+    background-image: url('/src/hero.jpg');
     margin: 0;
     background-size: cover;
     background-position: center;
