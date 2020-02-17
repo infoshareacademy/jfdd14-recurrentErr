@@ -1,3 +1,14 @@
+:root{
+    --dark-primary-color: #455A64;
+    --default-primary-color: #607D8B;
+    --light-primary-color: #CFD8DC; 
+    --text-primary-color: #FFFFFF;
+    --text-dark-primary-color: #212121; 
+    --secondary-text-color: var(--secondary-text-color);
+    --accent-color: #FFEB3B;
+    --divider-color: #BDBDBD;
+}
+
 * {
     box-sizing: border-box;
     margin: 0 auto;
@@ -15,18 +26,18 @@
     height: auto;
     width: 100vw;
     padding: 0px;
-    background:#607D8B;
+    background: var(--default-primary-color);
     display: flex;
     flex-direction: row;
     text-transform: uppercase;
     text-align: center;
     justify-content: space-evenly;
-    color: #FFEB3B;
+    color: var(--accent-color);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: 2px solid #FFEB3B;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .navigation ul li{
@@ -39,7 +50,7 @@
 }
 
 .logo{
-    border: 3px black solid;
+    border: 3px var(--text-dark-primary-color) solid;
     margin: auto 0;
 }
 
@@ -53,7 +64,7 @@
 
 a.nav{
     text-decoration: none;
-    color:rgb(252, 243, 164);
+    color: var(--accent-color);
     text-transform: uppercase;
     padding: 6px;    
 }
@@ -63,7 +74,7 @@ a.nav:hover {
 }
 
 .menu:hover{
-    background: black;
+    background: var(--text-dark-primary-color);
 }
 
 /* hero section */
@@ -76,10 +87,10 @@ a.nav:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #FFF;
+    color: var(--text-primary-color);
     align-items: center;
     margin-top: 80px;
-    border-top: 2px solid #FFEB3B;    
+    border-top: 2px solid var(--accent-color);    
 }
 
 .hero__top{
@@ -88,7 +99,7 @@ a.nav:hover {
 }
 
 .hero__header{
-    background-color: rgba(69, 90, 100, 0.8);
+    background-color: rgba(69, 90, 100, 0.8); /* --default-primary-color + transparency */
     width: 1000%;
     padding: 2rem;
 }
@@ -107,22 +118,25 @@ a.nav:hover {
 
 .bottom__header2 h1 a{
     text-decoration: none;
-    color: #FFEB3B;
+    color: var(--accent-color);
 }
 
 .bottom__header2 h1 a:hover{
-    color: #030303b2;
+    color: var(--text-dark-primary-color);
 }
 
 /* functionalities */
 
 #functionalities{
-    background: #CFD8DC;
-    border-top: 2px solid #FFEB3B;
+    background: var(--light-primary-color);
+    border-top: 2px solid var(--accent-color);
 }
 
-i{       
-    color: #757575;
+.ul__functionalities i {       
+    color: var(--text-dark-primary-color);
+    padding: 5px;
+    border: 3px solid var(--text-dark-primary-color);
+    border-radius: 10px;
 }
 
 .description{
@@ -143,7 +157,7 @@ div.p1, div.p2, div.p3, div.p4{
 .ul__functionalities{
     flex: 1 1 25%;
     margin: 0;
-    color: #212121;     
+    color: var(--text-dark-primary-color);     
     text-align: center;
     align-items: center;
 }
@@ -183,9 +197,9 @@ div.p1, div.p2, div.p3, div.p4{
 }
 
 .section-extra {
-    background: #455A64;
-    border-top: 2px solid #FFEB3B;
-    color: #FFFFFF;
+    background: var(--dark-primary-color);
+    border-top: 2px solid var(--accent-color);
+    color: var(--text-primary-color);
     display: grid;		
     grid-template-columns: 4rem 1fr 4rem;
     grid-template-rows: 3rem repeat(7, 1fr) 1rem;
@@ -213,7 +227,7 @@ div.p1, div.p2, div.p3, div.p4{
 }
 
 i.fa-5x {
-    color: #FFFFFF; /* Only in my section icons have class fa-5x */
+    color: var(--text-primary-color); /* Only in my section icons have class fa-5x */
 }
 
 /* contact-section styling */
@@ -223,10 +237,10 @@ i.fa-5x {
     flex-flow: column;
     align-items: center;
     text-align: center;
-    background: #607D8B;
-    color: #FFFFFF;
+    background: var(--default-primary-color);
+    color: var(--text-primary-color);
     padding: 8rem 1.5rem;
-    border-top: 2px solid #FFEB3B;
+    border-top: 2px solid var(--accent-color);
 }
 
 #contact-section h2 {
@@ -255,35 +269,35 @@ form {
 }
 
 .contact-section_email {
-    background: #CFD8DC;
-    color: #212121;
+    background: var(--light-primary-color);
+    color: var(--text-dark-primary-color);
     margin-bottom: 0.5rem; 
 }
 
 .contact-section_button {
-    background: #FFEB3B; 
-    color: #212121;  
+    background: var(--accent-color); 
+    color: var(--text-dark-primary-color);  
     width: 100%;
 }
 
 .contact-section_button:hover {
-    background: #455A64;
-    color: #FFFFFF; 
+    background: var(--dark-primary-color);
+    color: var(--text-primary-color); 
 }
 
 .about__us--heading{
     text-align: center;
-    background: #CFD8DC;
-    color: #212121;
-    border-top: 2px solid #FFEB3B;
+    background: var(--light-primary-color);
+    color: var(--text-dark-primary-color);
+    border-top: 2px solid var(--accent-color);
     padding-bottom: 2rem;
     padding-top: 2rem;
 }
 
 .photos{
     display: flex; 
-    background: #CFD8DC;
-    border-bottom: 2px solid #FFEB3B;
+    background: var(--light-primary-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .photos div img{
@@ -310,8 +324,8 @@ form {
 
 footer {
     width:100%;
-    background:#607D8B;
-    color: #FFFFFF;
+    background: var(--default-primary-color);
+    color: var(--text-primary-color);
     text-align: center;
 }
 
@@ -350,7 +364,7 @@ footer {
     }
 
      a.nav {
-        color: black;
+        color: var(--text-dark-primary-color);
         padding: 7px 10 px 6px;
         margin: 7px;
         flex-shrink: 1;
@@ -367,7 +381,7 @@ footer {
        margin-right: 5px;
        padding: 10px;
        flex-shrink: 1;
-       background: #CFD8DC;
+       background: var(--light-primary-color);
    }
    .logo{
        display: block;
@@ -378,7 +392,7 @@ footer {
 
     a.nav:hover {
         font-weight: lighter;
-        background: rgb(252, 243, 164);
+        background: var(--accent-color);
     }
 
     .menu:hover {
@@ -408,7 +422,7 @@ footer {
     }
 }
     #functionalities{   
-    background: #CFD8DC;
+    background: var(--light-primary-color);
 }
     li.ul__functionalities{
     flex: 1 1 25%;
