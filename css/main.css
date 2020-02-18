@@ -411,7 +411,7 @@ footer {
        margin-right: 5px;
        padding: 10px;
        flex-shrink: 1;
-       background: var(--light-primary-color);
+       /* background: var(--light-primary-color); */
    }
    .logo{
        display: block;
@@ -422,7 +422,7 @@ footer {
 
     a.nav:hover {
         font-weight: lighter;
-        background: var(--accent-color);
+        color: var(--accent-color);
     }
 
     .menu:hover {
