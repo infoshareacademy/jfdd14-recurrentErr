@@ -303,18 +303,21 @@ form {
 
 .photos{
     display: grid;
+    grid-template-columns: 1fr 1rem 1fr 1re 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "p1 p2"
-        "p3 p4";
+        "p3 p3";
     background: var(--light-primary-color);
     border-bottom: 2px solid var(--accent-color);
 }
 
-.photos div img{
-    border-radius: 50%;
-    width: 160px;
-    height: 160px;
-    overflow: hidden;
+.photos div img{ 
+    background: var(--text-primary-color);
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; 
 }
 
 .photos img{
@@ -333,15 +336,11 @@ form {
     grid-area: p3;
 }
 
-.p4{
-    grid-area: p4;
-}
-
-.p1,.p2,.p3,.p4{
+.p1,.p2,.p3 {
     text-align: center;    
 }
 
-.p1_paragraph, .p2_paragraph, .p3_paragraph, .p4_paragraph{
+.p1_paragraph, .p2_paragraph, .p3_paragraph {
     font-size: 1rem;
     padding: 1rem 0;
 }
@@ -437,10 +436,13 @@ footer {
         grid-template-columns: 4rem 1fr 2rem 1fr 4rem;
     }
 
-    .photos {
-        display: flex;
+    .photos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "p1 p2 p3";
     }
-
 }
 
 @media screen and (min-width: 1000px){
