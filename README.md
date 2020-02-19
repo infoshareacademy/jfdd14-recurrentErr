@@ -31,20 +31,20 @@ Nie polecam jednak wykorzystywać tej branchy do wprowadzania nowych funkcjonaln
 ### 2.1. **Klasy**
 Korzystajmy z lekko zmodyfikowanego BEM:
 ```
-class = "name-of-block_element-inside-block--modificator"
+class = "nameOfBlockElement__insideBlock--modificator"
 ```
-**Nazwa bloku** - nazwa elementu stanowiącego funkcjonalnie jedną całość.
+**Nazwa bloku** - nazwa elementu stanowiącego funkcjonalnie jedną całość, jeżeli wieloczłonowa - pisana camelCasem.
 
-**Element znajdujący się w bloku** - elementy będące zarówno bezpośrednimi jak i pośrednimi potomkami elemntu blokowego.
+**Element znajdujący się w bloku** - elementy będące zarówno bezpośrednimi jak i pośrednimi potomkami elemntu blokowego, jeżeli wieloczłonowa - pisana camelCasem.
 
 **Modyfikator** - Specyficzny wariant danego elementu (opcjonalny).
 
 ### 2.2. **id**
 
-Podobnie jak nazwy bloków w klasach, jeżeli nazwa jest wieloczłonowa - oddzielamy ją myślnikami.
+Podobnie jak nazwy bloków w klasach, jeżeli nazwa musi być wieloczłonowa - zapisujemy ją camelCasem.
 
 ```
-id="id-name"
+id="idName"
 ```
 
 ### 2.3. **zmienne i funkcje**
