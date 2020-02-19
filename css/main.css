@@ -147,9 +147,6 @@ li.ul__functionalities{
 .description{
     padding: 1rem;
 }
-div.p1, div.p2, div.p3, div.p4{
-    padding: 1rem 0;
-}
 
 .section__functionalities{
     display: flex;
@@ -292,57 +289,46 @@ form {
     color: var(--text-primary-color); 
 }
 
-.about__us--heading{
-    text-align: center;
+.aboutUs {
     background: var(--light-primary-color);
-    color: var(--text-dark-primary-color);
+    color: var(--dark-primary-color);
     border-top: 2px solid var(--accent-color);
-    padding-bottom: 2rem;
-    padding-top: 2rem;
 }
 
-.photos{
-    display: grid;
-    grid-template-columns: 1fr 1rem 1fr 1re 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-        "p1 p2"
-        "p3 p3";
+.aboutUs__heading{
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.aboutUs__bio{
+    display: flex;
+    flex-direction: column;
     background: var(--light-primary-color);
     border-bottom: 2px solid var(--accent-color);
 }
 
-.photos div img{ 
-    background: var(--text-primary-color);
+.aboutUs__bio1, .aboutUs__bio2, .aboutUs__bio3 {
+    margin: 0.5rem 0;
+}
+
+.aboutUs__bio div img{
+    border: 2px solid var(--dark-primary-color);
+    border-radius: 50%;
     display: block;
-    max-width: 100%;
+    width: 100%; 
+    max-width: 280px;
     height: auto;
-    margin: 0 auto; 
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.photos img{
-    width: 100%;   
-}
-
-.p1{
-    grid-area: p1;
-}
-
-.p2{
-    grid-area: p2;
-}
-
-.p3{
-    grid-area: p3;
-}
-
-.p1,.p2,.p3 {
-    text-align: center;    
-}
-
-.p1_paragraph, .p2_paragraph, .p3_paragraph {
-    font-size: 1rem;
-    padding: 1rem 0;
+.aboutUs__bio div p {
+    font-size: 1.5rem;
+    color: var(--dark-primary-color);
+    padding: 0.5rem;
+    text-align: center;
 }
 
 footer {
@@ -379,6 +365,33 @@ footer {
             ".   .   .   .   .";
     }
 
+    .aboutUs__bio{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas:
+            "p1 ."
+            "c2 p2"
+            "p3 .";
+    }
+
+    .aboutUs__bio1{
+        grid-area: p1;
+    }
+    
+    .aboutUs__bio2{
+        grid-area: p2;
+    }
+    
+    .aboutUs__bio3{
+        grid-area: p3;
+    }
+
+    .someCaption {
+        grid-area: c2;
+        align-self: center;
+    }
+    
 }
 
 @media screen and (min-width: 800px){
@@ -436,12 +449,13 @@ footer {
         grid-template-columns: 4rem 1fr 2rem 1fr 4rem;
     }
 
-    .photos{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
+    .aboutUs__bio{
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+        grid-template-rows: repeat(3,1fr);
         grid-template-areas:
-            "p1 p2 p3";
+            ". p1 . ."
+            ". c2 p2 ."
+            ". p3 . .";
     }
 }
 
