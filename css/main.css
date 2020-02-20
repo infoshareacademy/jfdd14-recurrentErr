@@ -331,6 +331,42 @@ form {
     text-align: center;
 }
 
+.aboutUs__caption1 {
+    grid-area: c1;
+}
+
+.aboutUs__caption2 {
+    grid-area: c2;
+}
+
+.aboutUs__caption3 {
+    grid-area: c3;
+}
+
+.aboutUs__caption {
+    align-self: center;
+    padding-bottom: 1.25rem;
+}
+
+.aboutUs__caption h2 {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.aboutUs__caption p {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.aboutUs__caption ul {
+    display: flex;
+    list-style: none;
+}
+
+.aboutUs__caption ul li {
+    padding: 0.25rem;
+}
+
 footer {
     width:100%;
     background: var(--default-primary-color);
@@ -370,9 +406,10 @@ footer {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(3,1fr);
         grid-template-areas:
-            "p1 ."
+            "p1 c1"
             "c2 p2"
-            "p3 .";
+            "p3 c3";
+            padding: 1.25rem;
     }
 
     .aboutUs__bio1{
@@ -387,9 +424,23 @@ footer {
         grid-area: p3;
     }
 
-    .someCaption {
-        grid-area: c2;
-        align-self: center;
+    .aboutUs__caption {
+        justify-self: end;
+        padding: 1rem;
+        margin: 0;
+        
+    }
+
+    .aboutUs__caption1,.aboutUs__caption3 {
+        justify-self: start;
+    }
+
+    .aboutUs__caption2 {
+        justify-self: end;
+    }
+
+    .aboutUs__caption ul {
+        flex-direction: column;
     }
     
 }
@@ -453,9 +504,9 @@ footer {
         grid-template-columns: 1fr 2fr 2fr 1fr;
         grid-template-rows: repeat(3,1fr);
         grid-template-areas:
-            ". p1 . ."
+            ". p1 c1 ."
             ". c2 p2 ."
-            ". p3 . .";
+            ". p3 c3 .";
     }
 }
 
