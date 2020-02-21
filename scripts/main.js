@@ -1,26 +1,19 @@
 const element = document.getElementById('aboutUs');
-const elementHeight = element.offsetHeight;
+
 const elementOffsetTop = element.offsetTop;
-const windowHeight = window.innerHeight;
 
-let last_known_scroll_position = 0;
-let ticking = false;
 
-function doSomething(scroll_pos) {
-    if(scroll_pos>element.offsetHeight/2 + element.offsetTop - windowHeight ){
+
+function doSomething() {
+   let scroll_pos = window.scrollY;
+   const windowHeight = window.innerHeight;
+   const elementHeight = element.offsetHeight;
+
+   console.log(window.scrollY);
+    if(scroll_pos + windowHeight > element.offsetTop + element.offsetHeight*3/4){
         console.log('Mam Cię!!!');
+        window.removeEventListener('scroll', doSomething)
     }
 }
 
-window.addEventListener('scroll', function(e) {
-  last_known_scroll_position = window.scrollY;
-
-  if (!ticking) {
-    window.requestAnimationFrame(function() {
-      doSomething(last_known_scroll_position);
-      ticking = false;
-    });
-
-    ticking = true;
-  }
-});
+window.addEventListener('scroll', doSomething);
