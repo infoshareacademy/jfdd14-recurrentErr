@@ -310,18 +310,29 @@ form {
     border-bottom: 2px solid var(--accent-color);
 }
 
-.aboutUs_img:hover .aboutUs_card, .aboutUs_card--back{
+.aboutUs__img:hover .aboutUs__card, .aboutUs__card--back{
     transform: rotateY( 180deg );
+    
+}
+
+@keyframes rotate {
+    from {transform: rotateY( 0deg );}
+    50% {transform: rotateY( 180deg );}
+    to {transform: rotateY( 360deg );}
 }
   
-.aboutUs_card {
+.aboutUs__card {
     transition: transform 0.7s;
     transform-style: preserve-3d;
     width: 250px;
     height: 250px;
 }
+
+.aboutUs__card--animation {
+    animation: rotate ease-out 2.5s;
+}
   
-.aboutUs_card--front, .aboutUs_card--back {
+.aboutUs__card--front, .aboutUs__card--back {
     backface-visibility: hidden;
     position: absolute;
     width: 100%;
@@ -331,17 +342,17 @@ form {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.aboutUs_card--back {
+.aboutUs__card--back {
     display: flex;
     align-items: center;
     background: var(--dark-primary-color);
 }
 
-.aboutUs_card--back a .fa-3x {
+.aboutUs__card--back a .fa-3x {
     color: var(--light-primary-color);
 }
 
-.aboutUs_card--front img{
+.aboutUs__card--front img{
     border: 2px solid var(--dark-primary-color);
     display: block;
     width: 100%; 
@@ -404,7 +415,7 @@ footer {
             "c1 c2 c3";
     }
 
-    .aboutUs_card {
+    .aboutUs__card {
         width: 190px;
         height: 190px;
     }
@@ -501,7 +512,7 @@ footer {
         grid-template-columns: 4rem 1fr 2rem 1fr 4rem;
     }
 
-    .aboutUs_card {
+    .aboutUs__card {
         width: 250px;
         height: 250px;
     }

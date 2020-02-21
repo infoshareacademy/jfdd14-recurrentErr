@@ -1,7 +1,5 @@
 const element = document.getElementById('aboutUs');
-
-const elementOffsetTop = element.offsetTop;
-
+const aboutUsCards = document.querySelectorAll('.aboutUs__card');
 
 
 function doSomething() {
@@ -9,9 +7,9 @@ function doSomething() {
    const windowHeight = window.innerHeight;
    const elementHeight = element.offsetHeight;
 
-   console.log(window.scrollY);
-    if(scroll_pos + windowHeight > element.offsetTop + element.offsetHeight*3/4){
+    if(scroll_pos + windowHeight > element.offsetTop + element.offsetHeight*1/2){
         console.log('Mam Cię!!!');
+        aboutUsCards.forEach(element=>element.classList.add('aboutUs__card--animation'));
         window.removeEventListener('scroll', doSomething)
     }
 }
