@@ -287,7 +287,8 @@ form {
 
 .contact__button:hover {
     background: var(--dark-primary-color);
-    color: var(--text-primary-color); 
+    color: var(--text-primary-color);
+    cursor: pointer;
 }
 
 .aboutUs {

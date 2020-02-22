@@ -7,7 +7,7 @@ function scrollAboutUs() {
 
     if(scroll_pos + windowHeight > aboutUs.offsetTop + aboutUs.offsetHeight*1/2){
         aboutUsCards.forEach(element=>element.classList.add('aboutUs__card--animation'));
-        window.removeEventListener('scroll', doSomething)
+        window.removeEventListener('scroll', scrollAboutUs);
     }
 }
 
