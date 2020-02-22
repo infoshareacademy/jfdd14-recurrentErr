@@ -34,6 +34,7 @@
     justify-content: space-evenly;
     color: var(--accent-color);
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
@@ -147,9 +148,6 @@ li.ul__functionalities{
 .description{
     padding: 1rem;
 }
-div.p1, div.p2, div.p3, div.p4{
-    padding: 1rem 0;
-}
 
 .section__functionalities{
     display: flex;
@@ -234,7 +232,7 @@ div.p1, div.p2, div.p3, div.p4{
 }
 
 .section-extra_funcionality .fa-3x {
-    color: var(--text-primary-color); /* Only in my section icons have class fa-5x */
+    color: var(--text-primary-color);
 }
 
 /* contact-section styling */
@@ -292,58 +290,86 @@ form {
     color: var(--text-primary-color); 
 }
 
-.about__us--heading{
-    text-align: center;
+.aboutUs {
     background: var(--light-primary-color);
-    color: var(--text-dark-primary-color);
+    color: var(--dark-primary-color);
     border-top: 2px solid var(--accent-color);
-    padding-bottom: 2rem;
-    padding-top: 2rem;
 }
 
-.photos{
-    display: grid;
-    grid-template-areas:
-        "p1 p2"
-        "p3 p4";
+.aboutUs__heading{
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.aboutUs__bio{
+    display: flex;
+    flex-direction: column;
     background: var(--light-primary-color);
     border-bottom: 2px solid var(--accent-color);
 }
 
-.photos div img{
+.aboutUs__img:hover .aboutUs__card, .aboutUs__card--back{
+    transform: rotateY( 180deg );
+    
+}
+
+@keyframes rotate {
+    from {transform: rotateY( 0deg );}
+    50% {transform: rotateY( 180deg );}
+    to {transform: rotateY( 360deg );}
+}
+  
+.aboutUs__card {
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    width: 250px;
+    height: 250px;
+}
+
+.aboutUs__card--animation {
+    animation: rotate ease-out 2.5s;
+}
+  
+.aboutUs__card--front, .aboutUs__card--back {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
     border-radius: 50%;
-    width: 160px;
-    height: 160px;
-    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.photos img{
-    width: 100%;   
+.aboutUs__card--back {
+    display: flex;
+    align-items: center;
+    background: var(--dark-primary-color);
 }
 
-.p1{
-    grid-area: p1;
+.aboutUs__card--back a .fa-3x {
+    color: var(--light-primary-color);
 }
 
-.p2{
-    grid-area: p2;
+.aboutUs__card--front img{
+    border: 2px solid var(--dark-primary-color);
+    display: block;
+    width: 100%; 
+    height: auto;
+    margin: 0 auto;
+    border-radius: 50%;
 }
 
-.p3{
-    grid-area: p3;
+.aboutUs__caption {
+    align-self: center;
+    padding-top: 0.5rem;
+    padding-bottom: 1.75rem;
 }
 
-.p4{
-    grid-area: p4;
-}
-
-.p1,.p2,.p3,.p4{
-    text-align: center;    
-}
-
-.p1_paragraph, .p2_paragraph, .p3_paragraph, .p4_paragraph{
-    font-size: 1rem;
-    padding: 1rem 0;
+.aboutUs__caption p {
+    font-size: 1.75rem;
+    text-align: center;
 }
 
 footer {
@@ -380,6 +406,55 @@ footer {
             ".   .   .   .   .";
     }
 
+    .aboutUs__bio{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "p1 p2 p3"
+            "c1 c2 c3";
+    }
+
+    .aboutUs__card {
+        width: 190px;
+        height: 190px;
+    }
+
+    .aboutUs__img1{
+        grid-area: p1;
+    }
+    
+    .aboutUs__img2{
+        grid-area: p2;
+    }
+    
+    .aboutUs__img3{
+        grid-area: p3;
+    }
+
+    .aboutUs__caption1 {
+        grid-area: c1;
+    }
+    
+    .aboutUs__caption2 {
+        grid-area: c2;
+    }
+    
+    .aboutUs__caption3 {
+        grid-area: c3;
+    }
+
+    .aboutUs__caption {
+        justify-self: center;
+        padding: 1rem;
+        margin: 0;
+        
+    }
+
+    .aboutUs__caption ul {
+        flex-direction: column;
+    }
+    
 }
 
 @media screen and (min-width: 800px){
@@ -437,10 +512,23 @@ footer {
         grid-template-columns: 4rem 1fr 2rem 1fr 4rem;
     }
 
-    .photos {
-        display: flex;
+    .aboutUs__card {
+        width: 250px;
+        height: 250px;
     }
 
+    /*
+
+    .aboutUs__bio{
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas:
+            ". p1 c1 ."
+            ". c2 p2 ."
+            ". p3 c3 .";
+    }
+
+    */
 }
 
 @media screen and (min-width: 1000px){
