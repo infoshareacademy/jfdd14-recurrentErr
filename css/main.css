@@ -237,7 +237,7 @@ li.ul__functionalities{
 
 /* contact-section styling */
 
-#contact-section {
+.contact {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -248,15 +248,15 @@ li.ul__functionalities{
     border-top: 2px solid var(--accent-color);
 }
 
-#contact-section h2 {
+.contact h2 {
     font-size: 1.25rem;
 }
 
-#contact-section p, .contact-section_email, .contact-section_button {
+.contact p, .contact__email, .contact__button {
     font-size: 1rem;
 }
 
-.contact-section_container {
+.contact__container {
     text-align: center;
     max-width: 535px;
 }
@@ -266,26 +266,26 @@ form {
     flex-direction: column;
 }
 
-.contact-section_email, .contact-section_button {
+.contact__email, .contact__button {
     padding: 0.5rem 0.5rem;
     border-radius: 0.5rem;
     width: 100%;
     border: none;
 }
 
-.contact-section_email {
+.contact__email {
     background: var(--light-primary-color);
     color: var(--text-dark-primary-color);
     margin-bottom: 0.5rem; 
 }
 
-.contact-section_button {
+.contact__button {
     background: var(--accent-color); 
     color: var(--text-dark-primary-color);  
     width: 100%;
 }
 
-.contact-section_button:hover {
+.contact__button:hover {
     background: var(--dark-primary-color);
     color: var(--text-primary-color); 
 }
