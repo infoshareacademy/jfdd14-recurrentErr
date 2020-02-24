@@ -235,28 +235,31 @@ li.ul__functionalities{
     color: var(--text-primary-color);
 }
 
-/* contact-section styling */
-
-#contact-section {
+.contact {
     display: flex;
     flex-flow: column;
     align-items: center;
     text-align: center;
     background: var(--default-primary-color);
     color: var(--text-primary-color);
-    padding: 8rem 1.5rem;
+    padding: 6rem 1.5rem 7rem 1.5rem;
     border-top: 2px solid var(--accent-color);
 }
 
-#contact-section h2 {
+.contact--emphasis {
+    color: var(--accent-color);
+}
+
+.contact__heading {
+    padding-bottom: 4rem;
+    font-size: 1.5rem;
+}
+
+.contact p, .contact__email, .contact__button {
     font-size: 1.25rem;
 }
 
-#contact-section p, .contact-section_email, .contact-section_button {
-    font-size: 1rem;
-}
-
-.contact-section_container {
+.contact__container {
     text-align: center;
     max-width: 535px;
 }
@@ -266,28 +269,30 @@ form {
     flex-direction: column;
 }
 
-.contact-section_email, .contact-section_button {
+.contact__email, .contact__button {
     padding: 0.5rem 0.5rem;
     border-radius: 0.5rem;
     width: 100%;
     border: none;
 }
 
-.contact-section_email {
+.contact__email {
     background: var(--light-primary-color);
     color: var(--text-dark-primary-color);
-    margin-bottom: 0.5rem; 
+    margin-bottom: 0.75rem; 
 }
 
-.contact-section_button {
+.contact__button {
     background: var(--accent-color); 
     color: var(--text-dark-primary-color);  
     width: 100%;
+    margin-bottom: 4rem; 
 }
 
-.contact-section_button:hover {
+.contact__button:hover {
     background: var(--dark-primary-color);
-    color: var(--text-primary-color); 
+    color: var(--text-primary-color);
+    cursor: pointer;
 }
 
 .aboutUs {
@@ -298,9 +303,9 @@ form {
 
 .aboutUs__heading{
     text-align: center;
-    font-size: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+    padding-top: 6rem;
+    padding-bottom: 4.5rem;
 }
 
 .aboutUs__bio{
@@ -308,6 +313,15 @@ form {
     flex-direction: column;
     background: var(--light-primary-color);
     border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10.75rem;
+}
+.aboutUs__img1, .aboutUs__img2 {
+    padding-top: 0.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.aboutUs__img3 {
+    padding-top: 0.5rem;
 }
 
 .aboutUs__img:hover .aboutUs__card, .aboutUs__card--back{
@@ -363,12 +377,10 @@ form {
 
 .aboutUs__caption {
     align-self: center;
-    padding-top: 0.5rem;
-    padding-bottom: 1.75rem;
 }
 
-.aboutUs__caption p {
-    font-size: 1.75rem;
+.aboutUs p {
+    font-size: 1.25rem;
     text-align: center;
 }
 
@@ -377,10 +389,12 @@ footer {
     background: var(--default-primary-color);
     color: var(--text-primary-color);
     text-align: center;
+    padding: 0.7rem;
 }
 
 .footer{
     font-size: 1rem;
+    padding-top: 0.35rem;
 }
 
 @media screen and (min-width: 600px){
@@ -411,8 +425,8 @@ footer {
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: 1fr;
         grid-template-areas:
-            "p1 p2 p3"
-            "c1 c2 c3";
+            "c1 c2 c3"
+            "p1 p2 p3";
     }
 
     .aboutUs__card {
@@ -420,6 +434,10 @@ footer {
         height: 190px;
     }
 
+    .aboutUs__img1, .aboutUs__img2 {
+        padding-bottom: 0rem;
+    }
+    
     .aboutUs__img1{
         grid-area: p1;
     }
@@ -446,7 +464,6 @@ footer {
 
     .aboutUs__caption {
         justify-self: center;
-        padding: 1rem;
         margin: 0;
         
     }
@@ -517,18 +534,6 @@ footer {
         height: 250px;
     }
 
-    /*
-
-    .aboutUs__bio{
-        grid-template-columns: 1fr 2fr 2fr 1fr;
-        grid-template-rows: repeat(3,1fr);
-        grid-template-areas:
-            ". p1 c1 ."
-            ". c2 p2 ."
-            ". p3 c3 .";
-    }
-
-    */
 }
 
 @media screen and (min-width: 1000px){
