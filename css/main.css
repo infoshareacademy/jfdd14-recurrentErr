@@ -53,6 +53,7 @@
     justify-content: space-evenly;
     color:#CFD8DC;
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
@@ -166,9 +167,6 @@ li.ul__functionalities{
 .description{
     padding: 1rem;
 }
-div.p1, div.p2, div.p3, div.p4{
-    padding: 1rem 0;
-}
 
 .section__functionalities{
     display: flex;
@@ -253,31 +251,34 @@ div.p1, div.p2, div.p3, div.p4{
 }
 
 .section-extra_funcionality .fa-3x {
-    color: var(--text-primary-color); /* Only in my section icons have class fa-5x */
+    color: var(--text-primary-color);
 }
 
-/* contact-section styling */
-
-#contact-section {
+.contact {
     display: flex;
     flex-flow: column;
     align-items: center;
     text-align: center;
     background: var(--default-primary-color);
     color: var(--text-primary-color);
-    padding: 8rem 1.5rem;
+    padding: 6rem 1.5rem 7rem 1.5rem;
     border-top: 2px solid var(--accent-color);
 }
 
-#contact-section h2 {
+.contact--emphasis {
+    color: var(--accent-color);
+}
+
+.contact__heading {
+    padding-bottom: 4rem;
+    font-size: 1.5rem;
+}
+
+.contact p, .contact__email, .contact__button {
     font-size: 1.25rem;
 }
 
-#contact-section p, .contact-section_email, .contact-section_button {
-    font-size: 1rem;
-}
-
-.contact-section_container {
+.contact__container {
     text-align: center;
     max-width: 535px;
 }
@@ -287,82 +288,119 @@ form {
     flex-direction: column;
 }
 
-.contact-section_email, .contact-section_button {
+.contact__email, .contact__button {
     padding: 0.5rem 0.5rem;
     border-radius: 0.5rem;
     width: 100%;
     border: none;
 }
 
-.contact-section_email {
+.contact__email {
     background: var(--light-primary-color);
     color: var(--text-dark-primary-color);
-    margin-bottom: 0.5rem; 
+    margin-bottom: 0.75rem; 
 }
 
-.contact-section_button {
+.contact__button {
     background: var(--accent-color); 
     color: var(--text-dark-primary-color);  
     width: 100%;
+    margin-bottom: 4rem; 
 }
 
-.contact-section_button:hover {
+.contact__button:hover {
     background: var(--dark-primary-color);
-    color: var(--text-primary-color); 
+    color: var(--text-primary-color);
+    cursor: pointer;
 }
 
-.about__us--heading{
-    text-align: center;
+.aboutUs {
     background: var(--light-primary-color);
-    color: var(--text-dark-primary-color);
+    color: var(--dark-primary-color);
     border-top: 2px solid var(--accent-color);
-    padding-bottom: 2rem;
-    padding-top: 2rem;
 }
 
-.photos{
-    display: grid;
-    grid-template-areas:
-        "p1 p2"
-        "p3 p4";
+.aboutUs__heading{
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 6rem;
+    padding-bottom: 4.5rem;
+}
+
+.aboutUs__bio{
+    display: flex;
+    flex-direction: column;
     background: var(--light-primary-color);
     border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10.75rem;
+}
+.aboutUs__img1, .aboutUs__img2 {
+    padding-top: 0.5rem;
+    padding-bottom: 3.5rem;
 }
 
-.photos div img{
+.aboutUs__img3 {
+    padding-top: 0.5rem;
+}
+
+.aboutUs__img:hover .aboutUs__card, .aboutUs__card--back{
+    transform: rotateY( 180deg );
+    
+}
+
+@keyframes rotate {
+    from {transform: rotateY( 0deg );}
+    50% {transform: rotateY( 180deg );}
+    to {transform: rotateY( 360deg );}
+}
+  
+.aboutUs__card {
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    width: 250px;
+    height: 250px;
+}
+
+.aboutUs__card--animation {
+    animation: rotate ease-out 2.5s;
+}
+  
+.aboutUs__card--front, .aboutUs__card--back {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
     border-radius: 50%;
-    width: 160px;
-    height: 160px;
-    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.photos img{
-    width: 100%;   
+.aboutUs__card--back {
+    display: flex;
+    align-items: center;
+    background: var(--dark-primary-color);
 }
 
-.p1{
-    grid-area: p1;
+.aboutUs__card--back a .fa-3x {
+    color: var(--light-primary-color);
 }
 
-.p2{
-    grid-area: p2;
+.aboutUs__card--front img{
+    border: 2px solid var(--dark-primary-color);
+    display: block;
+    width: 100%; 
+    height: auto;
+    margin: 0 auto;
+    border-radius: 50%;
 }
 
-.p3{
-    grid-area: p3;
+.aboutUs__caption {
+    align-self: center;
 }
 
-.p4{
-    grid-area: p4;
-}
-
-.p1,.p2,.p3,.p4{
-    text-align: center;    
-}
-
-.p1_paragraph, .p2_paragraph, .p3_paragraph, .p4_paragraph{
-    font-size: 1rem;
-    padding: 1rem 0;
+.aboutUs p {
+    font-size: 1.25rem;
+    text-align: center;
 }
 
 footer {
@@ -370,10 +408,12 @@ footer {
     background: var(--default-primary-color);
     color: var(--text-primary-color);
     text-align: center;
+    padding: 0.7rem;
 }
 
 .footer{
     font-size: 1rem;
+    padding-top: 0.35rem;
 }
 
 @media screen and (min-width: 600px){
@@ -407,6 +447,58 @@ footer {
             ".   .   .   .   .";
     }
 
+    .aboutUs__bio{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "c1 c2 c3"
+            "p1 p2 p3";
+    }
+
+    .aboutUs__card {
+        width: 190px;
+        height: 190px;
+    }
+
+    .aboutUs__img1, .aboutUs__img2 {
+        padding-bottom: 0rem;
+    }
+    
+    .aboutUs__img1{
+        grid-area: p1;
+    }
+    
+    .aboutUs__img2{
+        grid-area: p2;
+    }
+    
+    .aboutUs__img3{
+        grid-area: p3;
+    }
+
+    .aboutUs__caption1 {
+        grid-area: c1;
+    }
+    
+    .aboutUs__caption2 {
+        grid-area: c2;
+    }
+    
+    .aboutUs__caption3 {
+        grid-area: c3;
+    }
+
+    .aboutUs__caption {
+        justify-self: center;
+        margin: 0;
+        
+    }
+
+    .aboutUs__caption ul {
+        flex-direction: column;
+    }
+    
 }
 
 @media screen and (min-width: 800px){
@@ -471,8 +563,9 @@ footer {
         grid-template-columns: 4rem 1fr 2rem 1fr 4rem;
     }
 
-    .photos {
-        display: flex;
+    .aboutUs__card {
+        width: 250px;
+        height: 250px;
     }
 
 }
@@ -485,4 +578,61 @@ footer {
 
 }
 
+/* Cookie part */
 
+#cookieAlert * {
+    margin: 0px;
+    padding: 0px;
+}
+
+#cookieAlert {
+    position: fixed;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #323334;
+    padding: 20px;
+    box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#cookieAlert h5 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 7px;
+}
+
+#cookieAlert p {
+    font-size: 12px;
+    color: #FFFFFF;
+    line-height: 1.5em;
+    text-align: justify;
+    
+}
+
+#cookieAlert a {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    line-height: 22px;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ff6000;
+    }
+
+#cookieAlert a:hover {
+    background-color: #ff7925;
+}
+
+.hidden{
+    display: none;
+}
