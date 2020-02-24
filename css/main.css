@@ -1,38 +1,57 @@
 :root{
-    --dark-primary-color: #455A64;
+    --dark-primary-color: black;
     --default-primary-color: #607D8B;
     --light-primary-color: #CFD8DC; 
     --text-primary-color: #FFFFFF;
     --text-dark-primary-color: #212121; 
     --secondary-text-color: var(--secondary-text-color);
-    --accent-color: #FFEB3B;
-    --divider-color: #BDBDBD;
+    --accent-color:black;
+    --divider-color: #BDBDBD; 
 }
-
+/* :root{
+--dark-primary-color: #5D4037; 
+--dark-primary-color: #795548;
+--light-primary-color:#757575; 
+--text-primary-color:  #009688; 
+--accent-color:#FFFFFF;
+--primary-text-color: #212121; 
+--secondary-text-color: #757575; 
+--divider-color: #BDBDBD; 
+} */
+/* :root{
+--dark-primary-color:#455A64; 
+--default-primary-color:#607D8B; 
+--light-primary-color:  #CFD8DC; 
+--text-primary-color: #FFFFFF; 
+--accent-color: #9E9E9E; 
+--primary-text-color: #212121; 
+--secondary-text-color: #757575; 
+--divider-color: #BDBDBD; 
+} */
 * {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
-    max-width: 1200px;
-    font-family: Arial, Helvetica, sans-serif;  
+    font-family: sans-serif;  
     scroll-behavior: smooth;
 }
 
 /* navbar */
 
-.navigation{    
+.navigation{   
+    z-index: 3; 
     margin: 0 auto; 
     margin-top: 0;   
     height: auto;
     width: 100vw;
     padding: 0px;
-    background: var(--default-primary-color);
+    background: black;
     display: flex;
     flex-direction: row;
     text-transform: uppercase;
     text-align: center;
     justify-content: space-evenly;
-    color: var(--accent-color);
+    color:#CFD8DC;
     position: fixed;
     top: 0;
     left: 0;
@@ -64,7 +83,7 @@
 
 a.nav{
     text-decoration: none;
-    color: var(--accent-color);
+    color: #CFD8DC;
     text-transform: uppercase;
     padding: 6px;    
 }
@@ -81,8 +100,12 @@ a.nav:hover {
 
 #hero{
     display: flex;
-    min-height: 540px;
-    background-image: url('/src/hero.jpg');
+    max-width:100%;
+    height:auto;
+    /* background-image: url('/src/hero.jpg');
+    background-image: url('/src/1.jpg');
+    background-image: url('/src/2jpg');
+    background-image: url('/src/3.jpg'); */
     margin: 0;
     background-size: cover;
     background-position: center;
@@ -93,36 +116,20 @@ a.nav:hover {
     border-top: 2px solid var(--accent-color);    
 }
 
-.hero__top{
-    text-align: center;
-    margin-bottom: 1rem;
-}
 
 .hero__header{
-    background-color: rgba(69, 90, 100, 0.8); /* --default-primary-color + transparency */
-    width: 1000%;
+    text-align: start;
+    width: 50%;
+    height: 25%;
+    position: absolute;
+    margin-left: 0;  
     padding: 2rem;
-}
-
-.top__header1{
+    text-align: flex-start;
+    justify-content: flex-end;
     margin-bottom: 1rem;
-}
-
-.hero__bottom{
-    text-align: center;
-}
-
-.bottom__header1{
-    margin-bottom: 1rem;
-}
-
-.bottom__header2 h1 a{
-    text-decoration: none;
-    color: var(--accent-color);
-}
-
-.bottom__header2 h1 a:hover{
-    color: var(--text-dark-primary-color);
+    }
+.hero__header > h3{
+text-transform: uppercase;
 }
 
 /* functionalities */
@@ -358,10 +365,17 @@ footer {
 }
 
 @media screen and (min-width: 600px){
+    #hero{
+        background-repeat: no-repeat;
+    }
 
     .hero__header{
+        font-size: medium;
         border-radius: 2rem;
         width: 80%;
+        align-self: flex-start;
+        justify-content: flex-start;
+        /* background: rgb(49, 46, 46, 0.3); */
     }
 
     .section__functionalities{
@@ -394,7 +408,7 @@ footer {
     }
 
      a.nav {
-        color: var(--text-dark-primary-color);
+        color: #CFD8DC;
         padding: 7px 10 px 6px;
         margin: 7px;
         flex-shrink: 1;
@@ -422,15 +436,21 @@ footer {
 
     a.nav:hover {
         font-weight: lighter;
-       color: var(--accent-color);
+       color: #607D8B;
     }
 
     .menu:hover {
         background: none;
     }
+    #hero{
+        display: flex;
+    }
 
     .hero__header{
+        margin-top: 0em;
         width: 50%;
+        align-items: center;
+        justify-items: flex-end;
     }
     
     .section-extra {
