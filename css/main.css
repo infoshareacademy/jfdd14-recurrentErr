@@ -286,7 +286,7 @@ form {
     background: var(--accent-color); 
     color: var(--text-dark-primary-color);  
     width: 100%;
-    margin-bottom: 3rem; 
+    margin-bottom: 4rem; 
 }
 
 .contact__button:hover {
@@ -305,7 +305,7 @@ form {
     text-align: center;
     font-size: 1.5rem;
     padding-top: 6rem;
-    padding-bottom: 4rem;
+    padding-bottom: 4.5rem;
 }
 
 .aboutUs__bio{
@@ -389,10 +389,12 @@ footer {
     background: var(--default-primary-color);
     color: var(--text-primary-color);
     text-align: center;
+    padding: 0.7rem;
 }
 
 .footer{
     font-size: 1rem;
+    padding-top: 0.35rem;
 }
 
 @media screen and (min-width: 600px){
