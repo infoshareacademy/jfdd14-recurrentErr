@@ -28,22 +28,40 @@ class Obstacle extends GameObject {
   constructor(x, y, width, height, image) {
     super(x, y, width, height, image);
   }
+
+  update(){
+    this.y += 2; // speed of obstacle
+  }
 }
 
 const player = new Player(100, 100); // utworzenie podstawowego obiektu - dla przykładu
 //dla obiektu gracza i przeszkody tworzymy podklasy dziedziczące jego własności
 
-const randomOne = Math.floor(Math.random() * 73) * 10; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
-const randomTwo = num => num >= 720 ? 0 : num + 80; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
+const obstacles = [];
 
-const obstacleOne = new Obstacle(0, 0, randomOne, 20);
-const obstacleTwo = new Obstacle(randomTwo(randomOne), 0, gameWidth - randomTwo(randomOne), 20);
+function createNewObstacle(){
+  const randomOne = Math.floor(Math.random() * 73) * 10; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
+  const randomTwo = num => num >= 720 ? 0 : num + 80; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
+  const obstacleOne = new Obstacle(0, 0, randomOne, 20);
+  const obstacleTwo = new Obstacle(randomTwo(randomOne), 0, gameWidth - randomTwo(randomOne), 20);
+  obstacles.push([obstacleOne,obstacleTwo]);
+}
+
+window.setInterval(createNewObstacle,5000);
+
+// let obstacleIntervalCounter = 0
 
 function animationFrame() {
   ctx.clearRect(0, 0, gameWidth, gameHeight);
   player.init(ctx);
-  obstacleOne.init(ctx);
-  obstacleTwo.init(ctx);
+  obstacles.filter(element=>element[0].y<800).forEach(element=>{
+    element[0].init(ctx);
+    element[1].init(ctx);
+    element[0].update();
+    element[1].update();
+  });
+
+  console.log(obstacles.length);
 }
 
 const refreshFrame = setInterval(animationFrame, 40); // setInterval odświeża canvas 25 razy na sekundę
