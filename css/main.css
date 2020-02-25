@@ -160,6 +160,9 @@ text-transform: uppercase;
 h3 > a{
     color: white;
 }
+.price{
+    color: white; 
+}
 
 
 /*calculator*/
