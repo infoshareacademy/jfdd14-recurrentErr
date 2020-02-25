@@ -27,7 +27,7 @@
         <div id="hero" class="hero">
             
 
-            <a id = "leftArrow" class="w3-btn-floating" style="position:absolute;top:45%;left:3em;; color: black;"
+            <a id = "leftArrow" class="w3-btn-floating" style="position:absolute;top:45%;left:3em; color: black;"
                >❮❮</a>
             <a id ="rightArrow" class="w3-btn-floating" style="position:absolute;top:45%;right:3em; color: black;"
                >❯❯</a>
@@ -42,9 +42,8 @@
 
         </div>
 
-        <!---->
 
-
+</section>
 
     </section>
     <!-- RE - Spis planowanych funkcji produktu -->
@@ -102,7 +101,20 @@
             <p>... je komentuj</p>
         </div>
     </section>
-
+        <!-- Calculator-->
+        <section id="calculator" class="calculator">
+            <h1>CENY ABONAMETÓW</h1>
+    <div>
+       
+      
+        <input type="range" min="0" max="4" value="2" class="slider" id="myRange">
+      <p class="paragraf">Liczba osób, która chce współdzielić abonament: <span id="people"></span></p>
+    
+        <label class="discount"><input class="discount" type="checkbox" id="discount50">JESTEM EMERYTĄ/RENCISTĄ</label><br>
+        <label class="discount"><input class="discount" type="checkbox" id="discount5">POSIADAM KARTĘ MIESZKAŃCA</label>
+    
+    </div>
+    </section>
     <section id="contact" class="contact">
         <div class="contact__container">
             <header class="contact__heading">
@@ -187,7 +199,7 @@
     </footer>
 
     <script src="rotacja.js"></script>
-    
+    <script src="/css/calculator.js"></script>
     <script src="script.js"></script>
 
 </body>

@@ -100,9 +100,12 @@ a.nav:hover {
 
 
 /* hero section */
-#rightArrow, #leftArrow{
+#rightArrow{
 cursor: pointer;
+/* margin: auto, 3em; */
+color: black;
 }
+
 .hero{
     display: flex;
     min-height: 540px;
@@ -149,6 +152,63 @@ text-transform: uppercase;
 h3 > a{
     color: white;
 }
+
+
+/*calculator*/
+.calculator{
+    font-size: medium;
+    background: #607D84;  
+}
+.calculator>h1{
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+.discount, .paragraf{
+    color: white;
+    padding: .4em;
+}
+.calculator>p{
+    color: white;
+    padding: .4em;
+}
+.slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
 
 /* functionalities */
 
@@ -506,7 +566,10 @@ footer {
 }
 
 @media screen and (min-width: 800px){
-    
+    #rightArrow, #leftArrow{
+        cursor: pointer;
+        margin: auto, 3em;
+        }
     .navigation {
         flex-direction: row;
         justify-content: space-between; 
@@ -639,4 +702,10 @@ footer {
 
 .hidden{
     display: none;
+}
+@media screen and (min-width: 1000px){
+    #rightArrow, #leftArrow{
+        cursor: pointer;
+        margin: auto, 15em;
+    }
 }
