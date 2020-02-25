@@ -626,9 +626,10 @@ footer {
     nav a:hover{
     font-weight: lighter;
     color: var(--accent-color);
+    }
     a.nav:hover {
-        font-weight: lighter;
-       color: #607D8B;
+    font-weight: lighter;
+    color: #607D8B;
     }
 
    
