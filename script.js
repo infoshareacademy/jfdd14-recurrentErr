@@ -24,10 +24,27 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             cookieAlert.classList.add('hidden');
             localStorage.setItem('cookieAlert', true);
-    })});
-            
+    })});       
+ 
+    (function() {
 
-
+        const sectionsEl = document.querySelectorAll(".scrollspy");
+        const sections = {};
+        
+        sectionsEl.forEach(function(element) {
+          sections[element.id] = element.offsetTop;
+        });
+      
+        window.onscroll = function() {
+          const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+          for (let i in sections) {
+            if (sections[i] <= scrollPosition + 300) {
+              document.querySelector('.active').setAttribute('class', 'nav');
+              document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
+            }
+          }
+        };
+      })();
 
 
      
