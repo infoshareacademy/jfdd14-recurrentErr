@@ -7,12 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>crossRoads</title>
     <script src="https://kit.fontawesome.com/cd3df7232a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>   
     <nav class="navigation">
-        <img src="/src/logo.png" class="logo" alt="logo" width="40px">
+        <div class="logo">
+            <img src="/src/logoBW.png" alt="logo"">
+            <div>crossRoads</div>
+        </div>
         <ul class="position">
             <li class="menu"><a href="#home" class="active nav">Home</a></li>
             <li class="menu"><a href="#functionalities" class="nav">Dlaczego My?</a></li>
@@ -25,34 +30,28 @@
     <section id="home" class="scrollspy">
         <div id="hero">
 
-            <!-- <img src="las.jpg" alt="Przejdź się" class="hero__image"> -->
+    <section>
 
-<div class="hero__header">
-    
+        <div id="hero" class="hero">
+            
 
-            <div class="hero__top">
+            <a id = "leftArrow" class="w3-btn-floating" style="position:absolute;top:45%;left:3em; color: black;"
+               >❮❮</a>
+            <a id ="rightArrow" class="w3-btn-floating" style="position:absolute;top:45%;right:3em; color: black;"
+               >❯❯</a>
 
-                <div class="top__header1">
-                    <h1>crossRoads</h1>
-                </div>
-
-
-                 <div class="top__header2">
-                    <h3>Masz czas ale nie wiesz, gdzie iść?</h3>
-                    <p>
-                        My mamy trasy!
-                    </p>
-                </div>
-
+            <div class="hero__header">
+                <h1>crossRoads</h1><br><br>
+                <h3> Chcesz się przejść?</h3>
+                <h3><a href="#contact">Więcej info tutaj</a></h3>
+                        
+                
             </div>
 
-            <div class="bottom__header2">
-                    <h1><a href="index.html#contact">Dowiedz się jak chodzić z crossRoads!</a></h1>
-                </div>
-
-            </div> <!---->
         </div>
-        </div>       
+
+
+</section>
 
     </section>
     <!-- RE - Spis planowanych funkcji produktu -->
@@ -79,34 +78,50 @@
 
     <section id="section-extra" class="section-extra scrollspy">
         <!-- RE - Dodatkowe informacje o produkcie  -->
-            <div class="section-extra_funcionality section-extra_funcionality-1">
-                <i class="fas fa-plus fa-3x"></i>
-                <p>Tworzysz własny profil w którym ustawiasz jaką masz kondycję fizyczną lub jeśli wiesz, wybierasz śrędnią prędkość odpowiednią dla siebie.</p>
-            </div>
-            <div class="section-extra_funcionality section-extra_funcionality-2">
-                <i class="fas fa-map-marker-alt fa-3x"></i>
-                <p>Poznawaj nowe miejsca bez pośpiechu, dzięki dobraniu odpowiedniej trasy zależnej od czasu, którym dysponujesz.</p>
-            </div>
-            <div class="section-extra_funcionality section-extra_funcionality-3">
-                <i class="fas fa-map-marked-alt fa-3x"></i>
-                <p>Dobrane zostaną trasy, które są najbliżej Ciebie.</p>
-            </div>
-            <div class="section-extra_funcionality section-extra_funcionality-4">
-                <i class="fas fa-spinner fa-3x"></i>
-                <p>Dowiedz się, jak daleko jesteś aktualnie na trasie.</p>
-            </div>
-            <div class="section-extra_funcionality section-extra_funcionality-5">
-                <i class="fas fa-save fa-3x"></i>
-                <p>Rejestruj pokonane przez Ciebie nowe trasy i zapisuj je do swojej kolekcji.</p>
-            </div>
-            <div class="section-extra_funcionality section-extra_funcionality-6">
-                <i class="fas fa-share-alt fa-3x"></i>
-                <p>Dziel się trasami i osiągnięciami ze znajomymi...</p>
-            </div>
-            <div class="section-extra_funcionality section-extra_funcionality-7">
-                <i class="fas fa-comments fa-3x"></i>
-                <p>... je komentuj</p>
-            </div>
+        <div class="section-extra_funcionality section-extra_funcionality-1">
+            <i class="fas fa-plus fa-3x"></i>
+            <p>Tworzysz własny profil w którym ustawiasz jaką masz kondycję fizyczną lub jeśli wiesz, wybierasz śrędnią
+                prędkość odpowiednią dla siebie.</p>
+        </div>
+        <div class="section-extra_funcionality section-extra_funcionality-2">
+            <i class="fas fa-map-marker-alt fa-3x"></i>
+            <p>Poznawaj nowe miejsca bez pośpiechu, dzięki dobraniu odpowiedniej trasy zależnej od czasu, którym
+                dysponujesz.</p>
+        </div>
+        <div class="section-extra_funcionality section-extra_funcionality-3">
+            <i class="fas fa-map-marked-alt fa-3x"></i>
+            <p>Dobrane zostaną trasy, które są najbliżej Ciebie.</p>
+        </div>
+        <div class="section-extra_funcionality section-extra_funcionality-4">
+            <i class="fas fa-spinner fa-3x"></i>
+            <p>Dowiedz się, jak daleko jesteś aktualnie na trasie.</p>
+        </div>
+        <div class="section-extra_funcionality section-extra_funcionality-5">
+            <i class="fas fa-save fa-3x"></i>
+            <p>Rejestruj pokonane przez Ciebie nowe trasy i zapisuj je do swojej kolekcji.</p>
+        </div>
+        <div class="section-extra_funcionality section-extra_funcionality-6">
+            <i class="fas fa-share-alt fa-3x"></i>
+            <p>Dziel się trasami i osiągnięciami ze znajomymi...</p>
+        </div>
+        <div class="section-extra_funcionality section-extra_funcionality-7">
+            <i class="fas fa-comments fa-3x"></i>
+            <p>... je komentuj</p>
+        </div>
+    </section>
+        <!-- Calculator-->
+        <section id="calculator" class="calculator">
+            <h1>CENY ABONAMETÓW</h1>
+    <div>
+       
+      
+        <input type="range" min="0" max="4" value="2" class="slider" id="myRange">
+      <p class="paragraf">Liczba osób, która chce współdzielić abonament: <span id="people"></span></p>
+    
+        <label class="discount"><input class="discount" type="checkbox" id="discount50">JESTEM EMERYTEM/RENCISTĄ</label><br>
+        <label class="discount"><input class="discount" type="checkbox" id="discount5">POSIADAM KARTĘ MIESZKAŃCA</label>
+    
+    </div>
     </section>
 
     <section id="contact" class="contact scrollspy">
@@ -193,7 +208,8 @@
         <div class="footer">&copy; All rights reserved</div>
     </footer>
 
-    
+    <script src="rotacja.js"></script>
+    <script src="calculator.js"></script>
     <script src="script.js"></script>
 
 </body>

@@ -1,38 +1,58 @@
-:root{
-    --dark-primary-color: #455A64;
+/* :root{
+    --dark-primary-color: black;
     --default-primary-color: #607D8B;
     --light-primary-color: #CFD8DC; 
     --text-primary-color: #FFFFFF;
     --text-dark-primary-color: #212121; 
     --secondary-text-color: var(--secondary-text-color);
-    --accent-color: #FFEB3B;
-    --divider-color: #BDBDBD;
+    --accent-color:black;
+    --divider-color: #BDBDBD; 
+} */
+/* :root{
+--dark-primary-color: #5D4037; 
+--dark-primary-color: #795548;
+--light-primary-color:#757575; 
+--text-primary-color:  #009688; 
+--accent-color:#FFFFFF;
+--primary-text-color: #212121; 
+--secondary-text-color: #757575; 
+--divider-color: #BDBDBD; 
+} */
+:root{
+--dark-primary-color:#455A64; 
+--default-primary-color:#607D8B; 
+--light-primary-color:  #CFD8DC; 
+--text-primary-color: #FFFFFF; 
+--accent-color: #9E9E9E; 
+--primary-text-color: #212121; 
+--secondary-text-color: #757575; 
+--divider-color: #BDBDBD; 
 }
-
 * {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
-    max-width: 1200px;
-    font-family: Arial, Helvetica, sans-serif;  
+    font-family: "Raleway", sans-serif;  
     scroll-behavior: smooth;
+    max-width: 1200px;
 }
 
 /* navbar */
 
-.navigation{    
+.navigation{   
+    z-index: 3; 
     margin: 0 auto; 
     margin-top: 0;   
     height: auto;
     width: 100vw;
     padding: 0px;
-    background: var(--default-primary-color);
+    background: black;
     display: flex;
     flex-direction: row;
     text-transform: uppercase;
     text-align: center;
     justify-content: space-evenly;
-    color: var(--accent-color);
+    color:#CFD8DC;
     position: fixed;
     z-index: 2;
     top: 0;
@@ -45,18 +65,26 @@
     transition: all 0.3s ease;
 }
 
+.navigation span {
+    text-transform: none;
+}
+
+.logo {
+    text-transform: none;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    display: block;
+    width: 60px;
+}
+
 .navigation ul li{
     margin: 0.2em 0px;
     list-style: none;
-}
-.navigation > .logo{
-    align-self: flex-start;
-    width: 5em;
-}
-
-.logo{
-    border: 3px var(--text-dark-primary-color) solid;
-    margin: auto 0;
 }
 
 .position {
@@ -87,9 +115,15 @@ a.nav
     background: var(--text-dark-primary-color);
 }
 
-/* hero section */
 
-#hero{
+/* hero section */
+#rightArrow{
+cursor: pointer;
+/* margin: auto, 3em; */
+color: black;
+}
+
+.hero{
     display: flex;
     min-height: 540px;
     background-image: url('/src/hero.jpg');
@@ -98,42 +132,100 @@ a.nav
     background-position: center;
     background-repeat: no-repeat;
     color: var(--text-primary-color);
-    align-items: flex-end;
-    margin-top: 80px;
+    align-items: center;
+    margin-top: 60px;
     border-top: 2px solid var(--accent-color);    
 }
-
-.hero__top{
-    text-align: center;
-    margin-bottom: 1rem;
+.hero--image1 {
+background-image: url("/src/1.jpeg");
+transition: background-image 1s ease-in-out;
 }
-
+.hero--image2 {
+background-image: url("/src/2.jpeg");
+transition: background-image 1s ease-in-out;
+}
+.hero--image3{
+background-image: url("/src/3.jpeg"); 
+transition: background-image 1s ease-in-out;
+}
+.hero--image4{
+    background-image: url("/src/hero.jpg"); 
+    transition: background-image 1s ease-in-out;
+    }
 .hero__header{
-    background-color: rgba(69, 90, 100, 0.8); /* --default-primary-color + transparency */
-    width: 1000%;
-    padding: 2rem;
-}
-
-.top__header1{
-    margin-bottom: 1rem;
-}
-
-.hero__bottom{
+    background: rgb(41, 38, 38, 0.62);
     text-align: center;
+    /* width: 50%; */
+    /* height: 25%; */
+     
+    padding: 2em;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 1em;
+    }
+.hero__header > h3{
+text-transform: uppercase;
+}
+h3 > a{
+    color: white;
 }
 
-.bottom__header1{
-    margin-bottom: 1rem;
-}
 
-.bottom__header2 h1 a{
-    text-decoration: none;
-    color: var(--accent-color);
+/*calculator*/
+.calculator{
+    font-size: medium;
+    background: #607D84;  
 }
-
-.bottom__header2 h1 a:hover{
-    color: var(--text-dark-primary-color);
+.calculator>h1{
+    color: white;
+    text-align: center;
+    padding: 1em;
 }
+.discount, .paragraf{
+    color: white;
+    padding: .4em;
+}
+.calculator>p{
+    color: white;
+    padding: .4em;
+}
+.slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
 
 /* functionalities */
 
@@ -407,10 +499,17 @@ footer {
 }
 
 @media screen and (min-width: 600px){
+    .hero{
+        background-repeat: no-repeat;
+    }
 
     .hero__header{
-        border-radius: 2rem;
+        font-size: medium;
+        border-radius: 2em;
         width: 80%;
+        align-self: center;
+        justify-content: center;
+     
     }
 
     .section__functionalities{
@@ -484,7 +583,10 @@ footer {
 }
 
 @media screen and (min-width: 800px){
-    
+    #rightArrow, #leftArrow{
+        cursor: pointer;
+        margin: auto, 3em;
+        }
     .navigation {
         flex-direction: row;
         justify-content: space-between; 
@@ -515,7 +617,7 @@ footer {
        
    }
    .logo{
-       display: block;
+       display: flex;
        align-self: center;
        justify-self: flex-start;
        margin: 0;
@@ -524,15 +626,25 @@ footer {
     nav a:hover{
     font-weight: lighter;
     color: var(--accent-color);
+    a.nav:hover {
+        font-weight: lighter;
+       color: #607D8B;
     }
 
    
     .menu:hover {
         background: none;
     }
+    .hero{
+        display: flex;
+    }
 
     .hero__header{
-        width: 50%;
+      
+        margin-top: 0em;
+        /* width: 50%; */
+        align-items: center;
+        justify-items: flex-end;
     }
     
     .section-extra {
@@ -612,7 +724,9 @@ footer {
 .hidden{
     display: none;
 }
-
-
-
-
+@media screen and (min-width: 1000px){
+    #rightArrow, #leftArrow{
+        cursor: pointer;
+        margin: auto, 15em;
+    }
+}
