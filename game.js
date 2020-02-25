@@ -4,12 +4,11 @@ const gameWidth = canvas.width;
 const gameHeight = canvas.height;
 
 class GameObject {
-    constructor(x, y , width , height, speed, image){
+    constructor(x, y , width , height, image){
         this.width = width;
         this.height = height;
         this.x = x;
         this.y = y;
-        this.maxSpeed = speed;
         this.image = image;
   }
   
@@ -20,13 +19,27 @@ class GameObject {
   
 }
 
-const gameObject = new GameObject(100,100,20,20); // utworzenie podstawowego obiektu - dla przykładu
-                                                  //dla obiektu gracza i przeszkody tworzymy podklasy dziedziczące jego własności
+class Player extends GameObject {
+    constructor(x, y, image){
+      super(x, y , 20, 20, image);
+     }
+}
 
+class Obstacle extends GameObject {
+    constructor(width, height, image){
+      super(0, 0, width, height, image);
+    }
+}
+ 
+const player = new Player(100,100); // utworzenie podstawowego obiektu - dla przykładu
+                                          //dla obiektu gracza i przeszkody tworzymy podklasy dziedziczące jego własności
+
+const obstacle = new Obstacle(Math.floor((Math.random()*40+1)-1)*20,20);
 
 function animationFrame(){
     ctx.clearRect(0,0,gameWidth,gameHeight);
-    gameObject.init(ctx);
+    player.init(ctx);
+    obstacle.init(ctx);
 }
 
 const refreshFrame = setInterval(animationFrame,40); // setInterval odświeża canvas 25 razy na sekundę
