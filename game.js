@@ -47,21 +47,35 @@ function createNewObstacle(){
   obstacles.push([obstacleOne,obstacleTwo]);
 }
 
-window.setInterval(createNewObstacle,5000);
+//window.setInterval(createNewObstacle,5000);
 
 // let obstacleIntervalCounter = 0
 
+let obstacleTimer = 0;
+
 function animationFrame() {
+
+  console.log(obstacleTimer);
+
+  if(obstacleTimer===100){
+    createNewObstacle();
+    obstacleTimer = 0;
+  }
+
   ctx.clearRect(0, 0, gameWidth, gameHeight);
   player.init(ctx);
-  obstacles.filter(element=>element[0].y<800).forEach(element=>{
-    element[0].init(ctx);
-    element[1].init(ctx);
-    element[0].update();
-    element[1].update();
-  });
+  if(obstacles.length!==0){
+    obstacles.forEach(element=>{
+      element[0].init(ctx);
+      element[1].init(ctx);
+      element[0].update();
+      element[1].update();
+    });
+  }
 
-  console.log(obstacles.length);
+  obstacleTimer++;
+
+  //console.log(obstacles);
 }
 
 const refreshFrame = setInterval(animationFrame, 40); // setInterval odświeża canvas 25 razy na sekundę
