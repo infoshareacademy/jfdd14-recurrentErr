@@ -100,14 +100,18 @@ a.nav
     text-decoration: none;
     color: var(--text-dark-primary-color);
     text-transform: uppercase;
-    padding: 6px;   
+    padding: 7px 10px 6px;
+    margin: 7px;
+    flex-shrink: 1;
 }   
 
 .active {  
     color: var(--accent-color);
     text-decoration: none;
-    padding: 6px;
     text-transform: uppercase;
+    padding: 7px 10px 6px;
+    margin: 7px;
+    flex-shrink: 1;
 }  
   
   

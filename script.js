@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.onscroll = function() {
           const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
           for (let i in sections) {
-            if (sections[i] <= scrollPosition + 330) {
+            if (sections[i] <= scrollPosition + 200) {
               document.querySelector('.active').setAttribute('class', 'nav');
               document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
             }
