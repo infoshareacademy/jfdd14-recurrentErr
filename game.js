@@ -40,10 +40,10 @@ const player = new Player(100, 100); // utworzenie podstawowego obiektu - dla pr
 const obstacles = [];
 
 function createNewObstacle(){
-  const randomOne = Math.floor(Math.random() * 73) * 10; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
-  const randomTwo = num => num >= 720 ? 0 : num + 80; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
-  const obstacleOne = new Obstacle(0, 0, randomOne, 20);
-  const obstacleTwo = new Obstacle(randomTwo(randomOne), 0, gameWidth - randomTwo(randomOne), 20);
+  const randomOne = Math.floor(Math.random() * 35) * 20; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
+  const randomTwo = num => num >= 720 ? 0 : num + 100; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
+  const obstacleOne = new Obstacle(0, -40, randomOne, 40);
+  const obstacleTwo = new Obstacle(randomTwo(randomOne), -40, gameWidth - randomTwo(randomOne), 40);
   obstacles.push([obstacleOne,obstacleTwo]);
 }
 
@@ -57,7 +57,7 @@ function animationFrame() {
 
   console.log(obstacleTimer,obstacles.length);
 
-  if(obstacleTimer===100){
+  if(obstacleTimer===110){
     createNewObstacle();
     if(obstacles.length===5){
       obstacles.shift();  
