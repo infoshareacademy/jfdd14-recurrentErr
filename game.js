@@ -14,11 +14,11 @@ class GameObject {
   }
 
   init(ctx) {
-    // ctx.fillStyle = ctx.createPattern(this.image,'repeat'); // bez tej deklaracji jeżeli drawImage
+    // ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
     // ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
     // ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     for (var w = 0; w < this.width; w += this.image.width) {
-      ctx.drawImage(this.image, w, this.y);
+      ctx.drawImage(this.image, this.x+w, this.y);
     }
   }
 }
@@ -60,7 +60,7 @@ let obstacleTimer = 0;
 
 function animationFrame() {
 
-  console.log(obstacleTimer,obstacles.length);
+  // console.log(obstacleTimer,obstacles.length);
 
   if(obstacleTimer===110){
     createNewObstacle();
