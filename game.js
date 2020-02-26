@@ -55,10 +55,13 @@ let obstacleTimer = 0;
 
 function animationFrame() {
 
-  console.log(obstacleTimer);
+  console.log(obstacleTimer,obstacles.length);
 
   if(obstacleTimer===100){
     createNewObstacle();
+    if(obstacles.length===5){
+      obstacles.shift();  
+    }
     obstacleTimer = 0;
   }
 
