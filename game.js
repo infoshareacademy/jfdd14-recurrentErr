@@ -2,6 +2,7 @@ const canvas = document.querySelector("#gameScreen");
 const ctx = canvas.getContext("2d");
 const gameWidth = canvas.width;
 const gameHeight = canvas.height;
+const treeImg = document.querySelector('#imgTree');
 
 class GameObject {
   constructor(x, y, width, height, image) {
@@ -13,8 +14,12 @@ class GameObject {
   }
 
   init(ctx) {
-    ctx.fillStyle = "black"; // bez tej deklaracji jeżeli drawImage
-    ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
+    // ctx.fillStyle = ctx.createPattern(this.image,'repeat'); // bez tej deklaracji jeżeli drawImage
+    // ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
+    // ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+    for (var w = 0; w < this.width; w += this.image.width) {
+      ctx.drawImage(this.image, w, this.y);
+    }
   }
 }
 
@@ -34,7 +39,7 @@ class Obstacle extends GameObject {
   }
 }
 
-const player = new Player(100, 100); // utworzenie podstawowego obiektu - dla przykładu
+// const player = new Player(100, 100); // utworzenie podstawowego obiektu - dla przykładu
 //dla obiektu gracza i przeszkody tworzymy podklasy dziedziczące jego własności
 
 const obstacles = [];
@@ -42,8 +47,8 @@ const obstacles = [];
 function createNewObstacle(){
   const randomOne = Math.floor(Math.random() * 35) * 20; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
   const randomTwo = num => num >= 720 ? 0 : num + 100; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
-  const obstacleOne = new Obstacle(0, -40, randomOne, 40);
-  const obstacleTwo = new Obstacle(randomTwo(randomOne), -40, gameWidth - randomTwo(randomOne), 40);
+  const obstacleOne = new Obstacle(0, -40, randomOne, 40,treeImg);
+  const obstacleTwo = new Obstacle(randomTwo(randomOne), -40, gameWidth - randomTwo(randomOne), 40,treeImg);
   obstacles.push([obstacleOne,obstacleTwo]);
 }
 
@@ -66,7 +71,7 @@ function animationFrame() {
   }
 
   ctx.clearRect(0, 0, gameWidth, gameHeight);
-  player.init(ctx);
+  // player.init(ctx);
   if(obstacles.length!==0){
     obstacles.forEach(element=>{
       element[0].init(ctx);
