@@ -43,7 +43,7 @@ class Player extends GameObject {
         var crash = true;
         if (/*(mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)||*/ (mytop >= 0) && (mybottom <= 800) && (myleft >= 0) && (myright <= 800)) {
             crash = false;
-            // console.log('ok');
+            console.log('ok');
         }
         return crash;       
     }
@@ -84,7 +84,7 @@ function createNewBackground(){
   backgrounds.push(bckgr);
 }
 
-
+createNewObstacle();
 createNewBackground();
 backgrounds[0].y = 0;
 
@@ -119,8 +119,6 @@ document.addEventListener('keyup', function (element) {
     }
 });
 
-createNewObstacle();
-
 const animationFrameTime = 20;
 const spcBtwnObs = 100;
 
@@ -135,9 +133,6 @@ function animationFrame() {
   if(backgrounds[0].y >= gameHeight){
     backgrounds.shift();  
   }
-
-
-  console.log(backgrounds.length);
 
   if(obstacles[obstacles.length-1][0].y >= spcBtwnObs){
     createNewObstacle();  
@@ -168,4 +163,4 @@ function animationFrame() {
   player.crashWith(); 
 }
 
-const refreshFrame = setInterval(animationFrame, animationFrameTime); // setInterval odświeża canvas 25 razy na sekundę
+const refreshFrame = setInterval(animationFrame, animationFrameTime);
