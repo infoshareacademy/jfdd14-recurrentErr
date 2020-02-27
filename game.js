@@ -16,7 +16,7 @@ class GameObject {
 
 class Player extends GameObject {
     constructor(x, y, image){
-        super(x, y , 40, 40, image);  
+        super(x, y , 30, 30, image);  
         this.speedX = 0;
         this.speedY = 0; 
     }
@@ -54,12 +54,9 @@ class Obstacle extends GameObject {
   }
 
   init(ctx){
-    ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
-    ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
-    
-    // for(var w = 0; w < this.width; w += this.image.width) {
-    //     ctx.drawImage(this.image, this.x+w, this.y);
-    // }
+    for(var w = 0; w < this.width; w += this.image.width) {
+        ctx.drawImage(this.image, this.x+w, this.y);
+    }
   } 
 
   update(){
@@ -67,9 +64,6 @@ class Obstacle extends GameObject {
   }
   
 }
-
-// const player = new Player(100, 100); // utworzenie podstawowego obiektu - dla przykładu
-//dla obiektu gracza i przeszkody tworzymy podklasy dziedziczące jego własności
 
 const obstacles = [];
 
@@ -138,8 +132,6 @@ function animationFrame() {
   player.crashWith(); 
 
   obstacleTimer++;
-
-  //console.log(obstacles);
 }
 
 const refreshFrame = setInterval(animationFrame, 40); // setInterval odświeża canvas 25 razy na sekundę
