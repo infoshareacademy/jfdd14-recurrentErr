@@ -7,7 +7,8 @@ let five = document.getElementById("discount5");
 let fifty = document.getElementById("discount50");
 let newCenka = document.getElementById("cena");
 let newCenusia = document.getElementById("cena");
-
+let podwojnaCena = document.getElementById("cena");
+let both = document.getElementById("both");
 
 slider.addEventListener ( "change", function () {
 console.log("input")
@@ -55,7 +56,7 @@ five.addEventListener ('change',() => {
  
 });
 
-fifty.addEventListener ('change',() => {
+fifty.addEventListener ('click',() => {
 
   console.log("click")
   
@@ -78,7 +79,28 @@ fifty.addEventListener ('change',() => {
  
 });
 
+both.addEventListener ('click',() => {
 
+  console.log("click")
+  
+  
+  // let newCenusia = document.getElementById("cena");
+  let dwieCeny;
+  if (slider.value == 1)  {
+    
+    dwieCeny = "Nowa cena 55% mniej, czyli 17.99 zł";
+  }
+  else if (slider.value == 2) {
+    dwieCeny = "Nowa cena 55% mniej, czyli 22.49 zł";
+  }
+  else if (slider.value == 3 || slider.value == 4 ) {
+        
+    dwieCeny = "Nowa cena 55% mniej, czyli 26.99 zł";
+  }
+    podwojnaCena.innerHTML = `${dwieCeny}`;
+    console.log(podwojnaCena);
+ 
+});
 
 // num.addEventListener("input", () => {
 //   function newPromise(value){

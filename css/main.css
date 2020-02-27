@@ -157,15 +157,17 @@ transition: background-image 1s ease-in-out;
 .hero__header > h3{
 text-transform: uppercase;
 }
+/*calculator*/
+
 h3 > a{
     color: white;
+    padding: 2em;
 }
 .price{
     color: white; 
+    padding: 2em;
 }
 
-
-/*calculator*/
 .calculator{
     font-size: medium;
     background: #607D84;  
@@ -173,18 +175,19 @@ h3 > a{
 .calculator>h1{
     color: white;
     text-align: center;
-    padding: 1em;
+    padding: 2em;
 }
 .discount, .paragraf{
     color: white;
-    padding: .4em;
+    padding: 2em;
 }
 .calculator>p{
     color: white;
-    padding: .4em;
+    padding: 1em;
 }
 .slidecontainer {
-    width: 100%;
+    width: 80%;
+    padding: 2em;
   }
   
   .slider {
