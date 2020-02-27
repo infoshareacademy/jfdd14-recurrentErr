@@ -9,11 +9,14 @@ let newCenka = document.getElementById("cena");
 let newCenusia = document.getElementById("cena");
 let podwojnaCena = document.getElementById("cena");
 let both = document.getElementById("both");
-
+let render = function () {
+  cena.innerHTML = "";
+}
 slider.addEventListener ( "change", function () {
 console.log("input")
   output.innerHTML = slider.value;
   let show;
+  
   if (slider.value == 0) {
     show = "Proszę wybrać liczbę abonentów";
   }
@@ -35,10 +38,10 @@ console.log("input")
    
 }
 );
-five.addEventListener ('change',() => {
+five.addEventListener ('click',() => {
 
   console.log("click")
-  // let newCenka = document.getElementById("cena");
+
   let newCena;
   if (slider.value == 1)  {
     
@@ -53,16 +56,14 @@ five.addEventListener ('change',() => {
   }
     newCenka.innerHTML = `${newCena}`;
     console.log(newCena);
- 
+    
 });
 
 fifty.addEventListener ('click',() => {
 
   console.log("click")
   
-  
-  // let newCenusia = document.getElementById("cena");
-  let cenka;
+ let cenka;
   if (slider.value == 1)  {
     
     cenka = "Nowa cena 50% mniej, czyli 19.99 zł";
@@ -82,9 +83,7 @@ fifty.addEventListener ('click',() => {
 both.addEventListener ('click',() => {
 
   console.log("click")
-  
-  
-  // let newCenusia = document.getElementById("cena");
+
   let dwieCeny;
   if (slider.value == 1)  {
     
@@ -102,26 +101,3 @@ both.addEventListener ('click',() => {
  
 });
 
-// num.addEventListener("input", () => {
-//   function newPromise(value){
-
-
-//       return new Promise((resolve, reject) => {
-//           if (value > 0) {
-//               resolve ((value*value)*-1) //tak można dostać minus infinity
-//           }
-//           else reject ("Value is less than 0 can't perform this operation")
-//       })
-//   }
-
-//   newPromise(num.value)
-//   .then( x => {
-//       result.innerHTML =`Result = ` + x;
-//    console.log(x)
-//   })
-//    .catch (x => {
-//       result.innerHTML =`Result = ` + x;
-//       console.log(x)
-//   })
-
-// });
