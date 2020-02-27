@@ -10,29 +10,15 @@ class GameObject {
         this.x = x;
         this.y = y;
         this.image = image;
-<<<<<<< HEAD
-  }
-  
-  init(ctx){
-    ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
-    ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
-  }
-  
-=======
     }  
   init(ctx){
     ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
     ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
   }       
->>>>>>> feature/42-game-player
 }
 
 class Player extends GameObject {
     constructor(x, y, image){
-<<<<<<< HEAD
-      super(x, y , 20, 20, image);
-     }
-=======
         super(x, y , 40, 40, image);  
         this.speedX = 0;
         this.speedY = 0; 
@@ -57,7 +43,6 @@ class Player extends GameObject {
         }
         return crash;       
     }
->>>>>>> feature/42-game-player
 }
 
 class Obstacle extends GameObject {
@@ -65,11 +50,6 @@ class Obstacle extends GameObject {
       super(0, 0, width, height, image);
     }
 }
-<<<<<<< HEAD
- 
-const player = new Player(100,100); // utworzenie podstawowego obiektu - dla przykładu
-                                          //dla obiektu gracza i przeszkody tworzymy podklasy dziedziczące jego własności
-=======
 
 const player = new Player (380, 760); 
 
@@ -101,7 +81,6 @@ document.addEventListener('keyup', function (element) {
         player.speedY = 0;
     }
 });
->>>>>>> feature/42-game-player
 
 const obstacle = new Obstacle(Math.floor((Math.random()*40+1)-1)*20,20);
 
@@ -109,14 +88,8 @@ function animationFrame(){
     ctx.clearRect(0,0,gameWidth,gameHeight);
     player.init(ctx);
     obstacle.init(ctx);
-<<<<<<< HEAD
-}
-
-const refreshFrame = setInterval(animationFrame,40); // setInterval odświeża canvas 25 razy na sekundę
-=======
     player.newPos(ctx);
     player.crashWith();       
 }
 
 const refreshFrame = setInterval(animationFrame,40); 
->>>>>>> feature/42-game-player
