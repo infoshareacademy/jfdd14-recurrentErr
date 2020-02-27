@@ -113,7 +113,18 @@ cursor: pointer;
 /* margin: auto, 3em; */
 color: black;
 }
-
+.left {
+position:relative;
+    top:45%;
+    left:.5em; 
+    color: black;
+}
+.right {
+    position:relative;
+    top:45%;
+    right:.5em; 
+    color: black;
+}
 .hero{
     display: flex;
     min-height: 540px;
