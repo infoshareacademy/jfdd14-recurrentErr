@@ -5,28 +5,47 @@ const gameHeight = canvas.height;
 const treeImg = document.querySelector('#imgTree');
 
 class GameObject {
-  constructor(x, y, width, height, image) {
-    this.width = width;
-    this.height = height;
-    this.x = x;
-    this.y = y;
-    this.image = image;
-  }
-
-  init(ctx) {
-    // ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
-    // ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
-    // ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-    for (var w = 0; w < this.width; w += this.image.width) {
-      ctx.drawImage(this.image, this.x+w, this.y);
-    }
-  }
+    constructor(x, y , width , height, image){
+        this.width = width;
+        this.height = height;
+        this.x = x;
+        this.y = y;
+        this.image = image;
+    } 
 }
 
 class Player extends GameObject {
-  constructor(x, y, image) {
-    super(x, y, 20, 20, image);
-  }
+    constructor(x, y, image){
+        super(x, y , 40, 40, image);  
+        this.speedX = 0;
+        this.speedY = 0; 
+    }
+
+    init(ctx){
+        ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
+        ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
+      } 
+
+    newPos(){
+        this.x += this.speedX; 
+        this.y += this.speedY;  
+    }
+    crashWith(otherobj) {
+        var myleft = this.x;
+        var myright = this.x + (this.width);
+        var mytop = this.y;
+        var mybottom = this.y + (this.height);
+        // var otherleft = otherobj.x;
+        // var otherright = otherobj.x + (otherobj.width);
+        // var othertop = otherobj.y;
+        // var otherbottom = otherobj.y + (otherobj.height);
+        var crash = true;
+        if (/*(mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)||*/ (mytop >= 0) && (mybottom <= 800) && (myleft >= 0) && (myright <= 800)) {
+            crash = false;
+            console.log('ok');
+        }
+        return crash;       
+    }
 }
 
 class Obstacle extends GameObject {
@@ -34,9 +53,19 @@ class Obstacle extends GameObject {
     super(x, y, width, height, image);
   }
 
+  init(ctx){
+    ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
+    ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
+    
+    // for(var w = 0; w < this.width; w += this.image.width) {
+    //     ctx.drawImage(this.image, this.x+w, this.y);
+    // }
+  } 
+
   update(){
     this.y += 2; // speed of obstacle
   }
+  
 }
 
 // const player = new Player(100, 100); // utworzenie podstawowego obiektu - dla przykładu
@@ -52,15 +81,40 @@ function createNewObstacle(){
   obstacles.push([obstacleOne,obstacleTwo]);
 }
 
-//window.setInterval(createNewObstacle,5000);
+const player = new Player (380, 760); 
 
-// let obstacleIntervalCounter = 0
+document.addEventListener('keydown', function (element) {
+    if (element.code === "ArrowLeft") {
+        player.speedX = -4;     
+    }
+    if (element.code === "ArrowRight") {
+        player.speedX = 4;      
+    }  
+    if (element.code === "ArrowUp") {
+        player.speedY = -4;
+    }
+    if (element.code === "ArrowDown") {
+        player.speedY = 4;
+    }
+});
+document.addEventListener('keyup', function (element) {
+    if (element.code === "ArrowLeft") {
+        player.speedX = 0;     
+    }
+    if (element.code === "ArrowRight") {
+        player.speedX = 0;      
+    }  
+    if (element.code === "ArrowUp") {
+        player.speedY = 0;
+    }
+    if (element.code === "ArrowDown") {
+        player.speedY = 0;
+    }
+});
 
 let obstacleTimer = 0;
 
 function animationFrame() {
-
-  // console.log(obstacleTimer,obstacles.length);
 
   if(obstacleTimer===110){
     createNewObstacle();
@@ -71,7 +125,6 @@ function animationFrame() {
   }
 
   ctx.clearRect(0, 0, gameWidth, gameHeight);
-  // player.init(ctx);
   if(obstacles.length!==0){
     obstacles.forEach(element=>{
       element[0].init(ctx);
@@ -80,6 +133,9 @@ function animationFrame() {
       element[1].update();
     });
   }
+  player.init(ctx);
+  player.newPos(ctx);
+  player.crashWith(); 
 
   obstacleTimer++;
 
