@@ -9,9 +9,7 @@ let newCenka = document.getElementById("cena");
 let newCenusia = document.getElementById("cena");
 let podwojnaCena = document.getElementById("cena");
 let both = document.getElementById("both");
-let render = function () {
-  cena.innerHTML = "";
-}
+
 slider.addEventListener ( "change", function () {
 console.log("input")
   output.innerHTML = slider.value;
