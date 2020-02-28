@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
     <link rel="stylesheet" href="css/game.css">
 </head>
+
 <body>
-    <canvas id='gameScreen' width ="800px" height="800px" style="border: 1px solid black; "></canvas>
+    <header>
+        <h1>Z crossRoads przez las <img src="src/logoBW.png"></h1> 
+        <p class="head">Im dalej w las, tym więcej drzew!</p>
+        <button id="start">START</button>
+    </header>
+    <div class="gameWrapper">
+    <canvas id='gameScreen' width="800px" height="800px"></canvas>
     <img id="imgTree" src="src/tree.png">
     <img id="imgGround" src="src/ground.png">
+    
+    </div>
     <script src="game.js"></script>
 </body>
+
 </html>
