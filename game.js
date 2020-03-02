@@ -55,7 +55,8 @@ function createNewObstacle(){
   const randomTwo = num => num >= 720 ? 0 : num + 100; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
   const obstacleOne = new Obstacle(0, -40, randomOne, 40,treeImg);
   const obstacleTwo = new Obstacle(randomTwo(randomOne), -40, gameWidth - randomTwo(randomOne), 40,treeImg);
-  obstacles.push([obstacleOne,obstacleTwo]);      
+  obstacles.push([obstacleOne,obstacleTwo]); 
+  checkCollision();     
 }
 
 const player = new Player (380, 760); 
@@ -63,6 +64,7 @@ const player = new Player (380, 760);
 
 
 document.addEventListener('keydown', function (element) {
+    event.preventDefault();
     if (element.code === "ArrowLeft") {
         player.speedX = -4;     
     }
@@ -94,6 +96,7 @@ document.addEventListener('keyup', function (element) {
 let obstacleTimer = 0;
 
 function animationFrame() { 
+    
   checkCollision();  
 
   if(obstacleTimer===110){
@@ -126,23 +129,27 @@ const refreshFrame = setInterval(animationFrame, 40); // setInterval odświeża 
 
 function checkCollision() {
   obstacles.forEach((el) => {
-      const topObstacle = el.y - el.height / 2
-      const bottomObstacle = el.y + el.height / 2
-      const playerTop = player.y - player.height / 2;
-      const playerBottom = player.y + player.height / 2;
+      const topObstacle = el.y;
+      const bottomObstacle = el.y + el.height;
+      const playerTop = player.y;
+      const playerBottom = player.y + player.height;
       
-      const leftObstacle = el.x - el.width / 2
-      const rightObstacle = el.x + el.width / 2
-      const playerLeft = player.x - player.width / 2;
-      const playerRight = player.x + player.width / 2;
+      const leftObstacle = el.x;
+      const rightObstacle = el.x + el.width;
+      const playerLeft = player.x;
+      const playerRight = player.x + player.width;
       
-      if (bottomObstacle > playerTop && 
-          topObstacle < playerBottom &&
-          leftObstacle < playerRight &&
-          rightObstacle > playerLeft &&
-          mytop <= 0 && mybottom >= 800 && myleft <= 0 && myright >= 800) {
+      if (bottomObstacle > playerTop ||
+          topObstacle < playerBottom ||
+          leftObstacle < playerRight ||
+          rightObstacle > playerLeft ||
+          playerTop <= 0 ||
+          playerBottom >= 800 ||
+          playerLeft <= 0 ||
+          playerRight >= 800) {
           console.log("kolizja");
-          clearInterval(refreshFrame);         
+          clearInterval(refreshFrame);  
+                 
       }    
   })
 };
