@@ -1,7 +1,8 @@
-const canvas = document.querySelector('#gameScreen');
-const ctx = canvas.getContext('2d');
+const canvas = document.querySelector("#gameScreen");
+const ctx = canvas.getContext("2d");
 const gameWidth = canvas.width;
 const gameHeight = canvas.height;
+const treeImg = document.querySelector('#imgTree');
 
 class GameObject {
     constructor(x, y , width , height, image){
@@ -10,48 +11,56 @@ class GameObject {
         this.x = x;
         this.y = y;
         this.image = image;
-    }  
-  init(ctx){
-    ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
-    ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
-  }       
+    } 
 }
 
 class Player extends GameObject {
     constructor(x, y, image){
-        super(x, y , 40, 40, image);  
+        super(x, y , 30, 30, image);  
         this.speedX = 0;
         this.speedY = 0; 
     }
+
+    init(ctx){
+        ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
+        ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
+      } 
+
     newPos(){
         this.x += this.speedX; 
         this.y += this.speedY;  
     }
-    crashWith(otherobj) {
-        var myleft = this.x;
-        var myright = this.x + (this.width);
-        var mytop = this.y;
-        var mybottom = this.y + (this.height);
-        // var otherleft = otherobj.x;
-        // var otherright = otherobj.x + (otherobj.width);
-        // var othertop = otherobj.y;
-        // var otherbottom = otherobj.y + (otherobj.height);
-        var crash = true;
-        if (/*(mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)||*/ (mytop >= 0) && (mybottom <= 800) && (myleft >= 0) && (myright <= 800)) {
-            crash = false;
-            console.log('ok');
-        }
-        return crash;       
-    }
-}
+  }
 
 class Obstacle extends GameObject {
-    constructor(width, height, image){
-      super(0, 0, width, height, image);
+  constructor(x, y, width, height, image) {
+    super(x, y, width, height, image);
+  }
+
+  init(ctx){
+    for(var w = 0; w < this.width; w += this.image.width) {
+        ctx.drawImage(this.image, this.x+w, this.y);
     }
+  } 
+
+  update(){
+    this.y += 2; // speed of obstacle
+  }    
+}
+
+const obstacles = [];
+
+function createNewObstacle(){
+  const randomOne = Math.floor(Math.random() * 35) * 20; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
+  const randomTwo = num => num >= 720 ? 0 : num + 100; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
+  const obstacleOne = new Obstacle(0, -40, randomOne, 40,treeImg);
+  const obstacleTwo = new Obstacle(randomTwo(randomOne), -40, gameWidth - randomTwo(randomOne), 40,treeImg);
+  obstacles.push([obstacleOne,obstacleTwo]);      
 }
 
 const player = new Player (380, 760); 
+
+
 
 document.addEventListener('keydown', function (element) {
     if (element.code === "ArrowLeft") {
@@ -82,14 +91,58 @@ document.addEventListener('keyup', function (element) {
     }
 });
 
-const obstacle = new Obstacle(Math.floor((Math.random()*40+1)-1)*20,20);
+let obstacleTimer = 0;
 
-function animationFrame(){
-    ctx.clearRect(0,0,gameWidth,gameHeight);
-    player.init(ctx);
-    obstacle.init(ctx);
-    player.newPos(ctx);
-    player.crashWith();       
+function animationFrame() { 
+  checkCollision();  
+
+  if(obstacleTimer===110){
+    createNewObstacle();
+    if(obstacles.length===5){
+      obstacles.shift();  
+    }
+    obstacleTimer = 0;
+  }
+
+  ctx.clearRect(0, 0, gameWidth, gameHeight);
+  if(obstacles.length!==0){
+    obstacles.forEach(element=>{
+      element[0].init(ctx);
+      element[1].init(ctx);
+      element[0].update();
+      element[1].update();
+    });
+  }
+
+  player.init(ctx);
+  player.newPos(ctx); 
+    
+  obstacleTimer++;
+  
 }
 
-const refreshFrame = setInterval(animationFrame,40); 
+const refreshFrame = setInterval(animationFrame, 40); // setInterval odświeża canvas 25 razy na sekundę
+
+
+function checkCollision() {
+  obstacles.forEach((el) => {
+      const topObstacle = el.y - el.height / 2
+      const bottomObstacle = el.y + el.height / 2
+      const playerTop = player.y - player.height / 2;
+      const playerBottom = player.y + player.height / 2;
+      
+      const leftObstacle = el.x - el.width / 2
+      const rightObstacle = el.x + el.width / 2
+      const playerLeft = player.x - player.width / 2;
+      const playerRight = player.x + player.width / 2;
+      
+      if (bottomObstacle > playerTop && 
+          topObstacle < playerBottom &&
+          leftObstacle < playerRight &&
+          rightObstacle > playerLeft &&
+          mytop <= 0 && mybottom >= 800 && myleft <= 0 && myright >= 800) {
+          console.log("kolizja");
+          clearInterval(refreshFrame);         
+      }    
+  })
+};
