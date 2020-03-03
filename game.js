@@ -56,7 +56,8 @@ function createNewObstacle(){
   const obstacleOne = new Obstacle(0, -40, randomOne, 40,treeImg);
   const obstacleTwo = new Obstacle(randomTwo(randomOne), -40, gameWidth - randomTwo(randomOne), 40,treeImg);
   obstacles.push([obstacleOne,obstacleTwo]); 
-  checkCollision();     
+  checkCollision(); 
+  checkColObs();    
 }
 
 const player = new Player (380, 760); 
@@ -98,6 +99,7 @@ let obstacleTimer = 0;
 function animationFrame() { 
     
   checkCollision();  
+  checkColObs();
 
   if(obstacleTimer===110){
     createNewObstacle();
@@ -127,29 +129,40 @@ function animationFrame() {
 const refreshFrame = setInterval(animationFrame, 40); // setInterval odświeża canvas 25 razy na sekundę
 
 
+function checkColObs() {
+  obstacles.forEach(el=>{
+    el.forEach(el=>{  
+  const topObstacle = el.y;
+  const bottomObstacle = el.y + el.height;
+  const playerTop = player.y;
+  const playerBottom = player.y + player.height;
+      
+  const leftObstacle = el.x;
+  const rightObstacle = el.x + el.width;
+  const playerLeft = player.x;
+  const playerRight = player.x + player.width;
+      
+      if ((bottomObstacle > playerTop &&
+          topObstacle < playerBottom) &&
+          (leftObstacle < playerRight &&
+          rightObstacle > playerLeft)) {
+          console.log("kolizja");
+          clearInterval(refreshFrame);   
+      }
+})})};
+
+
 function checkCollision() {
-  obstacles.forEach((el) => {
-      const topObstacle = el.y;
-      const bottomObstacle = el.y + el.height;
-      const playerTop = player.y;
-      const playerBottom = player.y + player.height;
-      
-      const leftObstacle = el.x;
-      const rightObstacle = el.x + el.width;
-      const playerLeft = player.x;
-      const playerRight = player.x + player.width;
-      
-      if (bottomObstacle > playerTop ||
-          topObstacle < playerBottom ||
-          leftObstacle < playerRight ||
-          rightObstacle > playerLeft ||
-          playerTop <= 0 ||
-          playerBottom >= 800 ||
-          playerLeft <= 0 ||
-          playerRight >= 800) {
+  const playerTop = player.y;
+  const playerBottom = player.y + player.height;
+  const playerLeft = player.x;
+  const playerRight = player.x + player.width;
+  if (playerTop <= 0 ||
+      playerBottom >= gameHeight ||
+      playerLeft <= 0 ||
+      playerRight >= gameWidth) {
           console.log("kolizja");
           clearInterval(refreshFrame);  
                  
-      }    
-  })
+      } 
 };
