@@ -56,7 +56,7 @@ const obstacles = [];
 const backgrounds = [];
 
 function createNewObstacle(pathWidth){
-  const randomOne = Math.floor(Math.random() * 34) * 20; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
+  const randomOne = Math.floor(Math.random() * ((gameWidth-pathWidth)/20)) * 20; // losowa szerokość pierwszej przeszkody 
   const randomTwo = num => num >= gameWidth - pathWidth ? 0 : num + pathWidth; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
   const obstacleOne = new Obstacle(0, -80, randomOne, 80,treeImg);
   const obstacleTwo = new Obstacle(randomTwo(randomOne), -80, gameWidth - randomTwo(randomOne), 80,treeImg);
@@ -67,14 +67,6 @@ function createNewBackground(){
   const bckgr = new Obstacle(0, -800, 800, 800,groundImg);
   backgrounds.push(bckgr);
 }
-
-createNewObstacle(120);
-createNewBackground();
-backgrounds[0].y = 0;
-
-const player = new Player (380, 760);
-
-
 
 document.addEventListener('keydown', function (element) {
     event.preventDefault();
@@ -106,8 +98,15 @@ document.addEventListener('keyup', function (element) {
     }
 });
 
-const spcBtwnObs = 200;
+let spcBtwnObs = 200;
+let pathWidth = 200;
 let gamePoints = 0;
+
+createNewObstacle(pathWidth);
+createNewBackground();
+backgrounds[0].y = 0;
+
+const player = new Player (380, 760);
 
 function animationFrame() { 
     
@@ -133,7 +132,7 @@ function animationFrame() {
   }
 
   if(obstacles[obstacles.length-1][0].y >= spcBtwnObs){
-    createNewObstacle(120);  
+    createNewObstacle(pathWidth);  
   }
 
   if(obstacles[0][0].y >= gameHeight){
