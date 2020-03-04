@@ -4,6 +4,7 @@ const gameWidth = canvas.width;
 const gameHeight = canvas.height;
 const treeImg = document.querySelector('#imgTree');
 const groundImg = document.querySelector('#imgGround');
+const gameScore = document.querySelector('#gameScore');
 
 class GameObject {
     constructor(x, y , width , height, image){
@@ -54,14 +55,12 @@ class Obstacle extends GameObject {
 const obstacles = [];
 const backgrounds = [];
 
-function createNewObstacle(){
-  const randomOne = Math.floor(Math.random() * 35) * 20; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
-  const randomTwo = num => num >= 720 ? 0 : num + 100; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
+function createNewObstacle(pathWidth){
+  const randomOne = Math.floor(Math.random() * 34) * 20; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
+  const randomTwo = num => num >= gameWidth - pathWidth ? 0 : num + pathWidth; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
   const obstacleOne = new Obstacle(0, -80, randomOne, 80,treeImg);
   const obstacleTwo = new Obstacle(randomTwo(randomOne), -80, gameWidth - randomTwo(randomOne), 80,treeImg);
-  obstacles.push([obstacleOne,obstacleTwo]); 
-  // checkCollision(); 
-  // checkColObs();    
+  obstacles.push([obstacleOne,obstacleTwo]);   
 }
 
 function createNewBackground(){
@@ -69,7 +68,7 @@ function createNewBackground(){
   backgrounds.push(bckgr);
 }
 
-createNewObstacle();
+createNewObstacle(120);
 createNewBackground();
 backgrounds[0].y = 0;
 
@@ -86,10 +85,10 @@ document.addEventListener('keydown', function (element) {
         player.speedX = 4;      
     }  
     if (element.code === "ArrowUp") {
-        player.speedY = -4;
+        player.speedY = -2;
     }
     if (element.code === "ArrowDown") {
-        player.speedY = 4;
+        player.speedY = 2;
     }
 });
 document.addEventListener('keyup', function (element) {
@@ -107,13 +106,21 @@ document.addEventListener('keyup', function (element) {
     }
 });
 
-const animationFrameTime = 20;
-const spcBtwnObs = 100;
+const spcBtwnObs = 200;
+let gamePoints = 0;
 
 function animationFrame() { 
     
   checkCollision();  
   checkColObs();
+
+  const gameDistance = `Dystans: ${(gamePoints/1000).toFixed(1)} km`; // wyświetlanie wyniku gracza 
+  
+  if(gameDistance !== gameScore.innerHTML){ // odświeżanie wyniku gracza
+    
+    gameScore.innerHTML = gameDistance;
+
+  }
 
   ctx.clearRect(0, 0, gameWidth, gameHeight);
 
@@ -126,7 +133,7 @@ function animationFrame() {
   }
 
   if(obstacles[obstacles.length-1][0].y >= spcBtwnObs){
-    createNewObstacle();  
+    createNewObstacle(120);  
   }
 
   if(obstacles[0][0].y >= gameHeight){
@@ -150,7 +157,9 @@ function animationFrame() {
   }
 
   player.init(ctx);
-  player.newPos(ctx); 
+  player.newPos(ctx);
+  
+  gamePoints++;
  
 }
 
