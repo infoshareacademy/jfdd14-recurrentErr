@@ -113,14 +113,31 @@ function animationFrame() {
   checkCollision();  
   checkColObs();
 
-  if(gamePoints===1500){
-    spcBtwnObs -= 50;
-    pathWidth -= 50;  
-  }
-
-  if(gamePoints===3000){
-    spcBtwnObs -= 50;
-    pathWidth -= 50;  
+  switch(gamePoints){
+    case 3000:
+      spcBtwnObs -= 20;
+      pathWidth -= 20;
+      break;
+    case 6000:
+      spcBtwnObs -= 20;
+      pathWidth -= 20;
+      break;
+    case 9000:
+      spcBtwnObs -= 20;
+      pathWidth -= 20;
+      break;
+    case 12000:
+      spcBtwnObs -= 20;
+      pathWidth -= 20;
+      break;
+    case 15000:
+      spcBtwnObs -= 20;
+      pathWidth -= 20;
+      break;
+    case 18000:
+      spcBtwnObs -= 20;
+      pathWidth -= 20;
+      break;       
   }
 
   const gameDistance = `Dystans: ${(gamePoints/1000).toFixed(1)} km`; // wyświetlanie wyniku gracza 
