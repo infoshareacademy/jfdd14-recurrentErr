@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 const gameWidth = canvas.width;
 const gameHeight = canvas.height;
 const treeImg = document.querySelector('#imgTree');
+const groundImg = document.querySelector('#imgGround');
 
 class GameObject {
     constructor(x, y , width , height, image){
@@ -38,8 +39,10 @@ class Obstacle extends GameObject {
   }
 
   init(ctx){
-    for(var w = 0; w < this.width; w += this.image.width) {
-        ctx.drawImage(this.image, this.x+w, this.y);
+    for(var h = 0; h < this.height; h += this.image.height) {
+      for(var w = 0; w < this.width; w += this.image.width) {
+        ctx.drawImage(this.image, this.x+w, this.y+h);
+      }
     }
   } 
 
@@ -49,18 +52,28 @@ class Obstacle extends GameObject {
 }
 
 const obstacles = [];
+const backgrounds = [];
 
 function createNewObstacle(){
   const randomOne = Math.floor(Math.random() * 35) * 20; // losowa szerokość pierwszej przeszkody od 0 do 720 co 10
   const randomTwo = num => num >= 720 ? 0 : num + 100; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
-  const obstacleOne = new Obstacle(0, -40, randomOne, 40,treeImg);
-  const obstacleTwo = new Obstacle(randomTwo(randomOne), -40, gameWidth - randomTwo(randomOne), 40,treeImg);
+  const obstacleOne = new Obstacle(0, -80, randomOne, 80,treeImg);
+  const obstacleTwo = new Obstacle(randomTwo(randomOne), -80, gameWidth - randomTwo(randomOne), 80,treeImg);
   obstacles.push([obstacleOne,obstacleTwo]); 
-  checkCollision(); 
-  checkColObs();    
+  // checkCollision(); 
+  // checkColObs();    
 }
 
-const player = new Player (380, 760); 
+function createNewBackground(){
+  const bckgr = new Obstacle(0, -800, 800, 800,groundImg);
+  backgrounds.push(bckgr);
+}
+
+createNewObstacle();
+createNewBackground();
+backgrounds[0].y = 0;
+
+const player = new Player (380, 760);
 
 
 
@@ -94,22 +107,39 @@ document.addEventListener('keyup', function (element) {
     }
 });
 
-let obstacleTimer = 0;
+const animationFrameTime = 20;
+const spcBtwnObs = 100;
 
 function animationFrame() { 
     
   checkCollision();  
   checkColObs();
 
-  if(obstacleTimer===110){
-    createNewObstacle();
-    if(obstacles.length===5){
-      obstacles.shift();  
-    }
-    obstacleTimer = 0;
+  ctx.clearRect(0, 0, gameWidth, gameHeight);
+
+  if(backgrounds[backgrounds.length-1].y >= 0){
+    createNewBackground();  
   }
 
-  ctx.clearRect(0, 0, gameWidth, gameHeight);
+  if(backgrounds[0].y >= gameHeight){
+    backgrounds.shift();  
+  }
+
+  if(obstacles[obstacles.length-1][0].y >= spcBtwnObs){
+    createNewObstacle();  
+  }
+
+  if(obstacles[0][0].y >= gameHeight){
+    obstacles.shift();  
+  }
+
+  if(backgrounds.length!==0){
+    backgrounds.forEach(element=>{
+      element.init(ctx);
+      element.update();
+    });
+  }
+
   if(obstacles.length!==0){
     obstacles.forEach(element=>{
       element[0].init(ctx);
@@ -121,13 +151,10 @@ function animationFrame() {
 
   player.init(ctx);
   player.newPos(ctx); 
-    
-  obstacleTimer++;
-  
+ 
 }
 
-const refreshFrame = setInterval(animationFrame, 40); // setInterval odświeża canvas 25 razy na sekundę
-
+const refreshFrame = setInterval(animationFrame, 20); // setInterval odświeża canvas 25 razy na sekundę
 
 function checkColObs() {
   obstacles.forEach(el=>{
