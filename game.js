@@ -114,7 +114,15 @@ function animationFrame() {
   checkColObs();
 
   switch(gamePoints){
+    case 1500:
+      spcBtwnObs -= 20;
+      pathWidth -= 20;
+      break;
     case 3000:
+      spcBtwnObs -= 20;
+      pathWidth -= 20;
+      break;
+    case 4500:
       spcBtwnObs -= 20;
       pathWidth -= 20;
       break;
@@ -122,19 +130,11 @@ function animationFrame() {
       spcBtwnObs -= 20;
       pathWidth -= 20;
       break;
+    case 7500:
+      spcBtwnObs -= 20;
+      pathWidth -= 20;
+      break;
     case 9000:
-      spcBtwnObs -= 20;
-      pathWidth -= 20;
-      break;
-    case 12000:
-      spcBtwnObs -= 20;
-      pathWidth -= 20;
-      break;
-    case 15000:
-      spcBtwnObs -= 20;
-      pathWidth -= 20;
-      break;
-    case 18000:
       spcBtwnObs -= 20;
       pathWidth -= 20;
       break;       
