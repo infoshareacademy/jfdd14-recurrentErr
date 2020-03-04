@@ -113,6 +113,16 @@ function animationFrame() {
   checkCollision();  
   checkColObs();
 
+  if(gamePoints===1500){
+    spcBtwnObs -= 50;
+    pathWidth -= 50;  
+  }
+
+  if(gamePoints===3000){
+    spcBtwnObs -= 50;
+    pathWidth -= 50;  
+  }
+
   const gameDistance = `Dystans: ${(gamePoints/1000).toFixed(1)} km`; // wyświetlanie wyniku gracza 
   
   if(gameDistance !== gameScore.innerHTML){ // odświeżanie wyniku gracza
@@ -162,7 +172,7 @@ function animationFrame() {
  
 }
 
-const refreshFrame = setInterval(animationFrame, 20); // setInterval odświeża canvas 25 razy na sekundę
+const refreshFrame = setInterval(animationFrame, 20); // setInterval odświeża canvas 50 razy na sekundę
 
 function checkColObs() {
   obstacles.forEach(el=>{
