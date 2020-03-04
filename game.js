@@ -5,6 +5,7 @@ const gameHeight = canvas.height;
 const treeImg = document.querySelector('#imgTree');
 const groundImg = document.querySelector('#imgGround');
 const gameScore = document.querySelector('#gameScore');
+const levelInfo = document.querySelector('#levelInfo');
 
 class GameObject {
     constructor(x, y , width , height, image){
@@ -106,6 +107,9 @@ createNewObstacle(pathWidth);
 createNewBackground();
 backgrounds[0].y = 0;
 
+console.log('Level 1');
+levelInfo.innerHTML = 'Poziom 1';
+
 const player = new Player (380, 760);
 
 function animationFrame() { 
@@ -117,26 +121,38 @@ function animationFrame() {
     case 1500:
       spcBtwnObs -= 20;
       pathWidth -= 20;
+      console.log('level 2');
+      levelInfo.innerHTML = 'Poziom 2';
       break;
     case 3000:
       spcBtwnObs -= 20;
       pathWidth -= 20;
+      console.log('level 3');
+      levelInfo.innerHTML = 'Poziom 3';
       break;
     case 4500:
       spcBtwnObs -= 20;
       pathWidth -= 20;
+      console.log('level 4');
+      levelInfo.innerHTML = 'Poziom 4';
       break;
     case 6000:
       spcBtwnObs -= 20;
       pathWidth -= 20;
+      console.log('level 5');
+      levelInfo.innerHTML = 'Poziom 5';
       break;
     case 7500:
       spcBtwnObs -= 20;
       pathWidth -= 20;
+      console.log('level 6');
+      levelInfo.innerHTML = 'Poziom 6';
       break;
     case 9000:
       spcBtwnObs -= 20;
       pathWidth -= 20;
+      console.log('level 7');
+      levelInfo.innerHTML = 'Poziom 7';
       break;       
   }
 

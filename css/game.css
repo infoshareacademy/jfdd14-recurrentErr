@@ -2,6 +2,14 @@
     border: 1px solid black;
 }
 
+#gameInfo {
+    display: flex;
+}
+
+#levelInfo {
+    margin-left: 2rem;
+}
+
 img {
     display: none;
 }
