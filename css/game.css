@@ -9,9 +9,13 @@ body{
 img{
     width: 30px;
 }
-#imgTree #imgGround{
+#imgTree {
     display: none;
 }
+#imgGround {
+    display: none;
+}
+
 * {
     box-sizing: border-box;
     margin: 0 auto;
