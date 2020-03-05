@@ -180,17 +180,18 @@ h3 > a{
 }
 
 .calculator{
-    font-size: medium;
+    font-size: 1.3rem;
     background: #607D84;  
 }
 .calculator>h1{
     color: white;
+    font-size: 2.2rem;
     text-align: center;
-    padding: 2em;
+    padding: 1em;
 }
 .discount, .paragraf{
     color: white;
-    padding: 2em;
+    padding: 1em;
 }
 .calculator>p{
     color: white;

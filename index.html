@@ -106,16 +106,17 @@
     </section>
         <!-- Calculator-->
         <section id="calculator" class="calculator">
-            <h1>CENY ABONAMETÓW</h1>
+            <h1>Ceny abonamentów</h1>
     <div class="discount">
        
-      
+        <form>
         <input type="range" min="0" max="4" value="0" class="slider" id="myRange">
       <p class="paragraf">Liczba osób, która chce współdzielić abonament: <span id="people"></span></p>
-    
-        <label class="discount"></label><input name="checkbox" type="radio" id="discount50">Jestem emerytem/rencistą<br><br>
-        <label class="discount"></label><input name="checkbox" type="radio" id="discount5">Posiadam kartę mieszkańca<br><br>
-        <label class="discount"></label><input name="checkbox" type="radio" id="both">Posiadam kartę mieszkańca i jestem emerytem/rencistą
+   
+        <label class="discount"><input name="checkbox" type="checkbox" id="discount50">Jestem emerytem/rencistą<br></label>
+        <label class="discount"><input name="checkbox" type="checkbox" id="discount5">Posiadam kartę mieszkańca<br></label>
+        <!-- <label class="discount"></label><input name="checkbox" type="checkbox" id="both">Posiadam kartę mieszkańca i jestem emerytem/rencistą -->
+       </form>
         <p class="price">CENA:  <span id="cena">Zaznacz liczbę osób na suwaku.</span></p>
     </div>
     </section>
@@ -203,7 +204,7 @@
     </footer>
 
     <script src="rotacja.js"></script>
-    <script src="calculator.js"></script>
+    <script src="calc.js"></script>
     <script src="script.js"></script>
 
 </body>
