@@ -217,9 +217,10 @@ function animationFrame() {
   gamePoints++;
  
 }
+let refreshFrame;
 
-btnStart.addEventListener('click', () => {
-const refreshFrame = setInterval(animationFrame, 20)}); // setInterval odświeża canvas 50 razy na sekundę
+btnStart.addEventListener('click', () => { 
+refreshFrame = setInterval(animationFrame, 20)}); // setInterval odświeża canvas 50 razy na sekundę
 
 function checkColObs() {
   obstacles.forEach(el=>{
