@@ -6,6 +6,7 @@ const treeImg = document.querySelector('#imgTree');
 const groundImg = document.querySelector('#imgGround');
 const gameScore = document.querySelector('#gameScore');
 const levelInfo = document.querySelector('#levelInfo');
+const currHighScore = localStorage.getItem('highScore');
 
 class GameObject {
     constructor(x, y , width , height, image){
@@ -225,7 +226,10 @@ function checkColObs() {
           (leftObstacle < playerRight &&
           rightObstacle > playerLeft)) {
           console.log("kolizja");
-          clearInterval(refreshFrame);   
+          clearInterval(refreshFrame);
+          if((gamePoints/1000).toFixed(1)>currHighScore){
+            localStorage.setItem('highScore', (gamePoints/1000).toFixed(1)); 
+          }  
       }
 })})};
 
@@ -241,6 +245,8 @@ function checkCollision() {
       playerRight >= gameWidth) {
           console.log("kolizja");
           clearInterval(refreshFrame);  
-                 
+          if((gamePoints/1000).toFixed(1)>currHighScore){
+            localStorage.setItem('highScore', (gamePoints/1000).toFixed(1)); 
+          } 
       } 
 };
