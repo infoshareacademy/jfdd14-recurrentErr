@@ -258,14 +258,26 @@ const saveScoreReset = () => {
 
   const score = (gamePoints/1000).toFixed(1);
 
-  if(score>currHighScore){
-    localStorage.setItem('highScore', score); 
-  }
-
   const endGame = document.createElement('div');
+  const newGameBtn = document.createElement('button');
+  newGameBtn.innerText = 'Nowa gra';
+  newGameBtn.addEventListener('click',()=>{
+    endGame.remove();
+    refreshFrame;
+  });
+
   endGame.innerHTML = `<h2>Koniec gry</h2>
   <p>${endQotes[Math.floor(Math.random()*endQotes.length)]}</p>
   <p>Dystans który pokonałeś to: ${score} km</p>`;
+
+  if(score>currHighScore){
+    localStorage.setItem('highScore', score);
+    const newHighScore = document.createElement('p');
+    newHighScore.innerHTML = 'Nowy najwyższy wynik.';
+    endGame.appendChild(newHighScore);
+  }
+
+  endGame.appendChild(newGameBtn);
   endGame.classList.add("endGame");
   gameBody.appendChild(endGame);
 
