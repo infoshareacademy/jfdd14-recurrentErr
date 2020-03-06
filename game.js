@@ -7,6 +7,13 @@ const groundImg = document.querySelector('#imgGround');
 const gameScore = document.querySelector('#gameScore');
 const levelInfo = document.querySelector('#levelInfo');
 const currHighScore = localStorage.getItem('highScore');
+const gameBody = document.querySelector('body');
+const endQotes = ['Oczom ich ukazał się las...',
+                  'Bunkrów nie ma...',
+                  'O, jakie ładne drzewo.',
+                  'Teraz już wiem jak się czuli ci w Rospudzie.',
+                  'Ta kora jest smaczna, ile witamin',
+                  'Postanowiłem zostać drwalem, zacznę od tego drzewa.'];
 
 class GameObject {
     constructor(x, y , width , height, image){
@@ -227,9 +234,7 @@ function checkColObs() {
           rightObstacle > playerLeft)) {
           console.log("kolizja");
           clearInterval(refreshFrame);
-          if((gamePoints/1000).toFixed(1)>currHighScore){
-            localStorage.setItem('highScore', (gamePoints/1000).toFixed(1)); 
-          }  
+          saveScoreReset(); 
       }
 })})};
 
@@ -245,8 +250,23 @@ function checkCollision() {
       playerRight >= gameWidth) {
           console.log("kolizja");
           clearInterval(refreshFrame);  
-          if((gamePoints/1000).toFixed(1)>currHighScore){
-            localStorage.setItem('highScore', (gamePoints/1000).toFixed(1)); 
-          } 
+          saveScoreReset();
       } 
+};
+
+const saveScoreReset = () => {
+
+  const score = (gamePoints/1000).toFixed(1);
+
+  if(score>currHighScore){
+    localStorage.setItem('highScore', score); 
+  }
+
+  const endGame = document.createElement('div');
+  endGame.innerHTML = `<h2>Koniec gry</h2>
+  <p>${endQotes[Math.floor(Math.random()*endQotes.length)]}</p>
+  <p>Dystans który pokonałeś to: ${score} km</p>`;
+  endGame.classList.add("endGame");
+  gameBody.appendChild(endGame);
+
 };
