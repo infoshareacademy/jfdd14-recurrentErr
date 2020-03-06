@@ -7,6 +7,19 @@ const groundImg = document.querySelector('#imgGround');
 const gameScore = document.querySelector('#gameScore');
 const levelInfo = document.querySelector('#levelInfo');
 
+var modal = document.getElementById("myModal");
+
+var btnStart = document.querySelector(".close");
+
+window.onload = function() {
+  modal.style.display = "block";
+}
+
+btnStart.onclick = function() {
+  modal.style.display = "none";
+}
+
+
 class GameObject {
     constructor(x, y , width , height, image){
         this.width = width;
@@ -204,8 +217,10 @@ function animationFrame() {
   gamePoints++;
  
 }
+let refreshFrame;
 
-const refreshFrame = setInterval(animationFrame, 20); // setInterval odświeża canvas 50 razy na sekundę
+btnStart.addEventListener('click', () => { 
+refreshFrame = setInterval(animationFrame, 20)}); // setInterval odświeża canvas 50 razy na sekundę
 
 function checkColObs() {
   obstacles.forEach(el=>{
