@@ -1,38 +1,26 @@
-#gameScreen {
-    border: 1px solid black;
-}
-body{
-    background:#607D8B;
-       
-    /* background-repeat: no-repeat; */
-}
-img{
-    width: 30px;
-   margin-right: 10px;
-}
-#imgTree {
-    display: none;
-}
-#imgGround {
-    display: none;
-}
-
 * {
     box-sizing: border-box;
     margin: 0 auto;
     font-family: "Raleway", sans-serif;  
     scroll-behavior: smooth;
     max-width: 1200px;
+    background:#607D8B;
 }
-#start{
-    justify-self: center;
-    padding: .3em;
-    background: white;
-    color: #607D8B;
-    font-weight: bolder;
-}
-header{
 
+header img{
+    width: 30px;
+    margin-right: 10px;
+}
+#imgTree {
+    display: none;
+}
+
+#imgGround {
+    display: none;
+}
+
+header{
+    
     color: white;
     display: flex;
     flex-direction: column;
@@ -43,12 +31,10 @@ header{
 .head{
     padding: .3em;;
 }
+
 #gameScreen{
-width: 800px;
-height: 800px;
-border: solid #455A64 1em;
-display: flex;
-justify-content: center;
-align-content: center;
-text-align: center;
+    width: 800px;
+    height: 800px;
+    border: solid #455A64 1em;
+    display: flex;
 }
