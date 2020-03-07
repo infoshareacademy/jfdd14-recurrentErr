@@ -6,10 +6,27 @@ const treeImg = document.querySelector('#imgTree');
 const groundImg = document.querySelector('#imgGround');
 const gameScore = document.querySelector('#gameScore');
 const levelInfo = document.querySelector('#levelInfo');
-
+const highScoreInfo = document.querySelector('#highScore');
+const currHighScore = localStorage.getItem('highScore');
+const endGame = document.querySelector('#endGame');
+const endGameHeader = document.querySelector('#endGameHeader');
+const endGameBody = document.querySelector('#endGameBody');
 var modal = document.getElementById("myModal");
-
 var btnStart = document.querySelector(".close");
+
+let player;
+let obstacles;
+let backgrounds; 
+let spcBtwnObs = 200;
+let pathWidth = 200;
+let gamePoints;
+
+const endQotes = ['Oczom ich ukazał się las...',
+                  'Bunkrów nie ma...',
+                  'O, jakie ładne drzewo',
+                  'Teraz już wiem jak się czuli ci w Rospudzie',
+                  'Ta kora jest smaczna, ile witamin',
+                  'Postanowiłem zostać drwalem, zacznę od tego drzewa'];
 
 window.onload = function() {
   modal.style.display = "block";
@@ -18,7 +35,6 @@ window.onload = function() {
 btnStart.onclick = function() {
   modal.style.display = "none";
 }
-
 
 class GameObject {
     constructor(x, y , width , height, image){
@@ -66,9 +82,6 @@ class Obstacle extends GameObject {
   }    
 }
 
-const obstacles = [];
-const backgrounds = [];
-
 function createNewObstacle(pathWidth){
   const randomOne = Math.floor(Math.random() * ((gameWidth-pathWidth)/20)) * 20; // losowa szerokość pierwszej przeszkody 
   const randomTwo = num => num >= gameWidth - pathWidth ? 0 : num + pathWidth; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
@@ -97,6 +110,7 @@ document.addEventListener('keydown', function (element) {
         player.speedY = 2;
     }
 });
+
 document.addEventListener('keyup', function (element) {
     if (element.code === "ArrowLeft") {
         player.speedX = 0;     
@@ -112,18 +126,9 @@ document.addEventListener('keyup', function (element) {
     }
 });
 
-let spcBtwnObs = 200;
-let pathWidth = 200;
-let gamePoints = 0;
 
-createNewObstacle(pathWidth);
-createNewBackground();
-backgrounds[0].y = 0;
 
-console.log('Level 1');
-levelInfo.innerHTML = 'Poziom 1';
-
-const player = new Player (380, 760);
+resetGame();
 
 function animationFrame() { 
     
@@ -219,8 +224,9 @@ function animationFrame() {
 }
 let refreshFrame;
 
-btnStart.addEventListener('click', () => { 
-refreshFrame = setInterval(animationFrame, 20)}); // setInterval odświeża canvas 50 razy na sekundę
+btnStart.addEventListener('click', () => {
+  refreshFrame = setInterval(animationFrame, 20)
+}); // setInterval odświeża canvas 50 razy na sekundę
 
 function checkColObs() {
   obstacles.forEach(el=>{
@@ -240,7 +246,8 @@ function checkColObs() {
           (leftObstacle < playerRight &&
           rightObstacle > playerLeft)) {
           console.log("kolizja");
-          clearInterval(refreshFrame);   
+          clearInterval(refreshFrame);
+          saveScoreReset(); 
       }
 })})};
 
@@ -256,6 +263,62 @@ function checkCollision() {
       playerRight >= gameWidth) {
           console.log("kolizja");
           clearInterval(refreshFrame);  
-                 
+          saveScoreReset();
       } 
+};
+
+const saveScoreReset = () => {
+
+  const score = (gamePoints/1000).toFixed(1);
+
+  const newGameBtn = document.createElement('button');
+  newGameBtn.innerText = 'Nowa gra';
+  newGameBtn.addEventListener('click',()=>{
+    endGame.style.display = "none";
+    
+    resetGame();
+
+    refreshFrame = setInterval(animationFrame, 20);
+  });
+
+  endGameHeader.innerHTML = `<h2>${endQotes[Math.floor(Math.random()*endQotes.length)]}</h2>`;
+  endGameBody.innerHTML = `<p>Dystans który pokonałeś to: ${score} km</p>`;
+
+  if(score>currHighScore){
+    localStorage.setItem('highScore', score);
+    const newHighScore = document.createElement('p');
+    newHighScore.innerHTML = 'Nowy najwyższy wynik.';
+    endGameBody.appendChild(newHighScore);
+  }
+  endGameBody.appendChild(newGameBtn);
+  endGame.style.display = "flex";
+};
+
+function resetGame() {
+  ctx.clearRect(0, 0, gameWidth, gameHeight);
+  obstacles = [];
+  backgrounds = [];
+  gamePoints = 0;
+  player = new Player(380, 760);
+  createNewObstacle(pathWidth);
+  createNewBackground();
+  backgrounds[0].y = 0;
+
+  if (backgrounds.length !== 0) {
+    backgrounds.forEach(element => {
+      element.init(ctx);
+    });
+  }
+
+  if (obstacles.length !== 0) {
+    obstacles.forEach(element => {
+      element[0].init(ctx);
+      element[1].init(ctx);
+    });
+  }
+
+  player.init(ctx);
+
+  levelInfo.innerHTML = "Poziom 1";
+  highScoreInfo.innerHTML = `Najlepszy wynik: ${localStorage.getItem('highScore')||'0'} km`;
 };
