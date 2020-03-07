@@ -12,20 +12,23 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body>   
     <nav class="navigation">
         <div class="logo">
             <img src="/src/logoBW.png" alt="logo"">
             <div>crossRoads</div>
         </div>
         <ul class="position">
-            <li class="menu"><a href="#" class="nav">Home</a></li>
-            <li class="menu"><a href="#" class="nav">Mój Profil</a></li>
-            <li class="menu"><a href="#about__us" class="nav">O Nas</a></li>
-            <li class="menu"><a href="#" class="nav">Zaplanuj Przechadzkę</a></li>
-            <li class="menu"><a href="#contact" class="nav">Skontaktuj Się Z Nami</a></li>
+            <li class="menu"><a href="#home" class="active nav">Home</a></li>
+            <li class="menu"><a href="#functionalities" class="nav">Dlaczego My?</a></li>
+            <li class="menu"><a href="#section-extra" class="nav">Co Oferujemy?</a></li>
+            <li class="menu"><a href="#contact" class="nav">Premiera</a></li>
+            <li class="menu"><a href="#aboutUs" class="nav">O Nas</a></li>
         </ul>
     </nav>
+   
+    <section id="home" class="scrollspy">
+        
 
     <section>
 
@@ -50,7 +53,7 @@
 
     </section>
     <!-- RE - Spis planowanych funkcji produktu -->
-    <section id="functionalities">
+    <section id="functionalities" class="scrollspy">
         <ul class="section__functionalities">
             <li class="ul__functionalities">
                 <i class="fas fa-map-signs fa-3x"></i>
@@ -71,7 +74,7 @@
         </ul>
     </section>
 
-    <section class="section-extra">
+    <section id="section-extra" class="section-extra scrollspy">
         <!-- RE - Dodatkowe informacje o produkcie  -->
         <div class="section-extra_funcionality section-extra_funcionality-1">
             <i class="fas fa-plus fa-3x"></i>
@@ -120,7 +123,8 @@
         <p class="price">CENA:  <span id="cena">Zaznacz liczbę osób na suwaku.</span></p>
     </div>
     </section>
-    <section id="contact" class="contact">
+
+    <section id="contact" class="contact scrollspy">
         <div class="contact__container">
             <header class="contact__heading">
                 <h2>Kiedy premiera?</h2>
@@ -135,10 +139,22 @@
                 <p class="contact--emphasis">Zapewniamy bezpieczeństwo danych.</p>
             </div>
         </div>
+        <div id="id01" class="modal">            
+            <form class="modal-content" action="/action_page.php">
+              <div class="container__modal">
+                <h2>Dziękujemy za zapis na premierę!</h2><br/>
+                <p>Masz teraz możliwość zagrać w naszą grę!</p><br/>
+              
+                <div class="clearfix">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Powrót na stronę</button>
+                  <button type="button" onclick="window.location.href='game.html'" class="acceptbtn">Przejście do gry</button>
+                </div>
+              </div>
+            </form>
+          </div>
     </section>
 
-
-    <section id="aboutUs" class="aboutUs">
+    <section id="aboutUs" class="aboutUs scrollspy">
         <header class="aboutUs__heading">
             <h2>Nasz zespół</h2>
             <p>Zaprawieni w bojach podróżnicy:</p>
@@ -197,6 +213,8 @@
             <p><h5>UWAGA!</h5><p> Niniejsza strona wykorzystuje pliki cookies. Informacje uzyskane za pomocą cookies wykorzystywane są głównie w celach statystycznych. Pozostając na stronie godzisz się na ich zapisywanie w Twojej przeglądarce.</p>
         </div>
     </div> 
+    
+   
 
     <footer>
         <i class="far fa-envelope fa-1x" style="color: #FFFFFF"> crossroads@gmail.com</i>
