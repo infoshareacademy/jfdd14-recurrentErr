@@ -10,10 +10,10 @@ const currHighScore = localStorage.getItem('highScore');
 const gameBody = document.querySelector('body');
 const endQotes = ['Oczom ich ukazał się las...',
                   'Bunkrów nie ma...',
-                  'O, jakie ładne drzewo.',
-                  'Teraz już wiem jak się czuli ci w Rospudzie.',
+                  'O, jakie ładne drzewo',
+                  'Teraz już wiem jak się czuli ci w Rospudzie',
                   'Ta kora jest smaczna, ile witamin',
-                  'Postanowiłem zostać drwalem, zacznę od tego drzewa.'];
+                  'Postanowiłem zostać drwalem, zacznę od tego drzewa'];
 
 class GameObject {
     constructor(x, y , width , height, image){
@@ -266,8 +266,7 @@ const saveScoreReset = () => {
     refreshFrame;
   });
 
-  endGame.innerHTML = `<h2>Koniec gry</h2>
-  <p>${endQotes[Math.floor(Math.random()*endQotes.length)]}</p>
+  endGame.innerHTML = `<h2>${endQotes[Math.floor(Math.random()*endQotes.length)]}</h2>
   <p>Dystans który pokonałeś to: ${score} km</p>`;
 
   if(score>currHighScore){
