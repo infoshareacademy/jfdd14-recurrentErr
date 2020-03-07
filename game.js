@@ -122,11 +122,9 @@ let obstacles;
 let backgrounds; 
 let spcBtwnObs = 200;
 let pathWidth = 200;
-let gamePoints = 0;
+let gamePoints;
 
 resetGame();
-
-levelInfo.innerHTML = 'Poziom 1';
 
 function animationFrame() { 
     
@@ -294,25 +292,28 @@ const saveScoreReset = () => {
 
 function resetGame() {
   ctx.clearRect(0, 0, gameWidth, gameHeight);
-    obstacles = [];
-    backgrounds = [];
-    player = new Player (380, 760);
-    createNewObstacle(pathWidth);
-    createNewBackground();
-    backgrounds[0].y = 0;
+  obstacles = [];
+  backgrounds = [];
+  gamePoints = 0;
+  player = new Player(380, 760);
+  createNewObstacle(pathWidth);
+  createNewBackground();
+  backgrounds[0].y = 0;
 
-    if(backgrounds.length!==0){
-      backgrounds.forEach(element=>{
-        element.init(ctx);
-      });
-    }
-  
-    if(obstacles.length!==0){
-      obstacles.forEach(element=>{
-        element[0].init(ctx);
-        element[1].init(ctx);
-      });
-    }
+  if (backgrounds.length !== 0) {
+    backgrounds.forEach(element => {
+      element.init(ctx);
+    });
+  }
 
-    player.init(ctx);
+  if (obstacles.length !== 0) {
+    obstacles.forEach(element => {
+      element[0].init(ctx);
+      element[1].init(ctx);
+    });
+  }
+
+  player.init(ctx);
+
+  levelInfo.innerHTML = "Poziom 1";
 };
