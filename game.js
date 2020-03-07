@@ -74,9 +74,6 @@ class Obstacle extends GameObject {
   }    
 }
 
-let obstacles = [];
-let backgrounds = [];
-
 function createNewObstacle(pathWidth){
   const randomOne = Math.floor(Math.random() * ((gameWidth-pathWidth)/20)) * 20; // losowa szerokość pierwszej przeszkody 
   const randomTwo = num => num >= gameWidth - pathWidth ? 0 : num + pathWidth; // początek drugiej przeszkody w zależności od tego jaką długość ma przeszkoda pierwsza
@@ -120,17 +117,16 @@ document.addEventListener('keyup', function (element) {
     }
 });
 
+let player;
+let obstacles;
+let backgrounds; 
 let spcBtwnObs = 200;
 let pathWidth = 200;
 let gamePoints = 0;
 
-createNewObstacle(pathWidth);
-createNewBackground();
-backgrounds[0].y = 0;
+resetGame();
 
 levelInfo.innerHTML = 'Poziom 1';
-
-let player = new Player (380, 760);
 
 function animationFrame() { 
     
@@ -296,7 +292,7 @@ const saveScoreReset = () => {
   endGame.style.display = "flex";
 };
 
-const resetGame = () => {
+function resetGame() {
   ctx.clearRect(0, 0, gameWidth, gameHeight);
     obstacles = [];
     backgrounds = [];
