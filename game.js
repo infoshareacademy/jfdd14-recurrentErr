@@ -6,12 +6,20 @@ const treeImg = document.querySelector('#imgTree');
 const groundImg = document.querySelector('#imgGround');
 const gameScore = document.querySelector('#gameScore');
 const levelInfo = document.querySelector('#levelInfo');
+const highScoreInfo = document.querySelector('#highScore');
 const currHighScore = localStorage.getItem('highScore');
 const endGame = document.querySelector('#endGame');
 const endGameHeader = document.querySelector('#endGameHeader');
 const endGameBody = document.querySelector('#endGameBody');
 var modal = document.getElementById("myModal");
 var btnStart = document.querySelector(".close");
+
+let player;
+let obstacles;
+let backgrounds; 
+let spcBtwnObs = 200;
+let pathWidth = 200;
+let gamePoints;
 
 const endQotes = ['Oczom ich ukazał się las...',
                   'Bunkrów nie ma...',
@@ -102,6 +110,7 @@ document.addEventListener('keydown', function (element) {
         player.speedY = 2;
     }
 });
+
 document.addEventListener('keyup', function (element) {
     if (element.code === "ArrowLeft") {
         player.speedX = 0;     
@@ -117,12 +126,7 @@ document.addEventListener('keyup', function (element) {
     }
 });
 
-let player;
-let obstacles;
-let backgrounds; 
-let spcBtwnObs = 200;
-let pathWidth = 200;
-let gamePoints;
+
 
 resetGame();
 
@@ -316,4 +320,5 @@ function resetGame() {
   player.init(ctx);
 
   levelInfo.innerHTML = "Poziom 1";
+  highScoreInfo.innerHTML = `Najlepszy wynik: ${localStorage.getItem('highScore')||'0'} km`;
 };

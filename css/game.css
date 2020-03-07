@@ -7,11 +7,9 @@
 }
 
 #gameInfo {
+    width: 800px;
     display: flex;
-}
-
-#levelInfo {
-    margin-left: 2rem;
+    justify-content: space-between;
 }
 
 h2 {
