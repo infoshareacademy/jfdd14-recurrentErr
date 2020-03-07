@@ -38,13 +38,30 @@ document.addEventListener('DOMContentLoaded', function () {
         window.onscroll = function() {
           const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
           for (let i in sections) {
-            if (sections[i] <= scrollPosition + 140) {
+            if (sections[i] <= scrollPosition + 160) {
               document.querySelector('.active').setAttribute('class', 'nav');
               document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
             }
           }
         };
       })();
+
+
+const contactBtn = document.querySelector(".contact__button");
+const modalBox = document.getElementById('id01');
+const emailRegex = /\S+@\S+\.\S+/;
+
+contactBtn.addEventListener("click", function() {
+  let inputPrem = document.querySelector(".contact__email");
+  if (inputPrem.value == "") {
+    alert("Wpisz swój email!");
+  } else if (!emailRegex.test(inputPrem.value)) {
+    alert("Wpisz prawidłowy email!");
+  } else {
+    localStorage.setItem("email", inputPrem.value);
+    modalBox.style.display = "block";
+  }
+});
 
 
      
