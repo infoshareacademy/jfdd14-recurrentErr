@@ -262,8 +262,7 @@ const saveScoreReset = () => {
   const newGameBtn = document.createElement('button');
   newGameBtn.innerText = 'Nowa gra';
   newGameBtn.addEventListener('click',()=>{
-    endGame.remove();
-    refreshFrame;
+    window.location.reload();
   });
 
   endGame.innerHTML = `<h2>${endQotes[Math.floor(Math.random()*endQotes.length)]}</h2>
