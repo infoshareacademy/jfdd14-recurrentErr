@@ -35,10 +35,8 @@
         <div id="hero" class="hero">
             
 
-            <a id = "leftArrow" class="w3-btn-floating" style="position:absolute;top:45%;left:3em; color: black;"
-               >❮❮</a>
-            <a id ="rightArrow" class="w3-btn-floating" style="position:absolute;top:45%;right:3em; color: black;"
-               >❯❯</a>
+            <a id = "leftArrow" class="w3-btn-floating left" >❮❮</a>
+            
 
             <div class="hero__header">
                 <h1>crossRoads</h1><br><br>
@@ -47,7 +45,7 @@
                         
                 
             </div>
-
+            <a id ="rightArrow" class="w3-btn-floating right">❯❯</a>
         </div>
 
 
@@ -111,16 +109,18 @@
     </section>
         <!-- Calculator-->
         <section id="calculator" class="calculator">
-            <h1>CENY ABONAMETÓW</h1>
-    <div>
+            <h1>Ceny abonamentów</h1>
+    <div class="discount">
        
-      
-        <input type="range" min="0" max="4" value="2" class="slider" id="myRange">
+        <form>
+        <input type="range" min="0" max="4" value="0" class="slider" id="myRange">
       <p class="paragraf">Liczba osób, która chce współdzielić abonament: <span id="people"></span></p>
-    
-        <label class="discount"><input class="discount" type="checkbox" id="discount50">JESTEM EMERYTEM/RENCISTĄ</label><br>
-        <label class="discount"><input class="discount" type="checkbox" id="discount5">POSIADAM KARTĘ MIESZKAŃCA</label>
-    
+   
+        <label class="discount"><input name="checkbox" type="checkbox" id="discount50">Jestem emerytem/rencistą<br></label>
+        <label class="discount"><input name="checkbox" type="checkbox" id="discount5">Posiadam kartę mieszkańca<br></label>
+        
+       </form>
+        <p class="price">CENA:  <span id="cena">Zaznacz liczbę osób na suwaku.</span></p>
     </div>
     </section>
 
