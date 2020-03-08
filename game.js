@@ -23,18 +23,11 @@ let gamePoints;
 
 const endQotes = ['Oczom ich ukazał się las...',
                   'Bunkrów nie ma...',
-                  'O, jakie ładne drzewo',
-                  'Teraz już wiem jak się czuli ci w Rospudzie',
-                  'Ta kora jest smaczna, ile witamin',
-                  'Postanowiłem zostać drwalem, zacznę od tego drzewa'];
+                  'O, jakie ładne drzewo!',
+                  'Teraz już wiem jak się czuli ci w Rospudzie...',
+                  'Jaka ta kora jest smaczna, ile witamin!',
+                  'Postanowiłem zostać drwalem, zacznę od tego drzewa!'];
 
-window.onload = function() {
-  modal.style.display = "block";
-}
-
-btnStart.onclick = function() {
-  modal.style.display = "none";
-}
 
 class GameObject {
     constructor(x, y , width , height, image){
@@ -127,8 +120,15 @@ document.addEventListener('keyup', function (element) {
 });
 
 
+window.onload = function() {
+  resetGame();
+  modal.style.display = "block";
+}
 
-resetGame();
+btnStart.onclick = function() {
+  modal.style.display = "none";
+}
+
 
 function animationFrame() { 
     
@@ -291,7 +291,7 @@ const saveScoreReset = () => {
     endGameBody.appendChild(newHighScore);
   }
   endGameBody.appendChild(newGameBtn);
-  endGame.style.display = "flex";
+  endGame.style.display = "block";
 };
 
 function resetGame() {
@@ -319,6 +319,7 @@ function resetGame() {
 
   player.init(ctx);
 
+  gameScore.innerHTML = 'Dystans: 0.0 km'
   levelInfo.innerHTML = "Poziom 1";
   highScoreInfo.innerHTML = `Najlepszy wynik: ${localStorage.getItem('highScore')||'0'} km`;
 };
