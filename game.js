@@ -18,8 +18,8 @@ var btnStart = document.querySelector(".close");
 let player;
 let obstacles;
 let backgrounds; 
-let spcBtwnObs = 200;
-let pathWidth = 200;
+let spcBtwnObs;
+let pathWidth;
 let gamePoints;
 
 const endQotes = ['Oczom ich ukazał się las...',
@@ -48,10 +48,7 @@ class Player extends GameObject {
     }
 
     init(ctx,animCount,animModif){
-        // ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
-        // ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
         ctx.drawImage(this.image, 16*animCount, 18*animModif, 16, 18, this.x, this.y, 48, 54);
-
       } 
 
     newPos(){
@@ -320,6 +317,8 @@ function resetGame() {
   obstacles = [];
   backgrounds = [];
   gamePoints = 0;
+  spcBtwnObs = 200;
+  pathWidth = 200;
   player = new Player(376, 736);
   createNewObstacle(pathWidth);
   createNewBackground();
