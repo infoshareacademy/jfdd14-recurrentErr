@@ -23,7 +23,7 @@
 --default-primary-color:#607D8B; 
 --light-primary-color:  #CFD8DC; 
 --text-primary-color: #FFFFFF; 
---accent-color: #e91e63; 
+--accent-color: #ec407a; 
 --primary-text-color: #212121; 
 --secondary-text-color: #757575; 
 --divider-color: #BDBDBD; 
@@ -58,7 +58,7 @@
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid #DEDEDE;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -255,7 +255,7 @@ h3 > a{
 
 #functionalities{
     background: var(--light-primary-color);
-    border-top: 2px solid var(--accent-color);     
+    border-bottom: 2px solid #DEDEDE;     
 }
 
 .ul__functionalities i {       
@@ -328,8 +328,8 @@ li.ul__functionalities{
 
 .section-extra {
     background: var(--dark-primary-color);
-    border-top: 2px solid var(--accent-color); 
-    border-bottom: 2px solid var(--accent-color); 
+    border-top: 2px solid #DEDEDE; 
+    border-bottom: 2px solid #DEDEDE;
     color: var(--text-primary-color);
     display: grid;		
     grid-template-columns: 4rem 1fr 4rem;
@@ -369,12 +369,12 @@ li.ul__functionalities{
     background: var(--default-primary-color);
     color: var(--text-primary-color);
     padding: 6rem 1.5rem 7rem 1.5rem;
-    border-top: 2px solid var(--accent-color); 
+    border-top: 2px solid #DEDEDE; 
 }
 
-.contact--emphasis {
+/* .contact--emphasis {
     color: var(--accent-color);
-}
+} */
 
 .contact__heading {
     padding-bottom: 4rem;
@@ -424,7 +424,7 @@ form {
 .aboutUs {
     background: var(--light-primary-color);
     color: var(--dark-primary-color);
-    border-top: 2px solid var(--accent-color);
+    border-top: 2px solid #DEDEDE;
 }
 
 .aboutUs__heading{
@@ -438,7 +438,7 @@ form {
     display: flex;
     flex-direction: column;
     background: var(--light-primary-color);
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid #DEDEDE;
     padding-bottom: 10.75rem;
 }
 .aboutUs__img1, .aboutUs__img2 {
