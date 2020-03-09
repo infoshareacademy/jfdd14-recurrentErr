@@ -4,6 +4,7 @@ const gameWidth = canvas.width;
 const gameHeight = canvas.height;
 const treeImg = document.querySelector('#imgTree');
 const groundImg = document.querySelector('#imgGround');
+const playerImg = document.querySelector('#imgPlayer');
 const gameScore = document.querySelector('#gameScore');
 const levelInfo = document.querySelector('#levelInfo');
 const highScoreInfo = document.querySelector('#highScore');
@@ -40,15 +41,17 @@ class GameObject {
 }
 
 class Player extends GameObject {
-    constructor(x, y, image){
-        super(x, y , 30, 30, image);  
+    constructor(x, y){
+        super(x, y , 48, 54, playerImg);  
         this.speedX = 0;
         this.speedY = 0; 
     }
 
-    init(ctx){
-        ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
-        ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
+    init(ctx,animCount,animModif){
+        // ctx.fillStyle = 'black'; // bez tej deklaracji jeżeli drawImage
+        // ctx.fillRect(this.x, this.y, this.width, this.height); // drawImage jeżeli używamy tekstur
+        ctx.drawImage(this.image, 16*animCount, 18*animModif, 16, 18, this.x, this.y, 48, 54);
+
       } 
 
     newPos(){
@@ -88,34 +91,44 @@ function createNewBackground(){
   backgrounds.push(bckgr);
 }
 
+let animationModifier = 1;
+
 document.addEventListener('keydown', function (element) {
     event.preventDefault();
     if (element.code === "ArrowLeft") {
-        player.speedX = -4;     
+        player.speedX = -4;
+        animationModifier = 2;     
     }
     if (element.code === "ArrowRight") {
-        player.speedX = 4;      
+        player.speedX = 4;
+        animationModifier = 3;      
     }  
     if (element.code === "ArrowUp") {
         player.speedY = -2;
+        animationModifier = 1;
     }
     if (element.code === "ArrowDown") {
-        player.speedY = 2;
+        player.speedY = 3;
+        animationModifier = 0;
     }
 });
 
 document.addEventListener('keyup', function (element) {
     if (element.code === "ArrowLeft") {
-        player.speedX = 0;     
+        player.speedX = 0;
+        animationModifier = 1;   
     }
     if (element.code === "ArrowRight") {
-        player.speedX = 0;      
+        player.speedX = 0;
+        animationModifier = 1;     
     }  
     if (element.code === "ArrowUp") {
         player.speedY = 0;
+        animationModifier = 1;
     }
     if (element.code === "ArrowDown") {
         player.speedY = 0;
+        animationModifier = 1;
     }
 });
 
@@ -129,6 +142,8 @@ btnStart.onclick = function() {
   modal.style.display = "none";
 }
 
+const animationCount = [0,1,0,2];
+let animTimer = 0;
 
 function animationFrame() { 
     
@@ -216,17 +231,23 @@ function animationFrame() {
     });
   }
 
-  player.init(ctx);
+  animTimer = animTimer > 3 ? 0 : animTimer;
+
+  player.init(ctx,animationCount[animTimer],animationModifier);
   player.newPos(ctx);
   
+  if(gamePoints%10===0){
+    animTimer++;
+  }
+
   gamePoints++;
  
 }
 let refreshFrame;
 
 btnStart.addEventListener('click', () => {
-  refreshFrame = setInterval(animationFrame, 20)
-}); // setInterval odświeża canvas 50 razy na sekundę
+  refreshFrame = setInterval(animationFrame, 25)
+}); // setInterval odświeża canvas 40 razy na sekundę
 
 function checkColObs() {
   obstacles.forEach(el=>{
@@ -299,7 +320,7 @@ function resetGame() {
   obstacles = [];
   backgrounds = [];
   gamePoints = 0;
-  player = new Player(380, 760);
+  player = new Player(376, 736);
   createNewObstacle(pathWidth);
   createNewBackground();
   backgrounds[0].y = 0;
@@ -317,7 +338,7 @@ function resetGame() {
     });
   }
 
-  player.init(ctx);
+  player.init(ctx,0,1);
 
   gameScore.innerHTML = 'Dystans: 0.0 km'
   levelInfo.innerHTML = "Poziom 1";
