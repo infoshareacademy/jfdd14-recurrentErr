@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
     <link rel="stylesheet" href="css/game.css">
 </head>
+
 <body>
-    <canvas id='gameScreen' width ="600" height="600"></canvas>
+    <main class="game__container">
+      <header>
+        <h1><img src="src/logoBW.png">Z crossRoads przez las</h1> 
+        <p class="head">Im dalej w las, tym więcej drzew!</p>
+      </header>
+      
+      <canvas id='gameScreen' width ="800px" height="800px"></canvas>
+
+      <div id='gameInfo'>
+          <p id='gameScore'></p>
+          <p id='levelInfo'></p>
+          <p id='highScore'></p>
+      </div>
+    </main>
+
+    <img id="imgTree" src="src/tree.png">
+    <img id="imgGround" src="src/ground.png">
+    <img id="imgPlayer" src="src/player.png">
+
+    <div id="myModal" class="modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h2>Ekipa crossRoads wita Ciebie w naszej mini grze!</h2>
+        </div>
+        <div class="modal__body">
+          <p>Wybierz się z nami na spacer! Uważaj na drzewa i staraj się zachowywać od nich bezpieczną odległość.</p>
+          <p>Do sterowania używaj strzałek na klawiaturze.</p>
+          <button class="close">Zacznij zabawę!</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="endGame" class="modal">
+      <div class='modal__content'>
+        <div id="endGameHeader" class="modal__header"></div>
+        <div id="endGameBody"></div>
+      </div>
+    </div>
+  
     <script src="game.js"></script>
 </body>
+
 </html>
