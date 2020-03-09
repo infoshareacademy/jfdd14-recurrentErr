@@ -144,44 +144,37 @@ let animTimer = 0;
 
 function animationFrame() { 
     
-  checkCollision();  
-  checkColObs();
+  checkCollision();
 
   switch(gamePoints){
     case 1500:
       spcBtwnObs -= 20;
       pathWidth -= 20;
-      console.log('level 2');
       levelInfo.innerHTML = 'Poziom 2';
       break;
     case 3000:
       spcBtwnObs -= 20;
       pathWidth -= 20;
-      console.log('level 3');
       levelInfo.innerHTML = 'Poziom 3';
       break;
     case 4500:
       spcBtwnObs -= 20;
       pathWidth -= 20;
-      console.log('level 4');
       levelInfo.innerHTML = 'Poziom 4';
       break;
     case 6000:
       spcBtwnObs -= 20;
       pathWidth -= 20;
-      console.log('level 5');
       levelInfo.innerHTML = 'Poziom 5';
       break;
     case 7500:
-      spcBtwnObs -= 20;
-      pathWidth -= 20;
-      console.log('level 6');
+      spcBtwnObs -= 10;
+      pathWidth -= 10;
       levelInfo.innerHTML = 'Poziom 6';
       break;
     case 9000:
-      spcBtwnObs -= 20;
-      pathWidth -= 20;
-      console.log('level 7');
+      spcBtwnObs -= 10;
+      pathWidth -= 10;
       levelInfo.innerHTML = 'Poziom 7';
       break;       
   }
@@ -246,18 +239,27 @@ btnStart.addEventListener('click', () => {
   refreshFrame = setInterval(animationFrame, 25)
 }); // setInterval odświeża canvas 40 razy na sekundę
 
-function checkColObs() {
+function checkCollision() {
+  const playerTop = player.y + player.height/2;
+  const playerBottom = player.y + player.height;
+  const playerLeft = player.x + player.width/4;
+  const playerRight = player.x + player.width*(3/4);
+
+  if (playerTop <= 0 ||
+      playerBottom >= gameHeight ||
+      playerLeft <= 0 ||
+      playerRight >= gameWidth) {
+          console.log("kolizja");
+          clearInterval(refreshFrame);  
+          saveScoreReset();
+      }
+  
   obstacles.forEach(el=>{
     el.forEach(el=>{  
-  const topObstacle = el.y;
-  const bottomObstacle = el.y + el.height;
-  const playerTop = player.y;
-  const playerBottom = player.y + player.height;
-      
-  const leftObstacle = el.x;
-  const rightObstacle = el.x + el.width;
-  const playerLeft = player.x;
-  const playerRight = player.x + player.width;
+      const topObstacle = el.y;
+      const bottomObstacle = el.y + el.height;
+      const leftObstacle = el.x;
+      const rightObstacle = el.x + el.width;
       
       if ((bottomObstacle > playerTop &&
           topObstacle < playerBottom) &&
@@ -267,22 +269,9 @@ function checkColObs() {
           clearInterval(refreshFrame);
           saveScoreReset(); 
       }
-})})};
+    });
+  });
 
-
-function checkCollision() {
-  const playerTop = player.y;
-  const playerBottom = player.y + player.height;
-  const playerLeft = player.x;
-  const playerRight = player.x + player.width;
-  if (playerTop <= 0 ||
-      playerBottom >= gameHeight ||
-      playerLeft <= 0 ||
-      playerRight >= gameWidth) {
-          console.log("kolizja");
-          clearInterval(refreshFrame);  
-          saveScoreReset();
-      } 
 };
 
 const saveScoreReset = () => {
