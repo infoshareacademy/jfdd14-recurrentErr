@@ -22,9 +22,12 @@ let spcBtwnObs;
 let pathWidth;
 let gamePoints;
 
-const endQotes = ['Oczom ich ukazał się las...',
+const endQotes = ['Lubię zieleń, ale nie aż tak...',
+                  'O, Grzegorz Rasiak! Mogę prosić o autograf?',
+                  'To drzewo jest mojsze niż Twojsze!',
+                  'Oczom ich ukazał się las...',
                   'Bunkrów nie ma...',
-                  'O, jakie ładne drzewo!',
+                  'O! Jakie ładne drzewo!',
                   'Teraz już wiem jak się czuli ci w Rospudzie...',
                   'Jaka ta kora jest smaczna, ile witamin!',
                   'Postanowiłem zostać drwalem, zacznę od tego drzewa!'];
