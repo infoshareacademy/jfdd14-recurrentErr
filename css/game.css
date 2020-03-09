@@ -32,8 +32,8 @@ header{
 
 #gameScreen{
   margin: 0 auto;
-  width: 800px;
-  height: 800px;
+  width: 750px;
+  height: 750px;
   border: solid #455A64 1em;
   display: flex;
 }
@@ -55,7 +55,7 @@ h1 {
   margin-bottom: 0.25em;
 }
 
-.head {
+.head{
   margin-top: 0.25em;
   margin-bottom: 0.5em;
 }
