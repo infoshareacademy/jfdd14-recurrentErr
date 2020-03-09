@@ -204,7 +204,7 @@ h3 > a{
 
 .discount, .paragraf{
     color: white;
-    padding: 1em;
+    padding: 1rem;
 }
 
 .calculator>p{
@@ -216,10 +216,10 @@ h3 > a{
     width: 80%;
     padding: 2em;
 }
-  
+
 .slider {
     -webkit-appearance: none;
-    width: 100%;
+    width: 60%;
     height: 15px;
     border-radius: 5px;
     background: #d3d3d3;
@@ -227,6 +227,7 @@ h3 > a{
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+   
 }
   
 .slider:hover {
@@ -239,7 +240,7 @@ h3 > a{
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #4CAF50;
+    background: #ec407a;;
     cursor: pointer;
 }
   
@@ -247,7 +248,7 @@ h3 > a{
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #4CAF50;
+    background: #ec407a;;
     cursor: pointer;
 }
 
@@ -834,5 +835,7 @@ footer {
     .cancelbtn, .acceptbtn {
        width: 100%;
     }
+    .slider{
+    width: 100%;
   }
-  
+}
