@@ -8,7 +8,6 @@
     <title>crossRoads</title>
     <script src="https://kit.fontawesome.com/cd3df7232a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -19,39 +18,38 @@
             <div>crossRoads</div>
         </div>
         <ul class="position">
-            <li class="menu"><a href="#home" class="active nav">Home</a></li>
-            <li class="menu"><a href="#functionalities" class="nav">Dlaczego My?</a></li>
-            <li class="menu"><a href="#section-extra" class="nav">Co Oferujemy?</a></li>
-            <li class="menu"><a href="#contact" class="nav">Premiera</a></li>
-            <li class="menu"><a href="#aboutUs" class="nav">O Nas</a></li>
+            <li class="menu">
+                <a href="#home" class="active nav">Home</a>
+            </li>
+            <li class="menu">
+                <a href="#functionalities" class="nav">Dlaczego My?</a>
+            </li>
+            <li class="menu">
+                <a href="#section-extra" class="nav">Co Oferujemy?</a>
+            </li>
+            <li class="menu">
+                <a href="#contact" class="nav">Premiera</a>
+            </li>
+            <li class="menu">
+                <a href="#aboutUs" class="nav">O Nas</a>
+            </li>
         </ul>
     </nav>
-   
-    <section id="home" class="scrollspy">
-        
 
+    <section id="home" class="scrollspy">   
     <section>
-
         <div id="hero" class="hero">
-            
-
-            <a id = "leftArrow" class="w3-btn-floating" style="position:absolute;top:45%;left:3em; color: black;"
-               >❮❮</a>
-            <a id ="rightArrow" class="w3-btn-floating" style="position:absolute;top:45%;right:3em; color: black;"
-               >❯❯</a>
-
+            <a id = "leftArrow" class="w3-btn-floating left" >❮❮</a>
             <div class="hero__header">
                 <h1>crossRoads</h1><br><br>
                 <h3> Chcesz się przejść?</h3>
-                <h3><a href="#contact">Więcej info tutaj</a></h3>
-                        
-                
+                <h3>
+                    <a href="#contact">Więcej info tutaj</a>
+                </h3>                      
             </div>
-
+            <a id ="rightArrow" class="w3-btn-floating right">❯❯</a>
         </div>
-
-
-</section>
+    </section>
 
     </section>
     <!-- RE - Spis planowanych funkcji produktu -->
@@ -110,18 +108,21 @@
         </div>
     </section>
         <!-- Calculator-->
-        <section id="calculator" class="calculator">
-            <h1>CENY ABONAMETÓW</h1>
-    <div>
-       
-      
-        <input type="range" min="0" max="4" value="2" class="slider" id="myRange">
-      <p class="paragraf">Liczba osób, która chce współdzielić abonament: <span id="people"></span></p>
-    
-        <label class="discount"><input class="discount" type="checkbox" id="discount50">JESTEM EMERYTEM/RENCISTĄ</label><br>
-        <label class="discount"><input class="discount" type="checkbox" id="discount5">POSIADAM KARTĘ MIESZKAŃCA</label>
-    
-    </div>
+    <section id="calculator" class="calculator">
+        <h1>Ceny abonamentów</h1>
+        <div class="discount">       
+            <form>
+                <input type="range" min="0" max="4" value="0" class="slider" id="myRange">
+                <p class="paragraf">Liczba osób, która chce współdzielić abonament: <span id="people"></span></p>   
+                <label class="discount">
+                    <input name="checkbox" type="checkbox" id="discount50">Jestem emerytem/rencistą<br>
+                </label>
+                <label class="discount">
+                    <input name="checkbox" type="checkbox" id="discount5">Posiadam kartę mieszkańca<br>
+                </label>        
+            </form>
+            <p class="price">CENA:  <span id="cena">Zaznacz liczbę osób na suwaku.</span></p>
+        </div>
     </section>
 
     <section id="contact" class="contact scrollspy">
@@ -139,6 +140,18 @@
                 <p class="contact--emphasis">Zapewniamy bezpieczeństwo danych.</p>
             </div>
         </div>
+        <div id="id01" class="modal">            
+            <form class="modal-content" action="/action_page.php">
+              <div class="container__modal">
+                <h2>Dziękujemy za zapis na premierę!</h2><br/>
+                <p>Masz teraz możliwość zagrać w naszą grę!</p><br/>              
+                <div class="clearfix">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Powrót na stronę</button>
+                  <button type="button" onclick="window.location.href='game.html'" class="acceptbtn">Przejście do gry</button>
+                </div>
+              </div>
+            </form>
+          </div>
     </section>
 
     <section id="aboutUs" class="aboutUs scrollspy">
@@ -199,9 +212,7 @@
             <a href="#" class="close" title="Zamknij">x</a>
             <p><h5>UWAGA!</h5><p> Niniejsza strona wykorzystuje pliki cookies. Informacje uzyskane za pomocą cookies wykorzystywane są głównie w celach statystycznych. Pozostając na stronie godzisz się na ich zapisywanie w Twojej przeglądarce.</p>
         </div>
-    </div> 
-    
-   
+    </div>      
 
     <footer>
         <i class="far fa-envelope fa-1x" style="color: #FFFFFF"> crossroads@gmail.com</i>
